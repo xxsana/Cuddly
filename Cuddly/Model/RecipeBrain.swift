@@ -8,12 +8,13 @@
 import UIKit
 
 struct RecipeBrain {
-    let allRecipies: [Recipe] = [
+    
+    let allRecipes: [Recipe] = [
         Recipe(title: "퍼푸치노",
                subtitle: "따뜻하고 포근한 겨울을 위한 한 잔",
                time: "15분",
                effect: "모질 개선 기능",
-               image: #imageLiteral(resourceName: "puppucinoMain.jpeg"),
+               image: UIImage(named: "puppucinoMain.jpeg"),
                ingredients: [Ingredient(name: "락토프리 우유 혹은 펫밀크", weight: "150ml"),
                              Ingredient(name: "캐롭파우더", weight: "2tsp")],
                tools: ["전자레인지", "거품기"],
@@ -39,8 +40,10 @@ struct RecipeBrain {
                             title: "캐롭파우더 토핑하기",
                             description: "거품 위 캐롭파우더를 솔솔 뿌려주면 완성!",
                             image: UIImage(systemName: "5.circle"))
-                       ],
+               ],
                comments: nil,
                linkedProducts: nil)
     ]
+
+//    let allRecipes = ["title1", "title2", "title3", "title4", "title5"]
 }

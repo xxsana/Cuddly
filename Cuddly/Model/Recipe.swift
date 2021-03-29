@@ -12,7 +12,7 @@ struct Recipe {
     let subtitle: String            //소제목
     let time: String                //소요시간
     let effect: String
-    let image: UIImage              //메인이미지
+    let image: UIImage?             //메인이미지
     let ingredients: [Ingredient]   //재료
     let tools: [String]?            //도구
     let target: Target              //급여가능대상
