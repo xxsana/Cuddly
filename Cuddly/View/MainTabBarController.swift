@@ -7,16 +7,16 @@
 
 import UIKit
 
-class CustomTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController {
 
-    let customView = UIView()
+    let customTabBar = UIView()
+
     let tabItem01Home = CustomTabBarItem()
     let tabItem02Shop = CustomTabBarItem()
     let tabItem03Bookmark = CustomTabBarItem()
     let tabItem04MyPage = CustomTabBarItem()
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
 
         // Hide original TabBar 기존 탭바 숨기기
         tabBar.isHidden = true
@@ -27,14 +27,14 @@ class CustomTabBarController: UITabBarController {
         let x: CGFloat = 0
         let y = self.view.frame.height - height
         
-        self.customView.frame = CGRect(x: x, y: y, width: width, height: height)
-        self.customView.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
+        self.customTabBar.frame = CGRect(x: x, y: y, width: width, height: height)
+        self.customTabBar.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
         
         // add subview
-        self.view.addSubview(customView)
+        self.view.addSubview(customTabBar)
         
         // origin(point) of tabItems, height width는 있음
-        let tabItemWidth = self.customView.frame.size.width / 4
+        let tabItemWidth = self.customTabBar.frame.size.width / 4
         
         // arrange items with x
         self.tabItem01Home.frame.origin.x = 0
@@ -47,16 +47,15 @@ class CustomTabBarController: UITabBarController {
         self.tabItem02Shop.setImageAndTitle(title: "마켓", imageSystemName: "bag", tag: 1)
         self.tabItem03Bookmark.setImageAndTitle(title: "저장 목록", imageSystemName: "heart", tag: 2)
         self.tabItem04MyPage.setImageAndTitle(title: "마이페이지", imageSystemName: "person.circle", tag: 3)
- 
         
         let items = [tabItem01Home, tabItem02Shop, tabItem03Bookmark, tabItem04MyPage]
         
         for item in items {
             // action method
-            item.addTarget(self, action: #selector(tabItemClicked), for: .touchUpInside)
+            item.addTarget(self, action: #selector(tabItemClickedForMain), for: .touchUpInside)
             
             // add subview
-            self.customView.addSubview(item)
+            self.customTabBar.addSubview(item)
             
             // align center
             guard let imageWidth = item.imageView?.frame.width
@@ -67,10 +66,10 @@ class CustomTabBarController: UITabBarController {
             
             item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
         }
-        
     }
     
-    @objc func tabItemClicked(_ sender: CustomTabBarItem) {
+    @objc func tabItemClickedForMain(_ sender: CustomTabBarItem) {
+        
         // reset isSelected
         self.tabItem01Home.isSelected = false
         self.tabItem02Shop.isSelected = false
@@ -80,7 +79,7 @@ class CustomTabBarController: UITabBarController {
         sender.isSelected = true
         
         self.selectedIndex = sender.tag
+    
+
     }
-
-
 }

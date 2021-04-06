@@ -428,10 +428,10 @@
             </objects>
             <point key="canvasLocation" x="570" y="76"/>
         </scene>
-        <!--Custom Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="jeN-GN-xcu">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="CustomTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="MainTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Wd0-P2-dBJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5P8-mw-Hz2">

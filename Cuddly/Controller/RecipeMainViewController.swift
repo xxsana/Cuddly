@@ -18,6 +18,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var toolsLabel: UILabel!
     
+    var recipeTabBarController: RecipeTabBarController!
     
     // 혹시 필요할까 싶어 받은 index 안 쓰면 지우기
     var indexNum = 0
@@ -26,9 +27,14 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tabBar
+        self.recipeTabBarController = RecipeTabBarController(superView: self)
+        self.view.addSubview(recipeTabBarController.customTabBar)
+        
         titleLabel.text = recipe.title
         subtitleLabel.text = recipe.subtitle
         mainImageView.image = recipe.image
+        
         // 배치 어디에?
         var targetString: String {
             switch recipe.target {
