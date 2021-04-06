@@ -55,6 +55,12 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         ingredientTableView.dataSource = self
         ingredientTableView.delegate = self
 
+        // UI bar button item
+        let blackBackItem = UIBarButtonItem(title: nil, style: .done, target: self, action: nil)
+        blackBackItem.tintColor = .black
+        self.navigationItem.backBarButtonItem = blackBackItem
+        
+        
         // line UI
         let lineViewAbove = UIView(frame: CGRect(x: 19, y: 560, width: 376, height: 1.2))
         lineViewAbove.layer.borderWidth = 374

@@ -24,10 +24,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        // UI bar button item
-        let backItem = UIBarButtonItem(title: nil, style: .done, target: self, action: nil)
-        backItem.tintColor = .black
-        navigationItem.backBarButtonItem = backItem
     }
     
     
@@ -48,10 +44,12 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             print("failed to instantiate view controller with RecipeMain")
             return
         }
-        
+
         mainVC.indexNum = indexPath.row
         mainVC.recipe = allRecipes[indexPath.row]
         self.navigationController?.pushViewController(mainVC, animated: true)
+        
+
     }
     
 
