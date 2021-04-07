@@ -19,14 +19,18 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         // table view delegate
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // transparent Navigation Controller
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        navigationTransparent()
     }
     
-    
+
+    // navigation functions
+    func navigationTransparent() {
+        // 네비게이션 배경 투명 (transparent Navigation Controller)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+        
     // Table View
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRecipes.count

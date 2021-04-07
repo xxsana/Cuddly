@@ -28,14 +28,21 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         // tabBar
-        self.recipeTabBarController = RecipeTabBarController(superView: self)
-        self.view.addSubview(recipeTabBarController.customTabBar)
+//        self.recipeTabBarController = RecipeTabBarController(superView: self)
+//        self.view.addSubview(recipeTabBarController.customTabBar)
         
+        // for navigation controller
+        navigationTransparent()
+        navigationTitle(as: "타이틀 테스트")
+        navigationBackButton()
+        navigationItemShareAndBookmark()
+        
+        
+        // 레이블 값 대입
         titleLabel.text = recipe.title
         subtitleLabel.text = recipe.subtitle
         mainImageView.image = recipe.image
         
-        // 배치 어디에?
         var targetString: String {
             switch recipe.target {
             case .onlyCat :
@@ -79,6 +86,83 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         self.view.addSubview(lineViewAbove)
         self.view.addSubview(lineViewBelow)
     }
+    
+    
+    // navigation functions
+    func navigationTransparent() {
+        // 네비게이션 배경 투명 (transparent Navigation Controller)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+    func navigationTitle(as title: String) {
+        // 타이틀용 레이블 객체
+        let titleWidth = 220
+        let navigationHeight = 67
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: titleWidth, height: navigationHeight))
+
+        // 속성 설정
+        titleLabel.numberOfLines = 1
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
+        titleLabel.text = title
+
+        self.view.addSubview(titleLabel)
+
+        // 네비게이션에 대입
+        self.navigationItem.titleView = titleLabel
+    }
+    
+    func navigationBackButton() {
+        let backImage = UIImage(systemName: "chevron.backward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 19, weight: .medium))
+        let item = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(goBack))
+        item.tintColor = .black
+        
+        self.navigationItem.leftBarButtonItem = item
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func navigationItemShareAndBookmark() {
+
+        // items
+        let imageSize = 16
+        let shareImage = UIImage(systemName: "paperplane", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(imageSize), weight: .medium))
+        let shareButton = UIButton(type: .system)
+        shareButton.setImage(shareImage, for: .normal)
+        shareButton.tintColor = .black
+        
+        shareButton.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+        shareButton.addTarget(self, action: #selector(shareClicked), for: .touchUpInside)
+        
+        let shareitem = UIBarButtonItem(customView: shareButton)
+        
+        let bookmarkImage = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: CGFloat(imageSize), weight: .medium))
+        let bookmarkButton = UIButton(type: .system)
+        bookmarkButton.setImage(bookmarkImage, for: .normal)
+        bookmarkButton.tintColor = .black
+        
+        bookmarkButton.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+        bookmarkButton.addTarget(self, action: #selector(bookmarkClicked), for: .touchUpInside)
+        
+        let bookmarkItem = UIBarButtonItem(customView: bookmarkButton)
+
+        self.navigationItem.rightBarButtonItems = [bookmarkItem, shareitem]
+    }
+    
+    @objc func shareClicked() {
+        print("share clicked")
+    }
+    
+    @objc func bookmarkClicked() {
+        print("bookmark clicked")
+    }
+    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipe.ingredients.count
