@@ -115,7 +115,7 @@
         <!--Item-->
         <scene sceneID="jq5-l4-SWD">
             <objects>
-                <viewController id="PdL-8h-4wt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Comment" id="PdL-8h-4wt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYa-Lz-e3L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,10 +419,10 @@
             </objects>
             <point key="canvasLocation" x="3235" y="76"/>
         </scene>
-        <!--Main Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="jeN-GN-xcu">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="MainTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="CustomTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Wd0-P2-dBJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5P8-mw-Hz2">

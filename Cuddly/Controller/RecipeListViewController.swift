@@ -15,11 +15,13 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         // table view delegate
         tableView.delegate = self
         tableView.dataSource = self
         navigationTransparent()
+        
     }
     
 
@@ -48,10 +50,12 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             print("failed to instantiate view controller with RecipeMain")
             return
         }
-
         mainVC.indexNum = indexPath.row
         mainVC.recipe = allRecipes[indexPath.row]
-        self.navigationController?.pushViewController(mainVC, animated: true)
+
+        mainVC.modalPresentationStyle = .fullScreen
+        mainVC.modalTransitionStyle = .crossDissolve
+        present(mainVC, animated: true, completion: nil)
         
 
     }
