@@ -170,7 +170,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
 
     // tool bar action methods
     @objc func tabItem01HomeClicked(_ sender: CustomTabBarItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     @objc func tabItem02CommentClicked(_ sender: CustomTabBarItem) {
@@ -181,11 +181,23 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @objc func tabItem03BookmarkClicked(_ sender: CustomTabBarItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     @objc func tabItem04LinkedProductClicked(_ sender: CustomTabBarItem) {
-        self.dismiss(animated: true, completion: nil)
+        guard let linkedProductVC = storyboard?.instantiateViewController(withIdentifier: "LinkedProductViewController") as? LinkedProductViewController else {
+            assertionFailure("No view controller ID LinkedProductViewController in storyboard")
+            return
+        }
+        
+        // take a snapshot of current view and set it as backingImage
+        linkedProductVC.backingImage = self.view.asImage()
+        
+        // set the modal presentation to full screen
+        linkedProductVC.modalPresentationStyle = .fullScreen
+        
+        // present the view controller modally without animation
+        self.present(linkedProductVC, animated: false, completion: nil)
     }
     
 }

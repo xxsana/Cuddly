@@ -14,6 +14,8 @@
 		495457E6262033680011EE22 /* puppucinoStep4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457E1262033680011EE22 /* puppucinoStep4.jpg */; };
 		495457E9262034200011EE22 /* puppucinoMain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457E8262034200011EE22 /* puppucinoMain.jpeg */; };
 		495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */; };
+		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
+		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
 		496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3383260C9E5E00B2E35B /* AppDelegate.swift */; };
 		496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3385260C9E5E00B2E35B /* SceneDelegate.swift */; };
 		496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */; };
@@ -40,6 +42,8 @@
 		495457E1262033680011EE22 /* puppucinoStep4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep4.jpg; sourceTree = "<group>"; };
 		495457E8262034200011EE22 /* puppucinoMain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = puppucinoMain.jpeg; path = ../../../../../../../Desktop/Cuddly/puppucino/puppucinoMain.jpeg; sourceTree = "<group>"; };
 		495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep5.jpeg; sourceTree = "<group>"; };
+		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
+		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		496C3380260C9E5E00B2E35B /* Cuddly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496C3383260C9E5E00B2E35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496C3385260C9E5E00B2E35B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
+				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
+				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,8 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */,
+				495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */,
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
+				495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */,
 				495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */,
 				49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
