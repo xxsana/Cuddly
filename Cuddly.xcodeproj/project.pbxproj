@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495457D2261FE96F0011EE22 /* CustomToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D1261FE96F0011EE22 /* CustomToolBar.swift */; };
+		495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigationController.swift */; };
 		496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3383260C9E5E00B2E35B /* AppDelegate.swift */; };
 		496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3385260C9E5E00B2E35B /* SceneDelegate.swift */; };
 		496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		495457D1261FE96F0011EE22 /* CustomToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolBar.swift; sourceTree = "<group>"; };
+		495457D5261FF70C0011EE22 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		496C3380260C9E5E00B2E35B /* Cuddly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496C3383260C9E5E00B2E35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496C3385260C9E5E00B2E35B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +101,6 @@
 			children = (
 				496C3389260C9E5E00B2E35B /* Main.storyboard */,
 				49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */,
-				49C36737261B1AB9000D5BCD /* MainTabBarController.swift */,
-				49C3673D261C1D8E000D5BCD /* RecipeTabBarController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,8 +108,12 @@
 		496C339F260DD29A00B2E35B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				495457D5261FF70C0011EE22 /* CustomNavigationController.swift */,
+				49C36737261B1AB9000D5BCD /* MainTabBarController.swift */,
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
+				49C3673D261C1D8E000D5BCD /* RecipeTabBarController.swift */,
+				495457D1261FE96F0011EE22 /* CustomToolBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */,
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
+				495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */,
 				49C36738261B1AB9000D5BCD /* MainTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,
@@ -209,6 +216,7 @@
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
 				496C33DE26109BA100B2E35B /* Target.swift in Sources */,
+				495457D2261FE96F0011EE22 /* CustomToolBar.swift in Sources */,
 				496C33DB26109B3400B2E35B /* Product.swift in Sources */,
 				496C33D826109B2700B2E35B /* Comment.swift in Sources */,
 				496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */,
