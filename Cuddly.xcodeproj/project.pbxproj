@@ -59,7 +59,6 @@
 		496C33D726109B2700B2E35B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		496C33DA26109B3400B2E35B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		496C33DD26109BA100B2E35B /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		497AD76B2647AC070089171F /* puppucinoMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoMain.jpg; sourceTree = "<group>"; };
 		49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,7 +218,6 @@
 				495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */,
 				495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */,
 				496C338B260C9E5E00B2E35B /* Main.storyboard in Resources */,
-				497AD76C2647AC070089171F /* puppucinoMain.jpg in Resources */,
 				495457E2262033680011EE22 /* puppucinoStep1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
