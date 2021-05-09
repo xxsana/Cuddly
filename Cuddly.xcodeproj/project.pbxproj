@@ -12,7 +12,6 @@
 		495457E3262033680011EE22 /* puppucinoStep2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457DE262033680011EE22 /* puppucinoStep2.jpg */; };
 		495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457DF262033680011EE22 /* puppucinoStep3.jpg */; };
 		495457E6262033680011EE22 /* puppucinoStep4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457E1262033680011EE22 /* puppucinoStep4.jpg */; };
-		495457E9262034200011EE22 /* puppucinoMain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457E8262034200011EE22 /* puppucinoMain.jpeg */; };
 		495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
@@ -30,6 +29,7 @@
 		496C33D826109B2700B2E35B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33D726109B2700B2E35B /* Comment.swift */; };
 		496C33DB26109B3400B2E35B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33DA26109B3400B2E35B /* Product.swift */; };
 		496C33DE26109BA100B2E35B /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33DD26109BA100B2E35B /* Target.swift */; };
+		497AD76C2647AC070089171F /* puppucinoMain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 497AD76B2647AC070089171F /* puppucinoMain.jpg */; };
 		49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */; };
 		49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,6 @@
 		495457DE262033680011EE22 /* puppucinoStep2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep2.jpg; sourceTree = "<group>"; };
 		495457DF262033680011EE22 /* puppucinoStep3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep3.jpg; sourceTree = "<group>"; };
 		495457E1262033680011EE22 /* puppucinoStep4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep4.jpg; sourceTree = "<group>"; };
-		495457E8262034200011EE22 /* puppucinoMain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = puppucinoMain.jpeg; path = ../../../../../../../Desktop/Cuddly/puppucino/puppucinoMain.jpeg; sourceTree = "<group>"; };
 		495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep5.jpeg; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		496C33D726109B2700B2E35B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		496C33DA26109B3400B2E35B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		496C33DD26109BA100B2E35B /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		497AD76B2647AC070089171F /* puppucinoMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoMain.jpg; sourceTree = "<group>"; };
 		49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +78,7 @@
 		495457DB262033540011EE22 /* puppuchino */ = {
 			isa = PBXGroup;
 			children = (
-				495457E8262034200011EE22 /* puppucinoMain.jpeg */,
+				497AD76B2647AC070089171F /* puppucinoMain.jpg */,
 				495457DD262033680011EE22 /* puppucinoStep1.jpeg */,
 				495457DE262033680011EE22 /* puppucinoStep2.jpg */,
 				495457DF262033680011EE22 /* puppucinoStep3.jpg */,
@@ -213,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495457E9262034200011EE22 /* puppucinoMain.jpeg in Resources */,
 				496C3390260C9E6400B2E35B /* LaunchScreen.storyboard in Resources */,
 				495457E3262033680011EE22 /* puppucinoStep2.jpg in Resources */,
 				496C338D260C9E6400B2E35B /* Assets.xcassets in Resources */,
@@ -221,6 +220,7 @@
 				495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */,
 				495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */,
 				496C338B260C9E5E00B2E35B /* Main.storyboard in Resources */,
+				497AD76C2647AC070089171F /* puppucinoMain.jpg in Resources */,
 				495457E2262033680011EE22 /* puppucinoStep1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
