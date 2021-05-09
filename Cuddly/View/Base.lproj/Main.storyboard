@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-E6-06s">
-                                <rect key="frame" x="0.0" y="44" width="414" height="615"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="09S-as-puJ"/>
@@ -52,7 +52,6 @@
                             <constraint firstItem="dkv-E6-06s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r1V-Q8-jyC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" id="TUq-9y-lRC"/>
                     <navigationItem key="navigationItem" id="vXF-eH-uXm"/>
                     <connections>
                         <outlet property="tableView" destination="dkv-E6-06s" id="Jil-16-8Cc"/>
@@ -60,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="76"/>
+            <point key="canvasLocation" x="3234.7826086956525" y="75.669642857142847"/>
         </scene>
         <!--마켓-->
         <scene sceneID="khV-Wo-Ear">
@@ -135,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkY-Ni-gUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4067" y="-425"/>
+            <point key="canvasLocation" x="4976.811594202899" y="-425.22321428571428"/>
         </scene>
         <!--저장목록-->
         <scene sceneID="xZx-SE-WlV">
@@ -160,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X49-xI-gBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4067" y="264"/>
+            <point key="canvasLocation" x="4976.811594202899" y="263.83928571428572"/>
         </scene>
         <!--Item-->
         <scene sceneID="cei-2r-Zl5">
@@ -443,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-Dg-UOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3235" y="76"/>
+            <point key="canvasLocation" x="4144.927536231884" y="75.669642857142847"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="jeN-GN-xcu">
@@ -457,7 +456,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="sji-36-TFO"/>
+                        <segue destination="nVm-vs-alk" kind="relationship" relationship="viewControllers" id="sji-36-TFO"/>
                         <segue destination="Rgl-fa-ici" kind="relationship" relationship="viewControllers" id="jdP-jc-BDy"/>
                         <segue destination="ADB-xl-Dcw" kind="relationship" relationship="viewControllers" id="nVD-aM-GCs"/>
                         <segue destination="Auf-jA-luG" kind="relationship" relationship="viewControllers" id="IaK-0w-ORb"/>
@@ -466,6 +465,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKL-nu-TZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414.4927536231885" y="75.669642857142847"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="DM2-Jx-Hgv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVm-vs-alk" customClass="Navigation" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" id="TUq-9y-lRC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vms-G4-PTY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="homeTabBarItem" destination="TUq-9y-lRC" id="f7i-ck-ZI8"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="572-Gn-Qs6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63E-7V-hBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324.6376811594205" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>

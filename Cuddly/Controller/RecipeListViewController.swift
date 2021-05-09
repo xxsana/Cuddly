@@ -52,13 +52,22 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         mainVC.indexNum = indexPath.row
         mainVC.recipe = allRecipes[indexPath.row]
-
-        mainVC.modalPresentationStyle = .fullScreen
-        mainVC.modalTransitionStyle = .crossDissolve
-        present(mainVC, animated: true, completion: nil)
+        
+//        mainVC.modalPresentationStyle = .fullScreen
+//        mainVC.modalTransitionStyle = .crossDissolve
+        hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(mainVC, animated: true)
         
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        let navi = self.navigationController as! Navigation
+        navi.homeTabBarItem.isEnabled = false
+        let item0 = self.tabBarController!.tabBar.items![0]
+        item0.isEnabled = false
+    }
 
 }

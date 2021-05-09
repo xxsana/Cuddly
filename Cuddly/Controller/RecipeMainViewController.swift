@@ -19,7 +19,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var toolsLabel: UILabel!
 
     let toolBar = UIView()
-    var csNavigationController: CustomNavigationController!
+//    var csNavigationController: CustomNavigationController!
 
     let toolItem01Home = CustomTabBarItem()
     let toolItem02Comment = CustomTabBarItem()
@@ -35,10 +35,10 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         // navigation controller
-        csNavigationController = CustomNavigationController(superVC: self)
-        csNavigationController.setUpNavigationBar()
-        csNavigationController.backButton()
-        csNavigationController.shareAndBookmarkButton()
+//        csNavigationController = CustomNavigationController(superVC: self)
+//        csNavigationController.setUpNavigationBar()
+//        csNavigationController.backButton()
+//        csNavigationController.shareAndBookmarkButton()
         
         // toolBar
         setUpToolBar()
