@@ -60,5 +60,13 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        let navi = self.navigationController as! Navigation
+        navi.homeTabBarItem.isEnabled = false
+        let item0 = self.tabBarController!.tabBar.items![0]
+        item0.isEnabled = false
+    }
 
 }

@@ -59,6 +59,8 @@
 		496C33D726109B2700B2E35B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		496C33DA26109B3400B2E35B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		496C33DD26109BA100B2E35B /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		497B8E0926400385006E21CA /* puppucinoMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoMain.jpg; sourceTree = "<group>"; };
+		497B8E0D26400712006E21CA /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 		495457DB262033540011EE22 /* puppuchino */ = {
 			isa = PBXGroup;
 			children = (
+				497B8E0926400385006E21CA /* puppucinoMain.jpg */,
 				495457DD262033680011EE22 /* puppucinoStep1.jpeg */,
 				495457DE262033680011EE22 /* puppucinoStep2.jpg */,
 				495457DF262033680011EE22 /* puppucinoStep3.jpg */,
@@ -122,6 +125,7 @@
 			children = (
 				496C3389260C9E5E00B2E35B /* Main.storyboard */,
 				49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */,
+				497B8E0D26400712006E21CA /* Navigation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 				495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */,
 				495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */,
 				496C338B260C9E5E00B2E35B /* Main.storyboard in Resources */,
+				497B8E0A26400385006E21CA /* puppucinoMain.jpg in Resources */,
 				495457E2262033680011EE22 /* puppucinoStep1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +242,7 @@
 				495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */,
 				49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
+				497B8E0E26400712006E21CA /* Navigation.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,
 				496C33A2260DD2D300B2E35B /* RecipeMainViewController.swift in Sources */,
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
