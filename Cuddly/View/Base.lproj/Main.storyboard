@@ -469,7 +469,7 @@
         <!--홈-->
         <scene sceneID="DM2-Jx-Hgv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVm-vs-alk" customClass="Navigation" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVm-vs-alk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" id="TUq-9y-lRC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vms-G4-PTY">
@@ -478,7 +478,6 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="homeTabBarItem" destination="TUq-9y-lRC" id="f7i-ck-ZI8"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="572-Gn-Qs6"/>
                     </connections>
                 </navigationController>
