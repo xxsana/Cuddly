@@ -78,7 +78,6 @@
 		495457DB262033540011EE22 /* puppuchino */ = {
 			isa = PBXGroup;
 			children = (
-				497AD76B2647AC070089171F /* puppucinoMain.jpg */,
 				495457DD262033680011EE22 /* puppucinoStep1.jpeg */,
 				495457DE262033680011EE22 /* puppucinoStep2.jpg */,
 				495457DF262033680011EE22 /* puppucinoStep3.jpg */,
