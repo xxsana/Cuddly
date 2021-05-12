@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Recipe List View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-E6-06s">
-                                <rect key="frame" x="0.0" y="88" width="414" height="615"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="09S-as-puJ"/>
@@ -52,6 +57,7 @@
                             <constraint firstItem="dkv-E6-06s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r1V-Q8-jyC"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="WWI-Za-GK7"/>
                     <navigationItem key="navigationItem" id="vXF-eH-uXm"/>
                     <connections>
                         <outlet property="tableView" destination="dkv-E6-06s" id="Jil-16-8Cc"/>
@@ -210,7 +216,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x88-Fq-tgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4066.666666666667" y="943.52678571428567"/>
+            <point key="canvasLocation" x="4977" y="942"/>
+        </scene>
+        <!--Recipe Step View Controller-->
+        <scene sceneID="9NV-eU-pOP">
+            <objects>
+                <viewController storyboardIdentifier="RecipeStepViewController" id="gko-iV-4RG" customClass="RecipeStepViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7E-9r-yHn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="B9d-g5-uhr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jP-aL-vCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4143" y="774"/>
         </scene>
         <!--Recipe Main View Controller-->
         <scene sceneID="VWb-gX-5wP">
@@ -385,13 +406,17 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.0" green="0.95294117649999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-e4-Ecj">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-e4-Ecj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="15"/>
                                         <state key="normal" title="레시피 확인하기">
                                             <color key="titleColor" red="0.0" green="0.95294117649999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedGoToDetailBtn:" destination="DJ7-sb-CbK" eventType="touchUpInside" id="aay-X1-z6N"/>
+                                            <action selector="touchDownGoToDetailBtn:" destination="DJ7-sb-CbK" eventType="touchDown" id="Alz-ro-GdS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -456,34 +481,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nVm-vs-alk" kind="relationship" relationship="viewControllers" id="sji-36-TFO"/>
-                        <segue destination="Rgl-fa-ici" kind="relationship" relationship="viewControllers" id="jdP-jc-BDy"/>
-                        <segue destination="ADB-xl-Dcw" kind="relationship" relationship="viewControllers" id="nVD-aM-GCs"/>
-                        <segue destination="Auf-jA-luG" kind="relationship" relationship="viewControllers" id="IaK-0w-ORb"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JT3-Zc-d6c"/>
+                        <segue destination="Rgl-fa-ici" kind="relationship" relationship="viewControllers" id="JSk-kt-l6t"/>
+                        <segue destination="ADB-xl-Dcw" kind="relationship" relationship="viewControllers" id="0KU-hT-eeA"/>
+                        <segue destination="Auf-jA-luG" kind="relationship" relationship="viewControllers" id="njT-HW-1Ft"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKL-nu-TZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414.4927536231885" y="75.669642857142847"/>
-        </scene>
-        <!--홈-->
-        <scene sceneID="DM2-Jx-Hgv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVm-vs-alk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="TUq-9y-lRC"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vms-G4-PTY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="572-Gn-Qs6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="63E-7V-hBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2324.6376811594205" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>

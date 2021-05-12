@@ -39,7 +39,7 @@ struct RecipeBrain {
                        Step(number: 5,
                             title: "캐롭파우더 토핑하기",
                             description: "거품 위 캐롭파우더를 솔솔 뿌려주면 완성!",
-                            image: UIImage(named: "puppucinoStep5.jpeg"))
+                            image: UIImage(named: "puppucinoStep5.jpg"))
                ],
                comments: nil,
                linkedProducts: nil),

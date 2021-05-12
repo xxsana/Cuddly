@@ -26,6 +26,7 @@ class CustomNavigationController {
         superVC.view.addSubview(csNavigationBar)
     }
     
+    // add navigation title using given parameter
     func setTitle(as title: String) {
         
         let titleLabel = UILabel(frame: CGRect(x: 0, y: navigationY, width: width, height: height))
@@ -41,6 +42,7 @@ class CustomNavigationController {
         self.csNavigationBar.addSubview(titleLabel)
     }
     
+    // add back button
     func backButton() {
         
         // constants
@@ -64,6 +66,7 @@ class CustomNavigationController {
     }
     
     
+    // add share button and bookmark button on right
     func shareAndBookmarkButton() {
 
         // constants

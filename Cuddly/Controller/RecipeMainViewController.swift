@@ -17,28 +17,25 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var effectLabel: UILabel!
     @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var toolsLabel: UILabel!
-
+    
     let toolBar = UIView()
-//    var csNavigationController: CustomNavigationController!
+    var csNavigationController: CustomNavigationController!
 
     let toolItem01Home = CustomTabBarItem()
     let toolItem02Comment = CustomTabBarItem()
     let toolItem03Bookmark = CustomTabBarItem()
     let toolItem04LinkedProduct = CustomTabBarItem()
 
-    
-    // 혹시 필요할까 싶어 받은 index 안 쓰면 지우기
-    var indexNum = 0
     var recipe: Recipe! = nil       //okay with forced unwrap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // navigation controller
-//        csNavigationController = CustomNavigationController(superVC: self)
-//        csNavigationController.setUpNavigationBar()
-//        csNavigationController.backButton()
-//        csNavigationController.shareAndBookmarkButton()
+        //navigation controller
+        csNavigationController = CustomNavigationController(superVC: self)
+        csNavigationController.setUpNavigationBar()
+        csNavigationController.backButton()
+        csNavigationController.shareAndBookmarkButton()
         
         // toolBar
         setUpToolBar()
@@ -90,11 +87,36 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.view.addSubview(lineViewAbove)
         self.view.addSubview(lineViewBelow)
+
     }
     
     
-
-    // table view
+    // MARK:- Go Detail Button
+    
+    @IBAction func touchDownGoToDetailBtn(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(white: 1.0, alpha: 0.8)
+        sender.setTitleColor(UIColor(red: 0.00, green: 0.91, blue: 0.36, alpha: 0.3), for: .normal)
+    }
+    
+    @IBAction func pressedGoToDetailBtn(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
+        sender.setTitleColor(UIColor(named: "LightYellowGreen"), for: .normal)
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: K.id.recipeStepVC) as? RecipeStepViewController {
+            
+            // pass value
+            vc.recipeTitle = recipe.title
+            vc.recipeSteps = recipe.steps
+            vc.recipeCaution = recipe.caution
+            
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    
+    // MARK:- table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipe.ingredients.count
@@ -113,7 +135,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    // toolbar
+    // MARK:- toolbar
     func setUpToolBar() {
         
         self.tabBarController?.tabBar.isHidden = true

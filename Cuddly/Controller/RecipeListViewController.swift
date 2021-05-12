@@ -11,26 +11,30 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
 
     let allRecipes = RecipeBrain().allRecipes
     
+    var csNavigationController: CustomNavigationController!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        // configure custom navigation
+        csNavigationController = CustomNavigationController(superVC: self)
+        csNavigationController.setUpNavigationBar()
         
         // table view delegate
         tableView.delegate = self
         tableView.dataSource = self
-        navigationTransparent()
         
     }
     
 
-    // navigation functions
-    func navigationTransparent() {
-        // 네비게이션 배경 투명 (transparent Navigation Controller)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
+//    // navigation functions
+//    func navigationTransparent() {
+//        // 네비게이션 배경 투명 (transparent Navigation Controller)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//    }
 
         
     // Table View
@@ -50,7 +54,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             print("failed to instantiate view controller with RecipeMain")
             return
         }
-        mainVC.indexNum = indexPath.row
         mainVC.recipe = allRecipes[indexPath.row]
 
         mainVC.modalPresentationStyle = .fullScreen

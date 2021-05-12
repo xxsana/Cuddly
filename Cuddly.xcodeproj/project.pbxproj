@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492EC1FD264B82A100AA391B /* RecipeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */; };
+		492EC1FF264B8F8000AA391B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FE264B8F8000AA391B /* Constants.swift */; };
 		495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigationController.swift */; };
-		495457E2262033680011EE22 /* puppucinoStep1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457DD262033680011EE22 /* puppucinoStep1.jpeg */; };
-		495457E3262033680011EE22 /* puppucinoStep2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457DE262033680011EE22 /* puppucinoStep2.jpg */; };
-		495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457DF262033680011EE22 /* puppucinoStep3.jpg */; };
-		495457E6262033680011EE22 /* puppucinoStep4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 495457E1262033680011EE22 /* puppucinoStep4.jpg */; };
-		495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
 		496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3383260C9E5E00B2E35B /* AppDelegate.swift */; };
@@ -31,15 +28,21 @@
 		496C33DE26109BA100B2E35B /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33DD26109BA100B2E35B /* Target.swift */; };
 		49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */; };
 		49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */; };
+		49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */; };
+		49F28F1A264BDED4005FDF93 /* puppucinoStep3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */; };
+		49F28F1B264BDED4005FDF93 /* puppucinoStep5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F15264BDED3005FDF93 /* puppucinoStep5.jpg */; };
+		49F28F1C264BDED4005FDF93 /* puppucinoStep1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F16264BDED4005FDF93 /* puppucinoStep1.jpeg */; };
+		49F28F1D264BDED4005FDF93 /* puppucinoStep2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F17264BDED4005FDF93 /* puppucinoStep2.jpg */; };
+		49F28F1E264BDED4005FDF93 /* puppucinoMain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F18264BDED4005FDF93 /* puppucinoMain.jpg */; };
+		49F28F1F264BDED4005FDF93 /* puppucinoStep4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F19264BDED4005FDF93 /* puppucinoStep4.jpg */; };
+		49F28F22264BECE1005FDF93 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */; };
+		49F28F23264BECE3005FDF93 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
+		492EC1FE264B8F8000AA391B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		495457D5261FF70C0011EE22 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		495457DD262033680011EE22 /* puppucinoStep1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep1.jpeg; sourceTree = "<group>"; };
-		495457DE262033680011EE22 /* puppucinoStep2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep2.jpg; sourceTree = "<group>"; };
-		495457DF262033680011EE22 /* puppucinoStep3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep3.jpg; sourceTree = "<group>"; };
-		495457E1262033680011EE22 /* puppucinoStep4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep4.jpg; sourceTree = "<group>"; };
-		495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep5.jpeg; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		496C3380260C9E5E00B2E35B /* Cuddly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,9 +61,17 @@
 		496C33D726109B2700B2E35B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		496C33DA26109B3400B2E35B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		496C33DD26109BA100B2E35B /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		497B8E0926400385006E21CA /* puppucinoMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoMain.jpg; sourceTree = "<group>"; };
 		49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
+		49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep3.jpg; sourceTree = "<group>"; };
+		49F28F15264BDED3005FDF93 /* puppucinoStep5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep5.jpg; sourceTree = "<group>"; };
+		49F28F16264BDED4005FDF93 /* puppucinoStep1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep1.jpeg; sourceTree = "<group>"; };
+		49F28F17264BDED4005FDF93 /* puppucinoStep2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep2.jpg; sourceTree = "<group>"; };
+		49F28F18264BDED4005FDF93 /* puppucinoMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoMain.jpg; sourceTree = "<group>"; };
+		49F28F19264BDED4005FDF93 /* puppucinoStep4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep4.jpg; sourceTree = "<group>"; };
+		49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
+		49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +88,12 @@
 		495457DB262033540011EE22 /* puppuchino */ = {
 			isa = PBXGroup;
 			children = (
-				497B8E0926400385006E21CA /* puppucinoMain.jpg */,
-				495457DD262033680011EE22 /* puppucinoStep1.jpeg */,
-				495457DE262033680011EE22 /* puppucinoStep2.jpg */,
-				495457DF262033680011EE22 /* puppucinoStep3.jpg */,
-				495457E1262033680011EE22 /* puppucinoStep4.jpg */,
-				495457EC2620342A0011EE22 /* puppucinoStep5.jpeg */,
+				49F28F18264BDED4005FDF93 /* puppucinoMain.jpg */,
+				49F28F16264BDED4005FDF93 /* puppucinoStep1.jpeg */,
+				49F28F17264BDED4005FDF93 /* puppucinoStep2.jpg */,
+				49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */,
+				49F28F19264BDED4005FDF93 /* puppucinoStep4.jpg */,
+				49F28F15264BDED3005FDF93 /* puppucinoStep5.jpg */,
 			);
 			path = puppuchino;
 			sourceTree = "<group>";
@@ -114,6 +125,9 @@
 				496C338C260C9E6400B2E35B /* Assets.xcassets */,
 				496C338E260C9E6400B2E35B /* LaunchScreen.storyboard */,
 				496C3391260C9E6400B2E35B /* Info.plist */,
+				492EC1FE264B8F8000AA391B /* Constants.swift */,
+				49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */,
+				49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Cuddly;
 			sourceTree = "<group>";
@@ -134,8 +148,10 @@
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
+				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
 				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
 				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
+				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,13 +229,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				496C3390260C9E6400B2E35B /* LaunchScreen.storyboard in Resources */,
-				495457E3262033680011EE22 /* puppucinoStep2.jpg in Resources */,
+				49F28F23264BECE3005FDF93 /* SF-Pro-Display-Heavy.otf in Resources */,
+				49F28F1B264BDED4005FDF93 /* puppucinoStep5.jpg in Resources */,
+				49F28F22264BECE1005FDF93 /* SF-Pro-Display-Semibold.otf in Resources */,
+				49F28F1D264BDED4005FDF93 /* puppucinoStep2.jpg in Resources */,
+				49F28F1E264BDED4005FDF93 /* puppucinoMain.jpg in Resources */,
+				49F28F1C264BDED4005FDF93 /* puppucinoStep1.jpeg in Resources */,
+				49F28F1A264BDED4005FDF93 /* puppucinoStep3.jpg in Resources */,
+				49F28F1F264BDED4005FDF93 /* puppucinoStep4.jpg in Resources */,
 				496C338D260C9E6400B2E35B /* Assets.xcassets in Resources */,
-				495457E6262033680011EE22 /* puppucinoStep4.jpg in Resources */,
-				495457E4262033680011EE22 /* puppucinoStep3.jpg in Resources */,
-				495457ED2620342A0011EE22 /* puppucinoStep5.jpeg in Resources */,
 				496C338B260C9E5E00B2E35B /* Main.storyboard in Resources */,
-				495457E2262033680011EE22 /* puppucinoStep1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +261,13 @@
 				496C33A2260DD2D300B2E35B /* RecipeMainViewController.swift in Sources */,
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
+				49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */,
 				496C33DE26109BA100B2E35B /* Target.swift in Sources */,
 				496C33DB26109B3400B2E35B /* Product.swift in Sources */,
+				492EC1FD264B82A100AA391B /* RecipeStepViewController.swift in Sources */,
 				496C33D826109B2700B2E35B /* Comment.swift in Sources */,
 				496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */,
+				492EC1FF264B8F8000AA391B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
