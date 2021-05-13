@@ -18,6 +18,8 @@ struct K {
     
     struct id {
         static let recipeStepVC = "RecipeStepViewController"
-        static let stepCell = "StepCell"
+        static let recipeMainVC = "RecipeMainViewController"
+        static let recipeStepCell = "StepCell"
+        static let recipeListCell = "RecipeListCell"
     }
 }

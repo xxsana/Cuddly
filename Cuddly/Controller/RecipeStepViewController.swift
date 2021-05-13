@@ -119,7 +119,7 @@ class RecipeStepViewController: UIViewController {
         tableView.estimatedRowHeight = 300
         
         // register cells
-        tableView.register(StepTableViewCell.self, forCellReuseIdentifier: K.id.stepCell)
+        tableView.register(StepTableViewCell.self, forCellReuseIdentifier: K.id.recipeStepCell)
         
         // set constraints
         pin()
@@ -152,7 +152,7 @@ extension RecipeStepViewController: UITableViewDelegate,
     
     func tableView(_ tableView: UITableView,
                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.id.stepCell) as! StepTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.id.recipeStepCell) as! StepTableViewCell
         let step = recipeSteps[indexPath.row]
         cell.set(step: step)
         cell.selectionStyle = .none

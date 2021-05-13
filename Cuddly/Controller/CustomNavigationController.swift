@@ -99,7 +99,7 @@ class CustomNavigationController {
     }
     
     @objc func goBack() {
-        superVC.dismiss(animated: false, completion: nil)
+        superVC.dismiss(animated: true, completion: nil)
     }
     
     @objc func shareClicked() {

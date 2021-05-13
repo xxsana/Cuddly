@@ -11,7 +11,7 @@ struct RecipeBrain {
     
     let allRecipes: [Recipe] = [
         Recipe(title: "퍼푸치노",
-               subtitle: "따뜻하고 포근한 겨울을 위한 한 잔",
+               subtitle: "포근한 겨울을 위한 한 잔",
                time: "15분",
                effect: "모질 개선 기능",
                image: UIImage(named: "puppucinoMain.jpg"),
@@ -65,7 +65,7 @@ struct RecipeBrain {
             comments: nil,
             linkedProducts: [Product(name: "건조기", price: 33000)]),
             Recipe(title: "퍼푸치노3",
-                   subtitle: "따뜻하고 포근한 겨울을 위한 한 잔",
+                   subtitle: "포근한 겨울을 위한 한 잔",
                time: "15분",
                effect: "모질 개선 기능",
                image: UIImage(named: "puppucinoMain.jpg"),
