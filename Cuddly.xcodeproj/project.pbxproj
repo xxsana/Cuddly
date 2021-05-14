@@ -39,6 +39,8 @@
 		49F28F23264BECE3005FDF93 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */; };
 		49F28F48264D6DA9005FDF93 /* RecipeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F46264D6DA9005FDF93 /* RecipeListCell.swift */; };
 		49F28F49264D6DA9005FDF93 /* RecipeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F47264D6DA9005FDF93 /* RecipeListCell.xib */; };
+		49F28F4B264D8D8E005FDF93 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F4A264D8D8E005FDF93 /* LogInViewController.swift */; };
+		49F28F4D264D90DF005FDF93 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F4C264D90DF005FDF93 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		49F28F46264D6DA9005FDF93 /* RecipeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListCell.swift; sourceTree = "<group>"; };
 		49F28F47264D6DA9005FDF93 /* RecipeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeListCell.xib; sourceTree = "<group>"; };
+		49F28F4A264D8D8E005FDF93 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		49F28F4C264D90DF005FDF93 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,7 @@
 				496C338C260C9E6400B2E35B /* Assets.xcassets */,
 				496C338E260C9E6400B2E35B /* LaunchScreen.storyboard */,
 				496C3391260C9E6400B2E35B /* Info.plist */,
-				492EC1FE264B8F8000AA391B /* Constants.swift */,
+				49F28F4E264E54D5005FDF93 /* Utils */,
 				49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */,
 				49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */,
 			);
@@ -150,6 +154,8 @@
 		496C339F260DD29A00B2E35B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49F28F4A264D8D8E005FDF93 /* LogInViewController.swift */,
+				49F28F4C264D90DF005FDF93 /* RegisterViewController.swift */,
 				495457D5261FF70C0011EE22 /* CustomNavigationController.swift */,
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
@@ -175,6 +181,14 @@
 				496C33DD26109BA100B2E35B /* Target.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		49F28F4E264E54D5005FDF93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				492EC1FE264B8F8000AA391B /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */,
+				49F28F4D264D90DF005FDF93 /* RegisterViewController.swift in Sources */,
 				495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */,
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
@@ -265,6 +280,7 @@
 				49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,
+				49F28F4B264D8D8E005FDF93 /* LogInViewController.swift in Sources */,
 				496C33A2260DD2D300B2E35B /* RecipeMainViewController.swift in Sources */,
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
@@ -429,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sanaJenog.dev.Cuddly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanaJeong.dev.Cuddly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,7 +464,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sanaJenog.dev.Cuddly;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanaJeong.dev.Cuddly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

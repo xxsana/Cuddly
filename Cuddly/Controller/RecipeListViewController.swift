@@ -57,6 +57,7 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         let vc = self.storyboard?.instantiateViewController(withIdentifier: K.id.recipeMainVC) as! RecipeMainViewController
         vc.recipe = allRecipes[indexPath.row]
         vc.modalPresentationStyle = .fullScreen
+        
         present(vc, animated: true, completion: nil)
     }
 }

@@ -28,5 +28,6 @@ class RecipeListCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: K.id.recipeListCell, bundle: nil)
     }
+    
 
 }
