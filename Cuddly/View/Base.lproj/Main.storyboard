@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TtY-7l-RNV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="flD-Iw-cJ6">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -483,7 +483,14 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="LightYellowGreen"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="logInButtonClicked:" destination="r2j-Go-AvH" eventType="touchUpInside" id="IUS-Y4-sMP"/>
                                     <segue destination="flD-Iw-cJ6" kind="show" id="kep-zD-80n"/>
                                 </connections>
                             </button>
@@ -589,7 +596,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qcd-kz-LRJ"/>
                     <connections>
+                        <outlet property="emailTextField" destination="w8r-ch-X4r" id="MFn-p8-6b2"/>
                         <outlet property="logInButton" destination="sVA-Sx-0rO" id="N1a-1L-3eZ"/>
+                        <outlet property="passwordTextField" destination="vmr-Ua-dAm" id="cKt-gU-44H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dd0-kl-Aca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -599,7 +608,7 @@
         <!--Custom Tab Bar Controller-->
         <scene sceneID="jeN-GN-xcu">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="CustomTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="CustomTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Wd0-P2-dBJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5P8-mw-Hz2">
@@ -621,7 +630,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YhK-B7-abw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TtY-7l-RNV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="TtY-7l-RNV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TKB-66-cMy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -636,11 +645,10 @@
             </objects>
             <point key="canvasLocation" x="576.81159420289862" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="QX9-nL-OK0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xhd-aP-f3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="tHN-AU-omY" sceneMemberID="viewController">
+                <viewController id="tHN-AU-omY" customClass="RegisterViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7o-oI-eSQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -742,6 +750,9 @@
                                 <state key="normal" title="Register In">
                                     <color key="titleColor" name="LightYellowGreen"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerInButtonClicked:" destination="tHN-AU-omY" eventType="touchUpInside" id="AOS-4U-EEY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iin-yf-ski"/>
@@ -781,7 +792,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RaG-6J-JOh"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="QOY-zk-dGW" id="rFt-dK-c77"/>
+                        <outlet property="passwordTextField" destination="QfM-bh-WKX" id="SNs-8h-NLL"/>
+                        <outlet property="userNameTextField" destination="hRJ-GX-SAP" id="oo6-WI-qUo"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhd-aP-f3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1487" y="751"/>
         </scene>

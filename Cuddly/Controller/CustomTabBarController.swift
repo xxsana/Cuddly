@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class CustomTabBarController: UITabBarController {
 
+    // MARK: - Properties
+    
     let customTabBar = UIView()
 
     let tabItem01Home = CustomTabBarItem()
@@ -16,9 +19,61 @@ class CustomTabBarController: UITabBarController {
     let tabItem03Bookmark = CustomTabBarItem()
     let tabItem04MyPage = CustomTabBarItem()
     
-
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
 
+        logUserOut()
+        
+        authenticateUserAndConfigureUI()
+        
+        configureUI()
+    }
+    
+    // MARK: - API
+    
+    func authenticateUserAndConfigureUI() {
+        if Auth.auth().currentUser == nil {
+            print("DEBUG: User is NOT logged in..")
+            
+            DispatchQueue.main.async {
+                let nav = self.storyboard?.instantiateViewController(withIdentifier: K.id.navigation) as! UINavigationController
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+            
+        } else {
+            print("DEBUG: User is logged in..")
+        }
+    }
+    
+    func logUserOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: Railed to sign out with error \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func tabItemClickedForMain(_ sender: CustomTabBarItem) {
+        
+        // reset isSelected
+        self.tabItem01Home.isSelected = false
+        self.tabItem02Shop.isSelected = false
+        self.tabItem03Bookmark.isSelected = false
+        self.tabItem04MyPage.isSelected = false
+        
+        sender.isSelected = true
+        
+        self.selectedIndex = sender.tag
+
+    }
+    
+    // MARK: - Helpers
+    
+    func configureUI() {
         // Hide original TabBar
         tabBar.isHidden = true
         
@@ -68,19 +123,5 @@ class CustomTabBarController: UITabBarController {
             item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
         }
     }
-    
-    @objc func tabItemClickedForMain(_ sender: CustomTabBarItem) {
         
-        // reset isSelected
-        self.tabItem01Home.isSelected = false
-        self.tabItem02Shop.isSelected = false
-        self.tabItem03Bookmark.isSelected = false
-        self.tabItem04MyPage.isSelected = false
-        
-        sender.isSelected = true
-        
-        self.selectedIndex = sender.tag
-    
-
-    }
 }

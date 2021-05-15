@@ -43,13 +43,9 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.id.recipeListCell, for: indexPath) as? RecipeListCell {
-            cell.configure(with: allRecipes[indexPath.row])
-            return cell
-        } else {
-            print("cannot downcast recipe list cell")
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.id.recipeListCell, for: indexPath) as! RecipeListCell
+        cell.configure(with: allRecipes[indexPath.row])
+        return cell
     }
     
     // present main view controller
