@@ -54,7 +54,8 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         vc.recipe = allRecipes[indexPath.row]
         vc.modalPresentationStyle = .fullScreen
         
-        present(vc, animated: true, completion: nil)
+//        present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

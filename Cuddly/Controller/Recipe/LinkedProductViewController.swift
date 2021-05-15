@@ -43,9 +43,12 @@ class LinkedProductViewController: UIViewController {
         handleView.layer.cornerRadius = 3.0
         
         // hide the card view at the bottom when the View first load
-        if let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height, let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
-            cardViewTopConstraint.constant = safeAreaHeight + bottomPadding //hide상태에서 출발
-        }
+        guard let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {return}
+        
+        let safeAreaHeight = keyWindow.safeAreaLayoutGuide.layoutFrame.size.height
+        let bottomPadding = keyWindow.safeAreaInsets.bottom
+        
+        cardViewTopConstraint.constant = safeAreaHeight + bottomPadding //hide상태에서 출발
         
         // backingImageViewTapped() will be called when user tap on the dimmer view
         let backingImageViewTap = UITapGestureRecognizer(target: self, action: #selector(backingImageViewTapped))
@@ -119,16 +122,18 @@ class LinkedProductViewController: UIViewController {
             // 드래그가 끝난 뒤의 위에서부터 constraint를 확인 후 위에서 1/4면 아예 올리고
             // 밑에서 70 떨어진 중간쯤이면 가운데로 만들고
             // 밑에서 70 안이면 없애버림
-            if let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height, let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
-                if self.cardViewTopConstraint.constant < (safeAreaHeight + bottomPadding) * 0.25 {
-                    //show the card at expanded state
-                    showCard(atState: .expanded)
-                } else if self.cardViewTopConstraint.constant < (safeAreaHeight) - 70 {
-                    showCard(atState: .normal)
-                } else {
-                    // hide the card and dismiss current view controller
-                    hideCardAndGoBack()
-                }
+            guard let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {return}
+            
+            let safeAreaHeight = keyWindow.safeAreaLayoutGuide.layoutFrame.size.height
+            let bottomPadding = keyWindow.safeAreaInsets.bottom
+            if self.cardViewTopConstraint.constant < (safeAreaHeight + bottomPadding) * 0.25 {
+                //show the card at expanded state
+                showCard(atState: .expanded)
+            } else if self.cardViewTopConstraint.constant < (safeAreaHeight) - 70 {
+                showCard(atState: .normal)
+            } else {
+                // hide the card and dismiss current view controller
+                hideCardAndGoBack()
             }
         default:
             break
@@ -146,18 +151,19 @@ class LinkedProductViewController: UIViewController {
         // set the new top constraint value for card view
         // card view won't move up just yet, we need to call layoutIfNeeded()
         // to tell the app to refresh the frame/position of card view
-        if let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height,
-           let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
-            
-            if atState == .expanded {
-                // if state is expanded, top constrain is away from safe area top
-                cardViewTopConstraint.constant = maxTopConstant
-            } else {
-                cardViewTopConstraint.constant = (safeAreaHeight + bottomPadding) / 2.0
-            }
-            
-            cardPanStartingTopConstant = cardViewTopConstraint.constant
+        guard let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {return}
+        
+        let safeAreaHeight = keyWindow.safeAreaLayoutGuide.layoutFrame.size.height
+        let bottomPadding = keyWindow.safeAreaInsets.bottom
+        
+        if atState == .expanded {
+            // if state is expanded, top constrain is away from safe area top
+            cardViewTopConstraint.constant = maxTopConstant
+        } else {
+            cardViewTopConstraint.constant = (safeAreaHeight + bottomPadding) / 2.0
         }
+        
+        cardPanStartingTopConstant = cardViewTopConstraint.constant
             
         // move card up from bottom by telling the app to refresh the frame/position of view
         // create a new property animator
@@ -173,12 +179,12 @@ class LinkedProductViewController: UIViewController {
         self.view.layoutIfNeeded()
         
         // set the new top constraint value for card view
-        if let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height,
-           let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
+        guard let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {return}
+        let safeAreaHeight = keyWindow.safeAreaLayoutGuide.layoutFrame.size.height
+        let bottomPadding = keyWindow.safeAreaInsets.bottom
             
-            // move the card view to bottom of screen
-            cardViewTopConstraint.constant = safeAreaHeight + bottomPadding
-        }
+        // move the card view to bottom of screen
+        cardViewTopConstraint.constant = safeAreaHeight + bottomPadding
         
         // move down to bottom
         // create a new property animator

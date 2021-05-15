@@ -23,29 +23,27 @@ class CustomTabBarController: UITabBarController {
     
     override func viewDidLoad() {
 
-        logUserOut()
+//        logUserOut()
         
-        authenticateUserAndConfigureUI()
+//        authenticateUserAndConfigureUI()
         
         configureUI()
     }
     
     // MARK: - API
     
-    func authenticateUserAndConfigureUI() {
-        if Auth.auth().currentUser == nil {
-            print("DEBUG: User is NOT logged in..")
-            
-            DispatchQueue.main.async {
-                let nav = self.storyboard?.instantiateViewController(withIdentifier: K.id.navigation) as! UINavigationController
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true, completion: nil)
-            }
-            
-        } else {
-            print("DEBUG: User is logged in..")
-        }
-    }
+//    func authenticateUserAndConfigureUI() {
+//        if Auth.auth().currentUser == nil {
+//            print("DEBUG: User is NOT logged in..")
+//            DispatchQueue.main.async {
+//                let nav = self.storyboard?.instantiateViewController(withIdentifier: K.id.navigation) as! UINavigationController
+//                nav.modalPresentationStyle = .fullScreen
+//                self.present(nav, animated: true, completion: nil)
+//            }
+//        } else {
+//            print("DEBUG: User is logged in..")
+//        }
+//    }
     
     func logUserOut() {
         do {

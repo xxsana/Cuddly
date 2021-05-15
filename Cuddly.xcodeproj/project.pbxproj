@@ -128,6 +128,17 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4932789D264FA38C003C7936 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
+				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
+				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
+				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		495457DB262033540011EE22 /* puppuchino */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,10 +207,7 @@
 				49327899264E8285003C7936 /* Authentication */,
 				495457D5261FF70C0011EE22 /* CustomNavigationController.swift */,
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
-				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
-				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
-				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
-				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
+				4932789D264FA38C003C7936 /* Recipe */,
 				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
 				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
 			);
