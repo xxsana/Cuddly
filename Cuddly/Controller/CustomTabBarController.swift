@@ -13,21 +13,38 @@ class CustomTabBarController: UITabBarController {
     // MARK: - Properties
     
     let customTabBar = UIView()
-
     let tabItem01Home = CustomTabBarItem()
     let tabItem02Shop = CustomTabBarItem()
     let tabItem03Bookmark = CustomTabBarItem()
     let tabItem04MyPage = CustomTabBarItem()
     
+    var user: User? {
+        didSet {
+            // 값이 set 되었을 때 실행 될 메소드
+            print("DEBUG: Did set user in main tab..")
+            
+//            guard let nav = viewControllers?[3] as? UINavigationController else {return}
+//            guard let myPage = nav.viewControllers.last as? MyPageViewController else {return}
+//            if let myPage = self.storyboard?.instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController {
+//            if let myPage = viewControllers
+//                myPage.user = user
+//            }
+        }
+    }
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
 
+        configureUI()
+        
+        fetchUser()
+        
 //        logUserOut()
         
 //        authenticateUserAndConfigureUI()
         
-        configureUI()
+        
 
 //        self.navigationController
 
@@ -47,6 +64,12 @@ class CustomTabBarController: UITabBarController {
 //            print("DEBUG: User is logged in..")
 //        }
 //    }
+    
+    func fetchUser() {
+        UserService.shared.fetchUser { user in
+            self.user = user
+        }
+    }
     
     func logUserOut() {
         do {

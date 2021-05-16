@@ -40,6 +40,7 @@ class LogInViewController: UIViewController {
     
     func authenticateUser() {
         if Auth.auth().currentUser != nil {
+            
             // already log in
             guard let tabVC = storyboard?.instantiateViewController(withIdentifier: K.id.customTabBar) else {return}
             navigationController?.pushViewController(tabVC, animated: true)

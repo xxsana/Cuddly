@@ -91,7 +91,7 @@
         <!--내 정보-->
         <scene sceneID="Z6X-hf-hwC">
             <objects>
-                <viewController storyboardIdentifier="MyPage" id="Auf-jA-luG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPage" id="Auf-jA-luG" customClass="MyPageViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cYa-2y-Hqs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,15 +103,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdI-EG-GMr">
+                                <rect key="frame" x="98" y="233" width="214" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HUI-vg-61w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="내 정보" id="61G-dv-HHx"/>
+                    <connections>
+                        <outlet property="testLabel" destination="YdI-EG-GMr" id="xfF-5Z-kBp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqb-M9-d1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="1655"/>
+            <point key="canvasLocation" x="3947.826086956522" y="1654.6875"/>
         </scene>
         <!--Item-->
         <scene sceneID="jq5-l4-SWD">
@@ -776,7 +786,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="QOY-zk-dGW" id="rFt-dK-c77"/>
                         <outlet property="passwordTextField" destination="QfM-bh-WKX" id="SNs-8h-NLL"/>
-                        <outlet property="userNameTextField" destination="hRJ-GX-SAP" id="oo6-WI-qUo"/>
+                        <outlet property="usernameTextField" destination="hRJ-GX-SAP" id="oo6-WI-qUo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhd-aP-f3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

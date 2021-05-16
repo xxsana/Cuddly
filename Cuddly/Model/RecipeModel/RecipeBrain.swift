@@ -101,3 +101,10 @@ struct RecipeBrain {
 
 //    let allRecipes = ["title1", "title2", "title3", "title4", "title5"]
 }
+
+
+enum Target {
+    case onlyCat
+    case onlyDog
+    case catAndDog
+}

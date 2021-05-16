@@ -34,4 +34,9 @@ struct K {
         static let navigation = "NavigationController"
         static let customTabBar = "CustomTabBarController"
     }
+    
+    struct Firebase {
+        static let email = "email"
+        static let username = "userName"
+    }
 }

@@ -11,7 +11,7 @@ import Firebase
 struct AuthCredentials {
     let email: String
     let password: String
-    let userName: String
+    let username: String
 }
 
 struct AuthService {
@@ -29,7 +29,7 @@ struct AuthService {
     func registerUser(credentials: AuthCredentials, completion: @escaping(Error?, DatabaseReference) -> Void) {
         let email = credentials.email
         let password = credentials.password
-        let userName = credentials.userName
+        let username = credentials.username
         
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
@@ -42,7 +42,7 @@ struct AuthService {
             // unwrap unique id of user
             guard let uid = result?.user.uid else { return }
             
-            let values = ["email": email, "userName": userName]
+            let values = [K.Firebase.email: email, K.Firebase.username: username]
             
             REF_USERS.child(uid).updateChildValues(values, withCompletionBlock: completion)
         }

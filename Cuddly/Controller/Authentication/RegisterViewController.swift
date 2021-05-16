@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -32,9 +32,9 @@ class RegisterViewController: UIViewController {
         
         guard let email = emailTextField.text,
               let password = passwordTextField.text,
-              let userName = userNameTextField.text  else {print("DEBUG: emptied any text field"); return}
+              let username = usernameTextField.text  else {print("DEBUG: emptied any text field"); return}
 
-        let credentials = AuthCredentials(email: email, password: password, userName: userName)
+        let credentials = AuthCredentials(email: email, password: password, username: username)
         
         // register user and push Recipe Main if it succeed.
         AuthService.shared.registerUser(credentials: credentials) { error, reference in
@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
     func setTextFieldsDelegate() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        userNameTextField.delegate = self
+        usernameTextField.delegate = self
     }
 }
 
@@ -74,7 +74,7 @@ extension RegisterViewController: UITextFieldDelegate {
             
         } else if textField.placeholder == "password" {
             // user returned on password text field
-            userNameTextField.becomeFirstResponder()
+            usernameTextField.becomeFirstResponder()
             
         } else {
             // user returned on user name text field
