@@ -33,6 +33,7 @@ struct K {
         static let recipeListCell = "RecipeListCell"
         static let navigation = "NavigationController"
         static let customTabBar = "CustomTabBarController"
+        static let logInVC = "LogInViewController"
     }
     
     struct Firebase {

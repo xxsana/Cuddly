@@ -42,7 +42,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         navigation.initShareAndBookmarkButton(tintWhite: true)
         
         // toolBar
-        setUpToolBar()
+//        setUpToolBar()
         
         // 레이블 값 대입
         titleLabel.text = recipe.title
@@ -106,19 +106,20 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         sender.backgroundColor = UIColor(white: 1.0, alpha: 0.0)
         sender.setTitleColor(UIColor(named: "LightYellowGreen"), for: .normal)
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: K.id.recipeStepVC) as? RecipeStepViewController {
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: K.id.recipeStepVC) as? RecipeStepViewController {
             
-            // pass value
-            vc.recipeTitle = recipe.title
-            vc.recipeSteps = recipe.steps
-            vc.recipeCaution = recipe.caution
+        let vc = RecipeStepViewController()
+        // pass value
+        vc.recipeTitle = recipe.title
+        vc.recipeSteps = recipe.steps
+        vc.recipeCaution = recipe.caution
 
-            vc.modalTransitionStyle = .coverVertical
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true, completion: nil)
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
 //            self.navigationController?.pushViewController(vc, animated: true)
         
-        }
+//        }
     }
     
     
@@ -141,92 +142,92 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    // MARK:- toolbar
-    func setUpToolBar() {
-        
-        self.tabBarController?.tabBar.isHidden = true
-        
-        // TabBar size
-        let width = self.view.frame.width
-        let height: CGFloat = 90
-        let x: CGFloat = 0
-        let y = self.view.frame.height - height
-        
-        self.toolBar.frame = CGRect(x: x, y: y, width: width, height: height)
-        self.toolBar.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
-        
-        // add subview
-        self.view.addSubview(toolBar)
-        
-        // origin(point) of tabItems, height width는 있음
-        let toolItemWidth = self.toolBar.frame.size.width / 4
-        
-        // arrange items with x
-        self.toolItem01Home.frame.origin.x = 0
-        self.toolItem02Comment.frame.origin.x = toolItemWidth
-        self.toolItem03Bookmark.frame.origin.x = toolItemWidth * 2
-        self.toolItem04LinkedProduct.frame.origin.x = toolItemWidth * 3
-        
-        // set image and title
-        self.toolItem01Home.setImageAndTitle(title: "홈", imageSystemName: "house", tag: 0)
-        self.toolItem02Comment.setImageAndTitle(title: "댓글", imageSystemName: "square.and.pencil", tag: 1)
-        self.toolItem03Bookmark.setImageAndTitle(title: "저장 목록", imageSystemName: "heart", tag: 2)
-        self.toolItem04LinkedProduct.setImageAndTitle(title: "관련제품", imageSystemName: "cart", tag: 3)
-        
-        
-        // add action methods
-        toolItem01Home.addTarget(self, action: #selector(tabItem01HomeClicked(_:)), for: .touchUpInside)
-        toolItem02Comment.addTarget(self, action: #selector(tabItem02CommentClicked(_:)), for: .touchUpInside)
-        toolItem03Bookmark.addTarget(self, action: #selector(tabItem03BookmarkClicked(_:)), for: .touchUpInside)
-        toolItem04LinkedProduct.addTarget(self, action: #selector(tabItem04LinkedProductClicked(_:)), for: .touchUpInside)
-        
-        
-        let items = [toolItem01Home, toolItem02Comment, toolItem03Bookmark, toolItem04LinkedProduct]
-        
-        for item in items {
-            // add subview
-            self.toolBar.addSubview(item)
-            
-            // align center
-            guard let imageWidth = item.imageView?.frame.width
-            else { print("fail to unwrap item.imageView?.frame.width"); return}
-            guard let titleWidth = item.titleLabel?.frame.width
-            else { print("fail to unwrap item.titleLabel?.frame.width"); return}
-            item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
-        }
-    }
-
-    // tool bar action methods
-    @objc func tabItem01HomeClicked(_ sender: CustomTabBarItem) {
-        self.dismiss(animated: false, completion: nil)
-    }
-    
-    @objc func tabItem02CommentClicked(_ sender: CustomTabBarItem) {
-        if let commentVC = self.storyboard?.instantiateViewController(withIdentifier: "Comment") {
-            commentVC.modalPresentationStyle = .fullScreen
-            self.present(commentVC, animated: true, completion: nil)
-        }
-    }
-    
-    @objc func tabItem03BookmarkClicked(_ sender: CustomTabBarItem) {
-        self.dismiss(animated: false, completion: nil)
-    }
-    
-    @objc func tabItem04LinkedProductClicked(_ sender: CustomTabBarItem) {
-        guard let linkedProductVC = storyboard?.instantiateViewController(withIdentifier: "LinkedProductViewController") as? LinkedProductViewController else {
-            assertionFailure("No view controller ID LinkedProductViewController in storyboard")
-            return
-        }
-        
-        // take a snapshot of current view and set it as backingImage
-        linkedProductVC.backingImage = self.view.asImage()
-        
-        // set the modal presentation to full screen
-        linkedProductVC.modalPresentationStyle = .fullScreen
-        
-        // present the view controller modally without animation
-        self.present(linkedProductVC, animated: false, completion: nil)
-    }
+//    // MARK:- toolbar
+//    func setUpToolBar() {
+//
+//        self.tabBarController?.tabBar.isHidden = true
+//
+//        // TabBar size
+//        let width = self.view.frame.width
+//        let height: CGFloat = 90
+//        let x: CGFloat = 0
+//        let y = self.view.frame.height - height
+//
+//        self.toolBar.frame = CGRect(x: x, y: y, width: width, height: height)
+//        self.toolBar.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.00)
+//
+//        // add subview
+//        self.view.addSubview(toolBar)
+//
+//        // origin(point) of tabItems, height width는 있음
+//        let toolItemWidth = self.toolBar.frame.size.width / 4
+//
+//        // arrange items with x
+//        self.toolItem01Home.frame.origin.x = 0
+//        self.toolItem02Comment.frame.origin.x = toolItemWidth
+//        self.toolItem03Bookmark.frame.origin.x = toolItemWidth * 2
+//        self.toolItem04LinkedProduct.frame.origin.x = toolItemWidth * 3
+//
+//        // set image and title
+//        self.toolItem01Home.setImageAndTitle(title: "홈", imageSystemName: "house", tag: 0)
+//        self.toolItem02Comment.setImageAndTitle(title: "댓글", imageSystemName: "square.and.pencil", tag: 1)
+//        self.toolItem03Bookmark.setImageAndTitle(title: "저장 목록", imageSystemName: "heart", tag: 2)
+//        self.toolItem04LinkedProduct.setImageAndTitle(title: "관련제품", imageSystemName: "cart", tag: 3)
+//
+//
+//        // add action methods
+//        toolItem01Home.addTarget(self, action: #selector(tabItem01HomeClicked(_:)), for: .touchUpInside)
+//        toolItem02Comment.addTarget(self, action: #selector(tabItem02CommentClicked(_:)), for: .touchUpInside)
+//        toolItem03Bookmark.addTarget(self, action: #selector(tabItem03BookmarkClicked(_:)), for: .touchUpInside)
+//        toolItem04LinkedProduct.addTarget(self, action: #selector(tabItem04LinkedProductClicked(_:)), for: .touchUpInside)
+//
+//
+//        let items = [toolItem01Home, toolItem02Comment, toolItem03Bookmark, toolItem04LinkedProduct]
+//
+//        for item in items {
+//            // add subview
+//            self.toolBar.addSubview(item)
+//
+//            // align center
+//            guard let imageWidth = item.imageView?.frame.width
+//            else { print("fail to unwrap item.imageView?.frame.width"); return}
+//            guard let titleWidth = item.titleLabel?.frame.width
+//            else { print("fail to unwrap item.titleLabel?.frame.width"); return}
+//            item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
+//        }
+//    }
+//
+//    // tool bar action methods
+//    @objc func tabItem01HomeClicked(_ sender: CustomTabBarItem) {
+//        self.dismiss(animated: false, completion: nil)
+//    }
+//
+//    @objc func tabItem02CommentClicked(_ sender: CustomTabBarItem) {
+//        if let commentVC = self.storyboard?.instantiateViewController(withIdentifier: "Comment") {
+//            commentVC.modalPresentationStyle = .fullScreen
+//            self.present(commentVC, animated: true, completion: nil)
+//        }
+//    }
+//
+//    @objc func tabItem03BookmarkClicked(_ sender: CustomTabBarItem) {
+//        self.dismiss(animated: false, completion: nil)
+//    }
+//
+//    @objc func tabItem04LinkedProductClicked(_ sender: CustomTabBarItem) {
+//        guard let linkedProductVC = storyboard?.instantiateViewController(withIdentifier: "LinkedProductViewController") as? LinkedProductViewController else {
+//            assertionFailure("No view controller ID LinkedProductViewController in storyboard")
+//            return
+//        }
+//
+//        // take a snapshot of current view and set it as backingImage
+//        linkedProductVC.backingImage = self.view.asImage()
+//
+//        // set the modal presentation to full screen
+//        linkedProductVC.modalPresentationStyle = .fullScreen
+//
+//        // present the view controller modally without animation
+//        self.present(linkedProductVC, animated: false, completion: nil)
+//    }
     
 }
 

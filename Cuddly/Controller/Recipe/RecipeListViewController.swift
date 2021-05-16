@@ -21,6 +21,7 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
        
         // custom navigation
+        self.navigationController?.navigationBar.isHidden = true
         navigation = CustomNavigation(superVC: self)
         navigation.setTitle(as: "Cuddly")
         navigation.initCartButton()

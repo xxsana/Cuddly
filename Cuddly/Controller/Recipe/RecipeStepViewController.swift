@@ -31,6 +31,8 @@ class RecipeStepViewController: UIViewController {
         navigation.initBackButton(dismiss: true)
         navigation.initShareAndBookmarkButton()
 
+        self.view.backgroundColor = .white
+        
         if recipeCaution != nil {
             configureCautionView()
         }

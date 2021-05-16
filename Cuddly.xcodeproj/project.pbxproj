@@ -14,6 +14,7 @@
 		493278A726515235003C7936 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278A626515235003C7936 /* User.swift */; };
 		493278A926515265003C7936 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278A826515265003C7936 /* UserService.swift */; };
 		493278AB26518C86003C7936 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278AA26518C86003C7936 /* MyPageViewController.swift */; };
+		493278AD265192DA003C7936 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278AC265192DA003C7936 /* MainTabController.swift */; };
 		495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigation.swift */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
@@ -56,6 +57,7 @@
 		493278A626515235003C7936 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		493278A826515265003C7936 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		493278AA26518C86003C7936 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		493278AC265192DA003C7936 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		495457D5261FF70C0011EE22 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
@@ -223,9 +225,10 @@
 			isa = PBXGroup;
 			children = (
 				49327899264E8285003C7936 /* Authentication */,
+				4932789D264FA38C003C7936 /* Recipe */,
 				495457D5261FF70C0011EE22 /* CustomNavigation.swift */,
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
-				4932789D264FA38C003C7936 /* Recipe */,
+				493278AC265192DA003C7936 /* MainTabController.swift */,
 				493278AA26518C86003C7936 /* MyPageViewController.swift */,
 			);
 			path = Controller;
@@ -396,6 +399,7 @@
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,
 				49F28F4B264D8D8E005FDF93 /* LogInViewController.swift in Sources */,
+				493278AD265192DA003C7936 /* MainTabController.swift in Sources */,
 				496C33A2260DD2D300B2E35B /* RecipeMainViewController.swift in Sources */,
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,

@@ -47,4 +47,12 @@ struct AuthService {
             REF_USERS.child(uid).updateChildValues(values, withCompletionBlock: completion)
         }
     }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        }
+    }
 }

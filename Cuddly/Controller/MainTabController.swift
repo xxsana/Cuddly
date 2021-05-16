@@ -1,14 +1,14 @@
 //
-//  CustomTabBarController.swift
+//  TeestTabController.swift
 //  Cuddly
 //
-//  Created by Haru on 2021/04/05.
+//  Created by Haru on 2021/05/17.
 //
 
 import UIKit
 import Firebase
 
-class CustomTabBarController: UITabBarController {
+class MainTabController: UITabBarController {
 
     // MARK: - Properties
     
@@ -24,11 +24,11 @@ class CustomTabBarController: UITabBarController {
             print("DEBUG: Did set user in main tab..")
             
 //            guard let nav = viewControllers?[3] as? UINavigationController else {return}
+//
 //            guard let myPage = nav.viewControllers.last as? MyPageViewController else {return}
-//            if let myPage = self.storyboard?.instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController {
-//            if let myPage = viewControllers
-//                myPage.user = user
-//            }
+//
+//            myPage.user = user
+
         }
     }
     
@@ -37,41 +37,33 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
 
         configureViewControllers()
-        
+        authenticateUser()
         fetchUser()
-        
-//        logUserOut()
-//        authenticateUserAndConfigureUI()
-//        self.navigationController
 
     }
     
     // MARK: - API
     
-//    func authenticateUserAndConfigureUI() {
-//        if Auth.auth().currentUser == nil {
-//            print("DEBUG: User is NOT logged in..")
-//            DispatchQueue.main.async {
-//                let nav = self.storyboard?.instantiateViewController(withIdentifier: K.id.navigation) as! UINavigationController
-//                nav.modalPresentationStyle = .fullScreen
-//                self.present(nav, animated: true, completion: nil)
-//            }
-//        } else {
-//            print("DEBUG: User is logged in..")
-//        }
-//    }
+    // check if user is logged in
+    func authenticateUser() {
+        if Auth.auth().currentUser == nil {
+            print("DEBUG: User is NOT logged in")
+            
+            // present Log in view controller
+            DispatchQueue.main.async {
+                guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
+                let nav = UINavigationController(rootViewController: logInVC)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        } else {
+            print("DEBUG: User is logged in")
+        }
+    }
     
     func fetchUser() {
         UserService.shared.fetchUser { user in
             self.user = user
-        }
-    }
-    
-    func logUserOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch let error {
-            print("DEBUG: Railed to sign out with error \(error.localizedDescription)")
         }
     }
     
@@ -94,6 +86,7 @@ class CustomTabBarController: UITabBarController {
     // MARK: - Helpers
     
     func configureViewControllers() {
+        
         // Hide original TabBar
         tabBar.isHidden = true
         
@@ -112,12 +105,6 @@ class CustomTabBarController: UITabBarController {
         // origin(point) of tabItems, height width는 있음
         let tabItemWidth = self.customTabBar.frame.size.width / 4
         
-        // arrange items with x
-        self.tabItem01Home.frame.origin.x = 0
-        self.tabItem02Shop.frame.origin.x = tabItemWidth
-        self.tabItem03Bookmark.frame.origin.x = tabItemWidth * 2
-        self.tabItem04MyPage.frame.origin.x = tabItemWidth * 3
-        
         // set image and title
         self.tabItem01Home.setImageAndTitle(title: "홈", imageSystemName: "house", tag: 0)
         self.tabItem02Shop.setImageAndTitle(title: "마켓", imageSystemName: "bag", tag: 1)
@@ -126,19 +113,22 @@ class CustomTabBarController: UITabBarController {
         
         let items = [tabItem01Home, tabItem02Shop, tabItem03Bookmark, tabItem04MyPage]
         
+        var widthValue: CGFloat = 0
         for item in items {
-            // action method
-            item.addTarget(self, action: #selector(tabItemClickedForMain), for: .touchUpInside)
-            
             // add subview
             self.customTabBar.addSubview(item)
             
-            // align center
-            guard let imageWidth = item.imageView?.frame.width
-            else { print("fail to unwrap item.imageView?.frame.width"); return}
+            // arrange items with x
+            item.frame.origin.x = widthValue
+            widthValue += tabItemWidth
             
-            guard let titleWidth = item.titleLabel?.frame.width
-            else { print("fail to unwrap item.titleLabel?.frame.width"); return}
+            // action method
+            item.addTarget(self, action: #selector(tabItemClickedForMain), for: .touchUpInside)
+            
+            // align center
+            guard let imageWidth = item.imageView?.frame.width else { return }
+            
+            guard let titleWidth = item.titleLabel?.frame.width else { return }
             
             item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
         }

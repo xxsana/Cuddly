@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController {
         }
     }
 
-    // MARK: - Action Outlets
+    // MARK: - Actions
     
     @IBAction func registerInButtonClicked(_ sender: UIButton) {
         registerInAction()

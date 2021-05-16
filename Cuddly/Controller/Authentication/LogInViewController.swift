@@ -21,32 +21,22 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        authenticateUser()
-        
         setTextFieldsDelegate()
         
         navigationController?.navigationBar.isHidden = true
+    
+        self.emailTextField.becomeFirstResponder()
         
-        // 로그인 되어 있을 때 넘어갈 때 더 깔끔해 보이게 키보드 안보이게 함
-//        self.emailTextField.becomeFirstResponder(
     }
     
-    // MARK: - Action Outlets
+    // MARK: - Actions
+    
     @IBAction func logInButtonClicked(_ sender: UIButton) {
         logInAction()
     }
     
     // MARK: - API
-    
-    func authenticateUser() {
-        if Auth.auth().currentUser != nil {
-            
-            // already log in
-            guard let tabVC = storyboard?.instantiateViewController(withIdentifier: K.id.customTabBar) else {return}
-            navigationController?.pushViewController(tabVC, animated: true)
-        }
-    }
-    
+
     func logInAction() {
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
@@ -58,8 +48,7 @@ class LogInViewController: UIViewController {
                 
             } else {
                 // successfully logged in
-                guard let tabVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.customTabBar) else {return}
-                self.navigationController?.pushViewController(tabVC, animated: true)
+                self.dismiss(animated: true, completion: nil)
                 
             }
         }

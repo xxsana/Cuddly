@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RrU-Qj-gwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="flD-Iw-cJ6">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X7O-Pp-7qs">
-                                <rect key="frame" x="15" y="111" width="384" height="702"/>
+                                <rect key="frame" x="15" y="155" width="384" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eY9-iT-9Rn">
                                     <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,6 @@
                             <constraint firstItem="X7O-Pp-7qs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="jtR-D8-4OZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="WWI-Za-GK7"/>
                     <navigationItem key="navigationItem" id="vXF-eH-uXm"/>
                     <connections>
                         <outlet property="collectionView" destination="X7O-Pp-7qs" id="DJp-XM-XNw"/>
@@ -61,9 +60,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5053.6231884057979" y="75.669642857142847"/>
+            <point key="canvasLocation" x="5407" y="-533"/>
         </scene>
-        <!--마켓-->
+        <!--View Controller-->
         <scene sceneID="khV-Wo-Ear">
             <objects>
                 <viewController storyboardIdentifier="Shop" id="Rgl-fa-ici" sceneMemberID="viewController">
@@ -82,13 +81,13 @@
                         <viewLayoutGuide key="safeArea" id="6UI-iV-bP4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="마켓" id="S6q-1D-2NF"/>
+                    <navigationItem key="navigationItem" id="gzA-HS-Emh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRo-Kl-Rbj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3235" y="1054"/>
+            <point key="canvasLocation" x="5406" y="163"/>
         </scene>
-        <!--내 정보-->
+        <!--My Page View Controller-->
         <scene sceneID="Z6X-hf-hwC">
             <objects>
                 <viewController storyboardIdentifier="MyPage" id="Auf-jA-luG" customClass="MyPageViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,18 +109,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-BA-N2d">
+                                <rect key="frame" x="346" y="113" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LogOut">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutTempClicked:" destination="Auf-jA-luG" eventType="touchUpInside" id="OEj-Tw-vSu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HUI-vg-61w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 정보" id="61G-dv-HHx"/>
+                    <navigationItem key="navigationItem" id="mVq-pG-TOc"/>
                     <connections>
                         <outlet property="testLabel" destination="YdI-EG-GMr" id="xfF-5Z-kBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqb-M9-d1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3947.826086956522" y="1654.6875"/>
+            <point key="canvasLocation" x="5406" y="1570"/>
         </scene>
         <!--Item-->
         <scene sceneID="jq5-l4-SWD">
@@ -146,9 +155,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkY-Ni-gUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6797.1014492753629" y="-425.22321428571428"/>
+            <point key="canvasLocation" x="8148" y="5"/>
         </scene>
-        <!--저장목록-->
+        <!--View Controller-->
         <scene sceneID="xZx-SE-WlV">
             <objects>
                 <viewController storyboardIdentifier="Bookmark" id="ADB-xl-Dcw" sceneMemberID="viewController">
@@ -167,11 +176,11 @@
                         <viewLayoutGuide key="safeArea" id="oQA-2l-0e8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="저장목록" id="Krb-Wb-oGZ"/>
+                    <navigationItem key="navigationItem" id="qK3-2i-srH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X49-xI-gBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6797.1014492753629" y="263.83928571428572"/>
+            <point key="canvasLocation" x="5406" y="862"/>
         </scene>
         <!--Item-->
         <scene sceneID="cei-2r-Zl5">
@@ -222,22 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x88-Fq-tgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4977" y="942"/>
-        </scene>
-        <!--Recipe Step View Controller-->
-        <scene sceneID="9NV-eU-pOP">
-            <objects>
-                <viewController storyboardIdentifier="RecipeStepViewController" id="gko-iV-4RG" customClass="RecipeStepViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a7E-9r-yHn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="B9d-g5-uhr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4jP-aL-vCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4143" y="774"/>
+            <point key="canvasLocation" x="7078" y="-533"/>
         </scene>
         <!--Recipe Main View Controller-->
         <scene sceneID="VWb-gX-5wP">
@@ -473,18 +467,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-Dg-UOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5963.768115942029" y="75.669642857142847"/>
+            <point key="canvasLocation" x="6254" y="-533"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="T01-lT-aBg">
             <objects>
-                <viewController id="r2j-Go-AvH" customClass="LogInViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="r2j-Go-AvH" customClass="LogInViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vA-Mx-6r8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVA-Sx-0rO">
-                                <rect key="frame" x="40" y="411.33333333333331" width="334" height="45"/>
+                                <rect key="frame" x="40" y="367.33333333333331" width="334" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="U7N-du-A8I"/>
@@ -504,14 +498,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuddly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f02-lx-4SU">
-                                <rect key="frame" x="130.33333333333331" y="168" width="153.33333333333331" height="51.333333333333343"/>
+                                <rect key="frame" x="130.33333333333331" y="123.99999999999999" width="153.33333333333331" height="51.333333333333329"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="43"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8r-ch-X4r">
-                                <rect key="frame" x="80" y="299.33333333333331" width="254" height="20"/>
+                                <rect key="frame" x="80" y="255.33333333333337" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -522,7 +516,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmr-Ua-dAm">
-                                <rect key="frame" x="80" y="364.33333333333331" width="254" height="18"/>
+                                <rect key="frame" x="80" y="320.33333333333331" width="254" height="18"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
@@ -543,7 +537,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x4T-ih-wjY">
-                                <rect key="frame" x="40" y="294.66666666666663" width="34" height="30"/>
+                                <rect key="frame" x="40" y="250.66666666666669" width="34" height="30.000000000000028"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="0ux-IY-BvS"/>
@@ -551,7 +545,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bB1-Rv-KZf">
-                                <rect key="frame" x="42" y="356" width="32" height="34.666666666666686"/>
+                                <rect key="frame" x="42" y="312" width="32" height="34.666666666666657"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Nai-7V-39t"/>
@@ -559,7 +553,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEM-Tc-EPH" userLabel="Line2">
-                                <rect key="frame" x="40" y="390.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="346.33333333333331" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="YlI-ZG-Fxv"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -567,7 +561,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ta-gC-5Pf" userLabel="Line1">
-                                <rect key="frame" x="40" y="326.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="282.33333333333331" width="334" height="1"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dgn-XA-dLr"/>
@@ -614,10 +608,10 @@
             </objects>
             <point key="canvasLocation" x="2397.1014492753625" y="68.973214285714278"/>
         </scene>
-        <!--Custom Tab Bar Controller-->
+        <!--Main Tab Controller-->
         <scene sceneID="jeN-GN-xcu">
             <objects>
-                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="CustomTabBarController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="flD-Iw-cJ6" customClass="MainTabController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Wd0-P2-dBJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5P8-mw-Hz2">
@@ -626,33 +620,33 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JT3-Zc-d6c"/>
-                        <segue destination="Rgl-fa-ici" kind="relationship" relationship="viewControllers" id="JSk-kt-l6t"/>
-                        <segue destination="ADB-xl-Dcw" kind="relationship" relationship="viewControllers" id="0KU-hT-eeA"/>
-                        <segue destination="Auf-jA-luG" kind="relationship" relationship="viewControllers" id="njT-HW-1Ft"/>
+                        <segue destination="45X-X3-EpG" kind="relationship" relationship="viewControllers" id="N0x-51-Pn8"/>
+                        <segue destination="bQI-R9-cDL" kind="relationship" relationship="viewControllers" id="ysa-Ro-2lV"/>
+                        <segue destination="Rzc-Vv-NO6" kind="relationship" relationship="viewControllers" id="OHV-2l-ais"/>
+                        <segue destination="FEw-G4-kMz" kind="relationship" relationship="viewControllers" id="5XF-wl-1lR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKL-nu-TZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234.7826086956525" y="75.669642857142847"/>
+            <point key="canvasLocation" x="3474" y="69"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="QX9-nL-OK0">
             <objects>
                 <viewController id="tHN-AU-omY" customClass="RegisterViewController" customModule="Cuddly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7o-oI-eSQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuddly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdG-JG-moI">
-                                <rect key="frame" x="130.33333333333331" y="168" width="153.33333333333331" height="51.333333333333343"/>
+                                <rect key="frame" x="130.33333333333331" y="80" width="153.33333333333331" height="51.333333333333343"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="43"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-zk-dGW">
-                                <rect key="frame" x="80" y="299.33333333333331" width="254" height="20"/>
+                                <rect key="frame" x="80" y="211.33333333333334" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -663,7 +657,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-bh-WKX">
-                                <rect key="frame" x="80" y="364.33333333333331" width="254" height="18"/>
+                                <rect key="frame" x="80" y="276.33333333333331" width="254" height="18"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
@@ -674,7 +668,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OIZ-ap-xy8">
-                                <rect key="frame" x="40" y="294.66666666666663" width="34" height="30"/>
+                                <rect key="frame" x="40" y="206.66666666666669" width="34" height="30.000000000000014"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OIZ-ap-xy8" secondAttribute="height" id="Sx3-uz-m5v"/>
@@ -682,14 +676,14 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2I-It-W3u" userLabel="Line1">
-                                <rect key="frame" x="40" y="326.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="238.33333333333334" width="334" height="1"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="870-Eg-0mF"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xaW-Ev-ye1">
-                                <rect key="frame" x="42" y="356" width="32" height="34.666666666666686"/>
+                                <rect key="frame" x="42" y="268" width="32" height="34.666666666666657"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="9vZ-9M-anz"/>
@@ -697,7 +691,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hs8-Qf-f2F" userLabel="Line2">
-                                <rect key="frame" x="40" y="390.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="302.33333333333331" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="yPe-Jd-GGQ"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -705,7 +699,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-GX-SAP">
-                                <rect key="frame" x="80" y="428.33333333333331" width="254" height="20"/>
+                                <rect key="frame" x="80" y="340.33333333333331" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="join" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
@@ -716,7 +710,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gwy-5Z-0ln">
-                                <rect key="frame" x="42" y="424" width="32" height="29.333333333333314"/>
+                                <rect key="frame" x="42" y="336" width="32" height="29.333333333333314"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gwy-5Z-0ln" secondAttribute="height" id="DgP-JI-BWf"/>
@@ -724,7 +718,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEg-yf-kFA" userLabel="Line3">
-                                <rect key="frame" x="40" y="456.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="368.33333333333331" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="BNw-RQ-Kf3"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -732,7 +726,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygp-mp-I2v">
-                                <rect key="frame" x="40" y="473.66666666666669" width="334" height="45.000000000000057"/>
+                                <rect key="frame" x="40" y="385.66666666666669" width="334" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="5wO-Nc-qub"/>
@@ -793,23 +787,81 @@
             </objects>
             <point key="canvasLocation" x="2397" y="773"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kYI-wj-2jI">
+        <!--Item-->
+        <scene sceneID="rXe-D8-tKz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RrU-Qj-gwN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="45X-X3-EpG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WWI-Za-GK7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9fC-xT-4eM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fyn-TO-PrU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="r2j-Go-AvH" kind="relationship" relationship="rootViewController" id="5tf-p3-EO6"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="L1o-38-9EH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3en-2Y-d4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eif-cS-sPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486.9565217391305" y="68.973214285714278"/>
+            <point key="canvasLocation" x="4635" y="-533"/>
+        </scene>
+        <!--마켓-->
+        <scene sceneID="fHn-8g-0jU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bQI-R9-cDL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마켓" id="S6q-1D-2NF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F9F-RV-wX6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rgl-fa-ici" kind="relationship" relationship="rootViewController" id="He7-86-bWh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uf4-Ie-8xn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4635" y="163"/>
+        </scene>
+        <!--저장목록-->
+        <scene sceneID="V8c-pL-AUt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rzc-Vv-NO6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="저장목록" id="Krb-Wb-oGZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="afh-27-XDd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ADB-xl-Dcw" kind="relationship" relationship="rootViewController" id="bUe-7H-g7p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KM6-tc-25D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4635" y="862"/>
+        </scene>
+        <!--내 정보-->
+        <scene sceneID="g1k-dO-qth">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FEw-G4-kMz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="내 정보" id="61G-dv-HHx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWa-dJ-Q1X">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Auf-jA-luG" kind="relationship" relationship="rootViewController" id="3jh-Py-gkH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aZ-Hu-3l8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4635" y="1570"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
