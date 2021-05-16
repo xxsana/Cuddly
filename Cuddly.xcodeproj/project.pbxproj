@@ -11,7 +11,7 @@
 		492EC1FD264B82A100AA391B /* RecipeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */; };
 		492EC1FF264B8F8000AA391B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FE264B8F8000AA391B /* Constants.swift */; };
 		4932789C264EDF3A003C7936 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932789B264EDF3A003C7936 /* AuthService.swift */; };
-		495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigationController.swift */; };
+		495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigation.swift */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
 		496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3383260C9E5E00B2E35B /* AppDelegate.swift */; };
@@ -51,7 +51,7 @@
 		492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
 		492EC1FE264B8F8000AA391B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4932789B264EDF3A003C7936 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		495457D5261FF70C0011EE22 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		495457D5261FF70C0011EE22 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		496C3380260C9E5E00B2E35B /* Cuddly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +134,7 @@
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
 				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
+				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
 				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
 			);
 			path = Recipe;
@@ -205,11 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				49327899264E8285003C7936 /* Authentication */,
-				495457D5261FF70C0011EE22 /* CustomNavigationController.swift */,
+				495457D5261FF70C0011EE22 /* CustomNavigation.swift */,
 				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
 				4932789D264FA38C003C7936 /* Recipe */,
-				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
-				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				492EC1FE264B8F8000AA391B /* Constants.swift */,
+				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
 				495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */,
-				495457D6261FF70C0011EE22 /* CustomNavigationController.swift in Sources */,
+				495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */,
 				49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,

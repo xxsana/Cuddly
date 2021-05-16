@@ -25,10 +25,13 @@ class LogInViewController: UIViewController {
         
         setTextFieldsDelegate()
         
-//        self.emailTextField.becomeFirstResponder()
+        navigationController?.navigationBar.isHidden = true
+        
+        // 로그인 되어 있을 때 넘어갈 때 더 깔끔해 보이게 키보드 안보이게 함
+//        self.emailTextField.becomeFirstResponder(
     }
     
-    // MARK: - Selectors
+    // MARK: - Action Outlets
     @IBAction func logInButtonClicked(_ sender: UIButton) {
         logInAction()
     }

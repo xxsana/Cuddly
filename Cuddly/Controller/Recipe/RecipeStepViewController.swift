@@ -9,7 +9,7 @@ import UIKit
 
 class RecipeStepViewController: UIViewController {
 
-    var csNavigationController: CustomNavigationController!
+    var navigation: CustomNavigation!
     var tableView = UITableView()
     
     var recipeTitle: String!
@@ -21,15 +21,15 @@ class RecipeStepViewController: UIViewController {
         super.viewDidLoad()
         
         // create navigation bar
-        csNavigationController = CustomNavigationController(superVC: self)
+        navigation = CustomNavigation(superVC: self)
         guard let title = recipeTitle else {
             print("cannot unwrap recipeTitle")
             return
         }
-        csNavigationController.setUpNavigationBar()
-        csNavigationController.setTitle(as: title)
-        csNavigationController.backButton()
-        csNavigationController.shareAndBookmarkButton()
+        
+        navigation.setTitle(as: title)
+        navigation.initBackButton(dismiss: true)
+        navigation.initShareAndBookmarkButton()
 
         if recipeCaution != nil {
             configureCautionView()
@@ -138,7 +138,7 @@ class RecipeStepViewController: UIViewController {
             if cautionContainer != nil {
                 tableView.topAnchor.constraint(equalTo: cautionContainer.bottomAnchor, constant: 10.0).isActive = true
             } else {
-                tableView.topAnchor.constraint(equalTo: csNavigationController.csNavigationBar.bottomAnchor, constant: 10.0).isActive = true
+                tableView.topAnchor.constraint(equalTo: navigation.csNavigationBar.bottomAnchor, constant: 10.0).isActive = true
             }
         }
 

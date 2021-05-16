@@ -9,19 +9,21 @@ import UIKit
 
 class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // MARK: - Properties
     let allRecipes = RecipeBrain().allRecipes
     
-    var csNavigationController: CustomNavigationController!
-    
+    var navigation: CustomNavigation!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // configure custom navigation
-        csNavigationController = CustomNavigationController(superVC: self)
-        csNavigationController.setUpNavigationBar()
-        csNavigationController.setTitle(as: "Cuddly-장바구니")
+        // custom navigation
+        navigation = CustomNavigation(superVC: self)
+        navigation.setTitle(as: "Cuddly")
+        navigation.initCartButton()
         
         // collection view delegate
         collectionView.delegate = self
@@ -36,8 +38,12 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         let height = 13 * width / 9
         layout.itemSize = CGSize(width: width, height: height)
         collectionView.collectionViewLayout = layout
+        
     }
+    
 
+    // MARK: - CollectionView
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allRecipes.count
     }
@@ -53,12 +59,12 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         let vc = self.storyboard?.instantiateViewController(withIdentifier: K.id.recipeMainVC) as! RecipeMainViewController
         vc.recipe = allRecipes[indexPath.row]
         vc.modalPresentationStyle = .fullScreen
-        
-//        present(vc, animated: true, completion: nil)
+    
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+// Extentsion for CollectionViewLayout
 extension RecipeListCell: UICollectionViewDelegateFlowLayout {
     
     // cell size

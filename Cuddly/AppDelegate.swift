@@ -15,14 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-//        // UI setting for navigation bar
-//        // Sets background to a blank/empty image
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-//        // Sets shadow (line below the bar) to a blank image
-//        UINavigationBar.appearance().shadowImage = UIImage()
-//        // Sets the translucent background color
-//        UINavigationBar.appearance().backgroundColor = .clear
-            
+        
         
         return true
     }

@@ -28,6 +28,9 @@ class CustomTabBarController: UITabBarController {
 //        authenticateUserAndConfigureUI()
         
         configureUI()
+
+//        self.navigationController
+
     }
     
     // MARK: - API

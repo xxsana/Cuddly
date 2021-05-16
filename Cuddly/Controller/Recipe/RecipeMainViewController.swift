@@ -9,6 +9,8 @@ import UIKit
 
 class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
@@ -19,7 +21,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var toolsLabel: UILabel!
     
     let toolBar = UIView()
-    var csNavigationController: CustomNavigationController!
+    var navigation: CustomNavigation!
 
     let toolItem01Home = CustomTabBarItem()
     let toolItem02Comment = CustomTabBarItem()
@@ -28,14 +30,16 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var recipe: Recipe! = nil       //okay with forced unwrap?
     
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //navigation controller
-        csNavigationController = CustomNavigationController(superVC: self)
-        csNavigationController.setUpNavigationBar()
-        csNavigationController.backButton()
-        csNavigationController.shareAndBookmarkButton()
+        navigation = CustomNavigation(superVC: self)
+        navigation.initBackButton(tintWhite: true)
+        navigation.initShareAndBookmarkButton(tintWhite: true)
         
         // toolBar
         setUpToolBar()
@@ -108,10 +112,12 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
             vc.recipeTitle = recipe.title
             vc.recipeSteps = recipe.steps
             vc.recipeCaution = recipe.caution
-            
+
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
+//            self.navigationController?.pushViewController(vc, animated: true)
+        
         }
     }
     
