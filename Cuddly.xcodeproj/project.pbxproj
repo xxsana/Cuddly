@@ -31,7 +31,6 @@
 		496C33D526109B1C00B2E35B /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33D426109B1C00B2E35B /* Step.swift */; };
 		496C33D826109B2700B2E35B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33D726109B2700B2E35B /* Comment.swift */; };
 		496C33DB26109B3400B2E35B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C33DA26109B3400B2E35B /* Product.swift */; };
-		49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */; };
 		49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */; };
 		49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */; };
 		49F28F1A264BDED4005FDF93 /* puppucinoStep3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */; };
@@ -76,7 +75,6 @@
 		496C33D426109B1C00B2E35B /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		496C33D726109B2700B2E35B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		496C33DA26109B3400B2E35B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 		49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
 		49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep3.jpg; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				49327899264E8285003C7936 /* Authentication */,
 				4932789D264FA38C003C7936 /* Recipe */,
 				495457D5261FF70C0011EE22 /* CustomNavigation.swift */,
-				49C36737261B1AB9000D5BCD /* CustomTabBarController.swift */,
 				493278AC265192DA003C7936 /* MainTabController.swift */,
 				493278AA26518C86003C7936 /* MyPageViewController.swift */,
 			);
@@ -395,7 +392,6 @@
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
 				495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */,
 				495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */,
-				49C36738261B1AB9000D5BCD /* CustomTabBarController.swift in Sources */,
 				496C33CC26109B0700B2E35B /* RecipeBrain.swift in Sources */,
 				496C33D226109B1600B2E35B /* Ingredient.swift in Sources */,
 				49F28F4B264D8D8E005FDF93 /* LogInViewController.swift in Sources */,

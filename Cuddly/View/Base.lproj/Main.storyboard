@@ -95,20 +95,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마이페이지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJD-Kb-p14">
-                                <rect key="frame" x="133" y="79" width="148" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdI-EG-GMr">
-                                <rect key="frame" x="98" y="233" width="214" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZx-BA-N2d">
                                 <rect key="frame" x="346" y="113" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -119,6 +105,13 @@
                                     <action selector="logOutTempClicked:" destination="Auf-jA-luG" eventType="touchUpInside" id="OEj-Tw-vSu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TestLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdI-EG-GMr">
+                                <rect key="frame" x="100" y="234" width="214" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HUI-vg-61w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -478,7 +471,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVA-Sx-0rO">
-                                <rect key="frame" x="40" y="367.33333333333331" width="334" height="45"/>
+                                <rect key="frame" x="40" y="370" width="334" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="U7N-du-A8I"/>
@@ -498,14 +491,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuddly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f02-lx-4SU">
-                                <rect key="frame" x="130.33333333333331" y="123.99999999999999" width="153.33333333333331" height="51.333333333333329"/>
+                                <rect key="frame" x="127.00000000000001" y="124" width="160.33333333333337" height="54"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8r-ch-X4r">
-                                <rect key="frame" x="80" y="255.33333333333337" width="254" height="20"/>
+                                <rect key="frame" x="80" y="258" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -516,7 +509,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmr-Ua-dAm">
-                                <rect key="frame" x="80" y="320.33333333333331" width="254" height="18"/>
+                                <rect key="frame" x="80" y="323" width="254" height="18"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
@@ -537,7 +530,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="x4T-ih-wjY">
-                                <rect key="frame" x="40" y="250.66666666666669" width="34" height="30.000000000000028"/>
+                                <rect key="frame" x="40" y="253.33333333333337" width="34" height="30.000000000000028"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="0ux-IY-BvS"/>
@@ -545,7 +538,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bB1-Rv-KZf">
-                                <rect key="frame" x="42" y="312" width="32" height="34.666666666666657"/>
+                                <rect key="frame" x="42" y="314.66666666666669" width="32" height="34.666666666666657"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Nai-7V-39t"/>
@@ -553,7 +546,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEM-Tc-EPH" userLabel="Line2">
-                                <rect key="frame" x="40" y="346.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="349" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="YlI-ZG-Fxv"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -561,7 +554,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ta-gC-5Pf" userLabel="Line1">
-                                <rect key="frame" x="40" y="282.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="285" width="334" height="1"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dgn-XA-dLr"/>
@@ -639,14 +632,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuddly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdG-JG-moI">
-                                <rect key="frame" x="130.33333333333331" y="80" width="153.33333333333331" height="51.333333333333343"/>
+                                <rect key="frame" x="127.00000000000001" y="80" width="160.33333333333337" height="54"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-zk-dGW">
-                                <rect key="frame" x="80" y="211.33333333333334" width="254" height="20"/>
+                                <rect key="frame" x="80" y="214" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
@@ -657,7 +650,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QfM-bh-WKX">
-                                <rect key="frame" x="80" y="276.33333333333331" width="254" height="18"/>
+                                <rect key="frame" x="80" y="279" width="254" height="18"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
@@ -668,7 +661,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OIZ-ap-xy8">
-                                <rect key="frame" x="40" y="206.66666666666669" width="34" height="30.000000000000014"/>
+                                <rect key="frame" x="40" y="209.33333333333334" width="34" height="29.999999999999986"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OIZ-ap-xy8" secondAttribute="height" id="Sx3-uz-m5v"/>
@@ -676,14 +669,14 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2I-It-W3u" userLabel="Line1">
-                                <rect key="frame" x="40" y="238.33333333333334" width="334" height="1"/>
+                                <rect key="frame" x="40" y="241" width="334" height="1"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="870-Eg-0mF"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xaW-Ev-ye1">
-                                <rect key="frame" x="42" y="268" width="32" height="34.666666666666657"/>
+                                <rect key="frame" x="42" y="270.66666666666669" width="32" height="34.666666666666657"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="9vZ-9M-anz"/>
@@ -691,7 +684,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hs8-Qf-f2F" userLabel="Line2">
-                                <rect key="frame" x="40" y="302.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="305" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="yPe-Jd-GGQ"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -699,7 +692,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-GX-SAP">
-                                <rect key="frame" x="80" y="340.33333333333331" width="254" height="20"/>
+                                <rect key="frame" x="80" y="343" width="254" height="20"/>
                                 <color key="textColor" name="LightYellowGreen"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="join" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
@@ -710,7 +703,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gwy-5Z-0ln">
-                                <rect key="frame" x="42" y="336" width="32" height="29.333333333333314"/>
+                                <rect key="frame" x="42" y="338.66666666666669" width="32" height="29.333333333333314"/>
                                 <color key="tintColor" name="LightYellowGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gwy-5Z-0ln" secondAttribute="height" id="DgP-JI-BWf"/>
@@ -718,7 +711,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEg-yf-kFA" userLabel="Line3">
-                                <rect key="frame" x="40" y="368.33333333333331" width="334" height="1"/>
+                                <rect key="frame" x="40" y="371" width="334" height="1"/>
                                 <viewLayoutGuide key="safeArea" id="BNw-RQ-Kf3"/>
                                 <color key="backgroundColor" name="LightYellowGreen"/>
                                 <constraints>
@@ -726,7 +719,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygp-mp-I2v">
-                                <rect key="frame" x="40" y="385.66666666666669" width="334" height="45"/>
+                                <rect key="frame" x="40" y="388.33333333333331" width="334" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="5wO-Nc-qub"/>
@@ -847,7 +840,7 @@
         <!--내 정보-->
         <scene sceneID="g1k-dO-qth">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FEw-G4-kMz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyPageNav" automaticallyAdjustsScrollViewInsets="NO" id="FEw-G4-kMz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="내 정보" id="61G-dv-HHx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWa-dJ-Q1X">

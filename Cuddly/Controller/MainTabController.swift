@@ -23,11 +23,12 @@ class MainTabController: UITabBarController {
             // 값이 set 되었을 때 실행 될 메소드
             print("DEBUG: Did set user in main tab..")
             
-//            guard let nav = viewControllers?[3] as? UINavigationController else {return}
-//
-//            guard let myPage = nav.viewControllers.last as? MyPageViewController else {return}
-//
-//            myPage.user = user
+//            guard let myPageNav = storyboard?.instantiateViewController(withIdentifier: K.id.myPageNavigation) as? UINavigationController else { return }
+//            let myPage = myPageNav
+            
+            guard let myPage = storyboard?.instantiateViewController(withIdentifier: "MyPage" ) as? MyPageViewController else { return }
+            myPage.user = user
+            // 여기선 잘 넘어가는데 MyPage에서 값 지정이 안 됨.. IBOutlet이 늦게 만들어지나봄
 
         }
     }
@@ -36,9 +37,10 @@ class MainTabController: UITabBarController {
     
     override func viewDidLoad() {
 
-        configureViewControllers()
         authenticateUser()
-        fetchUser()
+        configureViewControllers()
+        
+//        fetchUser()
 
     }
     
@@ -58,12 +60,6 @@ class MainTabController: UITabBarController {
             }
         } else {
             print("DEBUG: User is logged in")
-        }
-    }
-    
-    func fetchUser() {
-        UserService.shared.fetchUser { user in
-            self.user = user
         }
     }
     

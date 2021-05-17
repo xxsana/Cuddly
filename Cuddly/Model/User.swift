@@ -8,6 +8,9 @@
 import Foundation
 
 struct User {
+    
+    static var currentUser: User?
+    
     let username: String
     let email: String
     let uid: String

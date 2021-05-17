@@ -12,27 +12,24 @@ class MyPageViewController: UIViewController {
 
     // MARK: - Properties
     
-    var user: User? {
-        didSet {
-            print("DEBUG: Didset user in My page controlelr..")
-//            testLabel.text = user?.username
-        }
-    }
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var testLabel: UILabel?
+    var navigation: CustomNavigation!
+    var lbl: UILabel!
+
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.isHidden = true
-//        print("DEBUG: MyPage view did load")
-//        testLabel.text = user?.username
-//        print("DEBUG: email : \(user?.email)")
-        // Do any additional setup after loading the view.
+        configureNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        testLabel.text = user?.username
-//        print("DEBUG: MyPage view will appear")
+        
+        print("DEBUG: MyPage view will appear")
+        configureTestLabel()
+
     }
     
 
@@ -41,5 +38,25 @@ class MyPageViewController: UIViewController {
         AuthService.shared.signOut()
     }
     
+    // MARK: - Helpers
+    
+    func configureNavigation() {
+        navigationController?.navigationBar.isHidden = true
+        
+        // custom navigation
+        self.navigationController?.navigationBar.isHidden = true
+        navigation = CustomNavigation(superVC: self)
+        navigation.setTitle(as: "마이페이지")
+        navigation.initCartButton()
+    }
+    
+    func configureTestLabel() {
+
+        testLabel?.text = User.currentUser?.username
+    }
+
+    
 
 }
+
+
