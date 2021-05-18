@@ -23,6 +23,22 @@ struct AuthService {
     func logUserIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
         print("DEBUG: Email : \(email)")
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+        
+        UserService.shared.fetchUser()
+    }
+    
+    func authenticateUser(completion: @escaping()->Void) {
+        if Auth.auth().currentUser == nil {
+            print("DEBUG: User is NOT logged in")
+            
+            // present Log in view controller
+            DispatchQueue.main.async {
+                completion()
+            }
+        } else {
+            print("DEBUG: User is logged in")
+
+        }
     }
     
     // completion is for using in controller class itself

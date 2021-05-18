@@ -74,6 +74,7 @@ class CustomTabBarItem: UIButton {
                                             right: imageWidth / 2)
     }
     
+    // MARK: - Selectors
     @objc func bright(_ sender: UIButton) {
         let alphaValue: CGFloat = 0.4
         sender.titleLabel?.alpha = alphaValue

@@ -34,7 +34,8 @@ struct K {
         static let navigation = "NavigationController"
         static let customTabBar = "CustomTabBarController"
         static let logInVC = "LogInViewController"
-        static let myPageNavigation = "MyPageNav"
+        static let userNavigation = "UserNav"
+        static let userCell = "UserCell"
     }
     
     struct Firebase {

@@ -16,31 +16,18 @@ class MainTabController: UITabBarController {
     let tabItem01Home = CustomTabBarItem()
     let tabItem02Shop = CustomTabBarItem()
     let tabItem03Bookmark = CustomTabBarItem()
-    let tabItem04MyPage = CustomTabBarItem()
-    
-    var user: User? {
-        didSet {
-            // 값이 set 되었을 때 실행 될 메소드
-            print("DEBUG: Did set user in main tab..")
-            
-//            guard let myPageNav = storyboard?.instantiateViewController(withIdentifier: K.id.myPageNavigation) as? UINavigationController else { return }
-//            let myPage = myPageNav
-            
-            guard let myPage = storyboard?.instantiateViewController(withIdentifier: "MyPage" ) as? MyPageViewController else { return }
-            myPage.user = user
-            // 여기선 잘 넘어가는데 MyPage에서 값 지정이 안 됨.. IBOutlet이 늦게 만들어지나봄
+    let tabItem04User = CustomTabBarItem()
 
-        }
-    }
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
 
         authenticateUser()
-        configureViewControllers()
         
-//        fetchUser()
+        configureViewControllers()
+    
+        fetchUser()
 
     }
     
@@ -48,19 +35,17 @@ class MainTabController: UITabBarController {
     
     // check if user is logged in
     func authenticateUser() {
-        if Auth.auth().currentUser == nil {
-            print("DEBUG: User is NOT logged in")
-            
-            // present Log in view controller
-            DispatchQueue.main.async {
-                guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
-                let nav = UINavigationController(rootViewController: logInVC)
-                nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: true, completion: nil)
-            }
-        } else {
-            print("DEBUG: User is logged in")
+        AuthService.shared.authenticateUser {
+            guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
+            let nav = UINavigationController(rootViewController: logInVC)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
         }
+    }
+    
+    func fetchUser() {
+        // set current user to static instance when there is a currentUser
+        UserService.shared.fetchUser()
     }
     
     // MARK: - Selectors
@@ -71,7 +56,7 @@ class MainTabController: UITabBarController {
         self.tabItem01Home.isSelected = false
         self.tabItem02Shop.isSelected = false
         self.tabItem03Bookmark.isSelected = false
-        self.tabItem04MyPage.isSelected = false
+        self.tabItem04User.isSelected = false
         
         sender.isSelected = true
         
@@ -79,6 +64,7 @@ class MainTabController: UITabBarController {
 
     }
     
+
     // MARK: - Helpers
     
     func configureViewControllers() {
@@ -105,9 +91,9 @@ class MainTabController: UITabBarController {
         self.tabItem01Home.setImageAndTitle(title: "홈", imageSystemName: "house", tag: 0)
         self.tabItem02Shop.setImageAndTitle(title: "마켓", imageSystemName: "bag", tag: 1)
         self.tabItem03Bookmark.setImageAndTitle(title: "저장 목록", imageSystemName: "heart", tag: 2)
-        self.tabItem04MyPage.setImageAndTitle(title: "마이페이지", imageSystemName: "person.circle", tag: 3)
+        self.tabItem04User.setImageAndTitle(title: "내정보", imageSystemName: "person.crop.rectangle", tag: 3)
         
-        let items = [tabItem01Home, tabItem02Shop, tabItem03Bookmark, tabItem04MyPage]
+        let items = [tabItem01Home, tabItem02Shop, tabItem03Bookmark, tabItem04User]
         
         var widthValue: CGFloat = 0
         for item in items {

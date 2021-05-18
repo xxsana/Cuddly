@@ -19,6 +19,10 @@ class CustomNavigation {
     let superVC: UIViewController!
     var csNavigationBar: UIView!
     var rightContainer: UIView!
+    var userContainer: UIButton!
+    var userImageView: UIImageView!
+    var usernameLabel: UILabel!
+    
     let itemPointSize: CGFloat = 16.0
     
     
@@ -53,7 +57,7 @@ class CustomNavigation {
         setTitleConstraints(titleLabel)
     }
     
-    // MARK: - BackButton
+    // MARK: - LeftButtonItems
     
     func initBackButton(dismiss: Bool = false, tintWhite: Bool = false) {
         
@@ -84,11 +88,11 @@ class CustomNavigation {
         let cartButton = UIButton(type: .system)
         self.rightContainer.addSubview(cartButton)
         
-        configureButtonItem(cartButton, imageName: "cart", false)
+        configureButtonItem(cartButton, imageName: "cart")
         setOneItemConstraint(item: cartButton)
         
         // add action method
-        cartButton.addTarget(self, action: #selector(cartClicked), for: .touchUpInside)
+        cartButton.addTarget(self, action: #selector(cart), for: .touchUpInside)
     }
 
     
@@ -109,11 +113,30 @@ class CustomNavigation {
         setTwoItemsConstraint(left: shareButton, right: bookmarkButton)
 
         // add action method
-        shareButton.addTarget(self, action: #selector(shareClicked), for: .touchUpInside)
-        bookmarkButton.addTarget(self, action: #selector(bookmarkClicked), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareURL), for: .touchUpInside)
+        bookmarkButton.addTarget(self, action: #selector(bookmark), for: .touchUpInside)
     }
     
-    
+    // add cart button and logOut button on right
+    func initCartAndLogOutButton() {
+        
+        configureRightContainer()
+        
+        let cartButton = UIButton(type: .system)
+        let logOutButton = UIButton(type: .system)
+        
+        self.rightContainer.addSubview(cartButton)
+        self.rightContainer.addSubview(logOutButton)
+        
+        configureButtonItem(cartButton, imageName: "cart")
+        configureButtonItem(logOutButton, imageName: "power")
+        
+        setTwoItemsConstraint(left: cartButton, right: logOutButton)
+        
+        // add action method
+        cartButton.addTarget(self, action: #selector(cart), for: .touchUpInside)
+        logOutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
 
     
     // MARK: - Selectors
@@ -126,16 +149,29 @@ class CustomNavigation {
         superVC.dismiss(animated: true, completion: nil)
     }
     
-    @objc func shareClicked() {
-        print("share clicked")
+    @objc func shareURL() {
+        print("DEBUG: share clicked")
     }
     
-    @objc func bookmarkClicked() {
-        print("bookmark clicked")
+    @objc func bookmark() {
+        print("DEBUG: bookmark clicked")
     }
 
-    @objc func cartClicked() {
-        print("cart clicked")
+    @objc func cart() {
+        print("DEBUG: cart clicked")
+    }
+    
+    @objc func logout() {
+        print("DEBUG: logout clicked")
+        
+        User.currentUser = nil
+        AuthService.shared.signOut()
+        AuthService.shared.authenticateUser {
+            guard let logInVC = self.superVC.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
+            let nav = UINavigationController(rootViewController: logInVC)
+            nav.modalPresentationStyle = .fullScreen
+            self.superVC.present(nav, animated: true, completion: nil)
+        }
     }
 
     
@@ -156,7 +192,7 @@ class CustomNavigation {
         rightContainer.heightAnchor.constraint(equalToConstant: containerHeight).isActive = true
     }
     
-    private func configureButtonItem(_ button: UIButton, imageName: String, _ tintWhite: Bool) {
+    private func configureButtonItem(_ button: UIButton, imageName: String, _ tintWhite: Bool = false) {
         
         let image = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: itemPointSize, weight: .medium))
         button.setImage(image, for: .normal)
@@ -166,6 +202,23 @@ class CustomNavigation {
             button.tintColor = .black
         }
     }
+    
+    private func configureUserContainer() {
+        // Properties
+        let containerWidth = superVC.view.frame.width * 0.38
+        let containerHeight = itemPointSize * 4
+    
+        userContainer.backgroundColor = .cyan
+        
+        userContainer.translatesAutoresizingMaskIntoConstraints = false
+        userContainer.leadingAnchor.constraint(equalTo: csNavigationBar.leadingAnchor).isActive = true
+        userContainer.bottomAnchor.constraint(equalTo: csNavigationBar.bottomAnchor, constant: 24 ).isActive = true
+        csNavigationBar.backgroundColor = .blue
+        
+        userContainer.widthAnchor.constraint(equalToConstant: containerWidth).isActive = true
+        userContainer.heightAnchor.constraint(equalToConstant: containerHeight).isActive = true
+    }
+    
 
     // MARK: - Constraint
     
@@ -175,27 +228,32 @@ class CustomNavigation {
         title.bottomAnchor.constraint(equalTo: csNavigationBar.bottomAnchor, constant: -10).isActive = true
     }
     
-    func setBackButtonConstraint(_ button: UIButton) {
+    private func setBackButtonConstraint(_ button: UIButton) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bottomAnchor.constraint(equalTo: csNavigationBar.bottomAnchor, constant: -14).isActive = true
         button.leadingAnchor.constraint(equalTo: csNavigationBar.leadingAnchor, constant: 25).isActive = true
     }
     
-    func setOneItemConstraint(item: UIButton) {
+    private func setOneItemConstraint(item: UIButton) {
         item.translatesAutoresizingMaskIntoConstraints = false
         item.trailingAnchor.constraint(equalTo: rightContainer.trailingAnchor).isActive = true
         item.centerYAnchor.constraint(equalTo: rightContainer.centerYAnchor).isActive = true
     }
     
-    func setTwoItemsConstraint(left: UIButton, right: UIButton) {
+    private func setTwoItemsConstraint(left: UIButton, right: UIButton) {
         
         right.translatesAutoresizingMaskIntoConstraints = false
         right.trailingAnchor.constraint(equalTo: rightContainer.trailingAnchor).isActive = true
         right.centerYAnchor.constraint(equalTo: rightContainer.centerYAnchor).isActive = true
         
         left.translatesAutoresizingMaskIntoConstraints = false
-        left.trailingAnchor.constraint(equalTo: right.leadingAnchor, constant: -7).isActive = true
+        left.trailingAnchor.constraint(equalTo: right.leadingAnchor, constant: -12).isActive = true
         left.centerYAnchor.constraint(equalTo: rightContainer.centerYAnchor).isActive = true
     }
     
+    private func setUserImageConstraint(item: UIImageView) {
+        item.translatesAutoresizingMaskIntoConstraints = false
+        item.leadingAnchor.constraint(equalTo: userContainer.leadingAnchor, constant: 10).isActive = true
+        item.centerYAnchor.constraint(equalTo: userContainer.centerYAnchor).isActive = true
+    }
 }
