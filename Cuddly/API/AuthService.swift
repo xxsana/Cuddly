@@ -23,8 +23,6 @@ struct AuthService {
     func logUserIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
         print("DEBUG: Email : \(email)")
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
-        
-        UserService.shared.fetchUser()
     }
     
     func authenticateUser(completion: @escaping()->Void) {

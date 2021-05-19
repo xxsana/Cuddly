@@ -39,8 +39,7 @@ class UserInfoViewController: UIViewController {
         updateUserLabel()
         
         tableViewDelegate()
-//        configureLeftBarButton()
-
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +65,9 @@ class UserInfoViewController: UIViewController {
         
         // init cart and logout button 변경예정
         navigation.initCartAndLogOutButton()
+        
+        // delegate
+        navigation.delegate = self
     }
 
     func updateUserLabel() {
@@ -97,4 +99,21 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+}
+
+extension UserInfoViewController: CustomNavigationDelegate {
+
+    func handleLogOut() {
+        print("DEBUG: logout in UserInfoViewController")
+        
+        self.tabBarController?.selectedIndex = 0
+        
+        User.currentUser = nil
+        AuthService.shared.signOut()
+        guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
+        let nav = UINavigationController(rootViewController: logInVC)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+    }
+    
 }

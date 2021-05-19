@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol CustomNavigationDelegate: UIViewController {
+    func handleLogOut()
+}
+
 class CustomNavigation {
     
     // MARK: - Properties
+    
+    var delegate: CustomNavigationDelegate?
     
     let height = 88
     var width: Int {
@@ -164,14 +170,14 @@ class CustomNavigation {
     @objc func logout() {
         print("DEBUG: logout clicked")
         
-        User.currentUser = nil
-        AuthService.shared.signOut()
-        AuthService.shared.authenticateUser {
-            guard let logInVC = self.superVC.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
-            let nav = UINavigationController(rootViewController: logInVC)
-            nav.modalPresentationStyle = .fullScreen
-            self.superVC.present(nav, animated: true, completion: nil)
-        }
+        let alertVC = UIAlertController(title: nil, message: "로그아웃 하시겠습니까?", preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { _ in
+            self.delegate?.handleLogOut()
+        }))
+        alertVC.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        
+        delegate?.present(alertVC, animated: true, completion: nil)
+
     }
 
     

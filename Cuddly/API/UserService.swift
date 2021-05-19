@@ -12,6 +12,7 @@ struct UserService {
     static let shared = UserService()
     
     func fetchUser() {
+        
         guard let uid = Auth.auth().currentUser?.uid else { print("DEBUG: no current user's uid"); return}
         
         // will user just one time
