@@ -36,6 +36,7 @@ struct K {
         static let logInVC = "LogInViewController"
         static let userNavigation = "UserNav"
         static let userCell = "UserCell"
+        static let productListCell = "ProductListCell"
     }
     
     struct Firebase {

@@ -10,7 +10,8 @@ import UIKit
 class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     // MARK: - Properties
-    let allRecipes = RecipeBrain().allRecipes
+    
+    let allRecipes = Recipe.fetchRecipes()
     
     var navigation: CustomNavigation!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -65,8 +66,10 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
     }
 }
 
-// Extentsion for CollectionViewLayout
-extension RecipeListCell: UICollectionViewDelegateFlowLayout {
+// MARK: - CollectionViewLayout
+
+//extension RecipeListCell: UICollectionViewDelegateFlowLayout {
+extension RecipeListViewController: UICollectionViewDelegateFlowLayout {
     
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -75,11 +78,12 @@ extension RecipeListCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
     
-    // height space
+    // vertical space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
     
+    // horizontal space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }

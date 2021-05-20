@@ -33,7 +33,7 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("DEBUG: UserInfo viewDidLoad")
+
         configureNavigation()
         
         updateUserLabel()
@@ -43,8 +43,6 @@ class UserInfoViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        print("DEBUG: UserInfo view will appear")
         
         updateUserLabel()
 
