@@ -17,6 +17,8 @@ class MainTabController: UITabBarController {
     let tabItem02Shop = CustomTabBarItem()
     let tabItem03Bookmark = CustomTabBarItem()
     let tabItem04User = CustomTabBarItem()
+    
+    let purchaseBar = UIView()
 
     
     // MARK: - LifeCycle
@@ -28,6 +30,8 @@ class MainTabController: UITabBarController {
         configureViewControllers()
     
         fetchUser()
+        
+//        purchaseBarTest()
 
     }
     
@@ -66,6 +70,17 @@ class MainTabController: UITabBarController {
     
 
     // MARK: - Helpers
+    
+    func hideTabBar() {
+        self.tabBar.isHidden = true
+        self.customTabBar.isHidden = true
+        self.purchaseBar.isHidden = false
+    }
+
+    func showTabBar() {
+        self.tabBar.isHidden = false
+        self.customTabBar.isHidden = false
+    }
     
     func configureViewControllers() {
         
@@ -114,6 +129,15 @@ class MainTabController: UITabBarController {
             
             item.alignImageAndTitleCenter(image: imageWidth, title: titleWidth)
         }
+    }
+    
+    func purchaseBarTest() {
+        self.view.addSubview(purchaseBar)
+        
+        purchaseBar.frame = CGRect(x: 0, y: 500, width: 414, height: 100)
+        purchaseBar.backgroundColor = .black
+        purchaseBar.isHidden = true
+        
     }
         
 }

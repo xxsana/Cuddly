@@ -46,7 +46,9 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("write present ProductMainVC code here")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: K.id.productMainVC) as! ProductMainViewController
+        vc.product = allProducts[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 
@@ -66,10 +68,11 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     func setCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         let width = collectionView.frame.width / 2 - 5
-        let height = 13 * width / 9
+        let height = width * 1.35
         layout.itemSize = CGSize(width: width, height: height)
         collectionView.collectionViewLayout = layout
     }
+    
     
 }
 
@@ -80,7 +83,7 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 2 - 5
-        let height = 13 * width / 9
+        let height = width * 1.35
         return CGSize(width: width, height: height)
     }
     
@@ -93,5 +96,6 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+    
 
 }

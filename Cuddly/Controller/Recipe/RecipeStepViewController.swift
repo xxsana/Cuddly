@@ -146,8 +146,7 @@ class RecipeStepViewController: UIViewController {
 
 }
 
-extension RecipeStepViewController: UITableViewDelegate,
-                                                UITableViewDataSource {
+extension RecipeStepViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipeSteps.count
     }

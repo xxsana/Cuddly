@@ -11,7 +11,7 @@ struct Product {
     let name: String                //상품명
     let price: Int                  //가격
     let mainImage: UIImage?
-    let descImages: [UIImage?]?
+    let descImages: [UIImage?]
     var linkedRecipes: [Recipe]? {
         
         // recipe 모델을 다 돌면서 linked products의 이름과 일치하는 것만 저장한 배열을 리턴

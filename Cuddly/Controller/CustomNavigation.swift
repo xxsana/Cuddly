@@ -65,9 +65,10 @@ class CustomNavigation {
     
     // MARK: - LeftButtonItems
     
-    func initBackButton(dismiss: Bool = false, tintWhite: Bool = false) {
+    func initBackButton(tintWhite: Bool = false, dismiss: Bool = false, showTab: Bool = false) {
         
         let backButton = UIButton(type: .system)
+        
         csNavigationBar.addSubview(backButton)
         
         configureButtonItem(backButton, imageName: "chevron.backward", tintWhite)
@@ -76,7 +77,12 @@ class CustomNavigation {
         
         // add action method
         if dismiss == false {
-            backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+            if showTab {
+                backButton.addTarget(self, action: #selector(goBackWithShowingTab), for: .touchUpInside)
+            } else {
+                backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+            }
+            
         } else {
             // call dismiss method. use for RecipeStepVC
             backButton.addTarget(self, action: #selector(goDismiss), for: .touchUpInside)
@@ -87,14 +93,14 @@ class CustomNavigation {
     // MARK: - RightButtonItems
     
     // add cart button on right
-    func initCartButton() {
+    func initCartButton(tintWhite: Bool = false) {
         
         configureRightContainer()
         
         let cartButton = UIButton(type: .system)
         self.rightContainer.addSubview(cartButton)
         
-        configureButtonItem(cartButton, imageName: "cart")
+        configureButtonItem(cartButton, imageName: "cart", tintWhite)
         setOneItemConstraint(item: cartButton)
         
         // add action method
@@ -148,6 +154,12 @@ class CustomNavigation {
     // MARK: - Selectors
     
     @objc func goBack() {
+        superVC.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func goBackWithShowingTab() {
+        let tab = superVC.tabBarController as! MainTabController
+        tab.showTabBar()
         superVC.navigationController?.popViewController(animated: true)
     }
     
