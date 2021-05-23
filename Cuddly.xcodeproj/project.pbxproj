@@ -51,6 +51,7 @@
 		49EA21092659281500840179 /* ProductMainCellTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EA21072659281500840179 /* ProductMainCellTwo.xib */; };
 		49EA210C2659282700840179 /* ProductMainCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA210A2659282700840179 /* ProductMainCellThree.swift */; };
 		49EA210D2659282700840179 /* ProductMainCellThree.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EA210B2659282700840179 /* ProductMainCellThree.xib */; };
+		49EA210F265A78A200840179 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA210E265A78A200840179 /* ProductService.swift */; };
 		49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */; };
 		49F28F1A264BDED4005FDF93 /* puppucinoStep3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */; };
 		49F28F1B264BDED4005FDF93 /* puppucinoStep5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F15264BDED3005FDF93 /* puppucinoStep5.jpg */; };
@@ -114,6 +115,7 @@
 		49EA21072659281500840179 /* ProductMainCellTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductMainCellTwo.xib; sourceTree = "<group>"; };
 		49EA210A2659282700840179 /* ProductMainCellThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainCellThree.swift; sourceTree = "<group>"; };
 		49EA210B2659282700840179 /* ProductMainCellThree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductMainCellThree.xib; sourceTree = "<group>"; };
+		49EA210E265A78A200840179 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
 		49F28F14264BDED3005FDF93 /* puppucinoStep3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep3.jpg; sourceTree = "<group>"; };
 		49F28F15264BDED3005FDF93 /* puppucinoStep5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppucinoStep5.jpg; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				4932789B264EDF3A003C7936 /* AuthService.swift */,
 				493278A826515265003C7936 /* UserService.swift */,
+				49EA210E265A78A200840179 /* ProductService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493278AB26518C86003C7936 /* UserInfoViewController.swift in Sources */,
+				49EA210F265A78A200840179 /* ProductService.swift in Sources */,
 				49EA21082659281500840179 /* ProductMainCellTwo.swift in Sources */,
 				49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */,
 				4932789C264EDF3A003C7936 /* AuthService.swift in Sources */,

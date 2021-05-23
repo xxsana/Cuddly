@@ -11,6 +11,7 @@ import Firebase
 // Property to access Database
 let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
+let REF_CART = DB_REF.child("cart")
 
 
 struct K {

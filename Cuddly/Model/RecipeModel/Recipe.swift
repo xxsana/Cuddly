@@ -72,7 +72,8 @@ struct Recipe {
                                             UIImage(named: "식품건조기3.jpg"),
                                             UIImage(named: "식품건조기4.jpg"),
                                             UIImage(named: "식품건조기5.jpg"),
-                                            UIImage(named: "식품건조기6.jpg")])
+                                            UIImage(named: "식품건조기6.jpg")],
+                                        productID: "KAFDB230")
                              ])
         let recipe2 = Recipe(title: "고구마 치즈볼",
                              subtitle: "겉은 바삭 속은 촉촉한 간식",

@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="건조기" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14S-Rm-lvf">
-                        <rect key="frame" x="35" y="21" width="364" height="45"/>
+                        <rect key="frame" x="25" y="21" width="374" height="45"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6p-yl-bUU">
-                        <rect key="frame" x="35" y="81" width="82.5" height="24"/>
+                        <rect key="frame" x="25" y="81" width="82.5" height="24"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cap-ML-5Ty">
-                        <rect key="frame" x="35" y="160" width="73" height="25.5"/>
+                        <rect key="frame" x="25" y="160" width="73" height="25.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,13 +62,13 @@
                     <constraint firstItem="q6p-yl-bUU" firstAttribute="leading" secondItem="14S-Rm-lvf" secondAttribute="leading" id="Eje-uX-qsb"/>
                     <constraint firstAttribute="trailing" secondItem="14S-Rm-lvf" secondAttribute="trailing" constant="15" id="RMq-oH-qO5"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Cap-ML-5Ty" secondAttribute="bottom" constant="6.5" id="V3Z-aT-DsH"/>
-                    <constraint firstItem="Cap-ML-5Ty" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="Yqf-nM-o00"/>
+                    <constraint firstItem="Cap-ML-5Ty" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Yqf-nM-o00"/>
                     <constraint firstItem="q6p-yl-bUU" firstAttribute="top" secondItem="14S-Rm-lvf" secondAttribute="bottom" constant="15" id="dKg-Bj-xhd"/>
                     <constraint firstAttribute="trailing" secondItem="bHc-Tt-41L" secondAttribute="trailing" constant="20" id="jkk-IE-QWQ"/>
-                    <constraint firstItem="14S-Rm-lvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="li0-qR-iDV"/>
+                    <constraint firstItem="14S-Rm-lvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="li0-qR-iDV"/>
                     <constraint firstItem="Cap-ML-5Ty" firstAttribute="top" secondItem="edW-Nu-7k4" secondAttribute="bottom" constant="20" id="m8l-IM-KVR"/>
                     <constraint firstItem="bHc-Tt-41L" firstAttribute="bottom" secondItem="q6p-yl-bUU" secondAttribute="bottom" id="mQ3-dR-h49"/>
-                    <constraint firstItem="q6p-yl-bUU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="nRd-KM-jtv"/>
+                    <constraint firstItem="q6p-yl-bUU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="nRd-KM-jtv"/>
                     <constraint firstItem="edW-Nu-7k4" firstAttribute="top" secondItem="q6p-yl-bUU" secondAttribute="bottom" constant="19" id="yo6-Ci-zz1"/>
                 </constraints>
             </tableViewCellContentView>

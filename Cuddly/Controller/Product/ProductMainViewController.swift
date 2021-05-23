@@ -15,6 +15,9 @@ class ProductMainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var countStepper: UIStepper!
+    @IBOutlet weak var priceLabel: UILabel!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -24,22 +27,53 @@ class ProductMainViewController: UIViewController {
         
         configureNavigation()
         
-        roundButtonBorder()
+        configureUI()
         
         tableViewDelegate()
         
         tableRegister()
         
-        tableView.contentInsetAdjustmentBehavior = .never
-        
-        print(product.name)
-        print(product.descImages)
-        
     }
 
 
     // MARK: - IBActions
+    @IBAction func countChanged(_ sender: UIStepper) {
+        let count = Int(sender.value)
+        let price: Int = product.price * count
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        guard let formattedPrice = numberFormatter.string(from: NSNumber(value: price)) else { return }
+        
+        countLabel.text = "\(count) 개"
+        priceLabel.text = "\(formattedPrice)원"
+    }
+    
     @IBAction func purchaseButtonClicked(_ sender: UIButton) {
+        let id = product.productID
+        let count = Int(countStepper.value)
+        
+        if count == 0 {
+            // alert "장바구니에 담겼습니다"
+            let alertVC = UIAlertController(title: "수량을 선택해주세요", message: nil, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alertVC, animated: true, completion: nil)
+            return
+            
+        } else {
+            ProductService.shared.uploadToCart(productID: id, count: count) { error, ref in
+                print("DEBUG: saved product to cart")
+                // alert "장바구니에 담겼습니다"
+                let alertVC = UIAlertController(title: "장바구니에 담겼습니다!", message: nil, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
+                
+                // stepper value 0
+                self.countStepper.value = 0
+                self.countLabel.text = "0 개"
+                self.priceLabel.text = "0원"
+            }
+        }
     }
     
     
@@ -61,9 +95,13 @@ class ProductMainViewController: UIViewController {
         navigation.initCartButton(tintWhite: true)
     }
     
-    func roundButtonBorder() {
+    func configureUI() {
+        // purchase button round border
         purchaseButton.layer.cornerRadius = 8.0
         purchaseButton.clipsToBounds = true
+        
+        // table autolayout
+        tableView.contentInsetAdjustmentBehavior = .never
     }
 
     func tableViewDelegate() {
@@ -94,15 +132,16 @@ extension ProductMainViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.row == 0 {
             // show main image cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellOne.identifier, for: indexPath) as! ProductMainCellOne
-//            cell.configure(with: product.mainImage)
             cell.setCustomImage(image: product.mainImage!)
             return cell
+            
         } else if indexPath.row == 1 {
             // show label cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellTwo.identifier, for: indexPath) as! ProductMainCellTwo
             cell.configure(with: product)
             return cell
         }
+        
         // show info cell
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellThree.identifier, for: indexPath) as! ProductMainCellThree
         
@@ -110,7 +149,6 @@ extension ProductMainViewController: UITableViewDataSource, UITableViewDelegate 
             cell.setCustomImage(image: detailImage)
             return cell
         }
-//        cell.configure(with: detailImage)
         
         return UITableViewCell()
     }
