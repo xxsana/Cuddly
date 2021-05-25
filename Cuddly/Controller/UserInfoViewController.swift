@@ -61,7 +61,7 @@ class UserInfoViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         navigation = CustomNavigation(superVC: self)
         
-        // init cart and logout button 변경예정
+        // init cart and logout button
         navigation.initCartAndLogOutButton()
         
         // delegate
@@ -104,10 +104,17 @@ extension UserInfoViewController: CustomNavigationDelegate {
     func handleLogOut() {
         print("DEBUG: logout in UserInfoViewController")
         
+        // open recipe view controller
         self.tabBarController?.selectedIndex = 0
         
+        // log user out
         User.currentUser = nil
         AuthService.shared.signOut()
+        
+        // reset static instance
+        Cart.sharedCart = []
+        
+        // pop up log in view controller
         guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }
         let nav = UINavigationController(rootViewController: logInVC)
         nav.modalPresentationStyle = .fullScreen

@@ -35,7 +35,7 @@ struct AuthService {
             }
         } else {
             print("DEBUG: User is logged in")
-
+            ProductService.shared.fetchCart()
         }
     }
     

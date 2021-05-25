@@ -14,7 +14,6 @@ struct User {
     let username: String
     let email: String
     let uid: String
-    let cart: [Product]? = nil
     
     init(uid: String, dictionary: [String: Any]) {
         self.uid = uid
@@ -23,3 +22,5 @@ struct User {
         self.email = dictionary[K.Firebase.email] as? String ?? ""
     }
 }
+
+

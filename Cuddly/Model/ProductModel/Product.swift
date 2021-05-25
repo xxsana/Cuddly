@@ -32,6 +32,17 @@ struct Product {
         return links
     }
     
+    static func findProduct(with productID: String) -> Product? {
+        let allProducts: [Product] = fetchProducts()
+        
+        for product in allProducts {
+            if product.productID == productID {
+                return product
+            }
+        }
+        return nil
+    }
+    
     static func fetchProducts() -> [Product]
     {
         

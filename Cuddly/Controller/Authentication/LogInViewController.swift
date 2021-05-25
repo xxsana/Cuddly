@@ -48,7 +48,10 @@ class LogInViewController: UIViewController {
                 
             } else {
                 // successfully logged in
-                self.dismiss(animated: true, completion: { UserService.shared.fetchUser() })
+                self.dismiss(animated: true, completion: {
+                                UserService.shared.fetchUser()
+                                ProductService.shared.fetchCart()
+                })
                 
             }
         }

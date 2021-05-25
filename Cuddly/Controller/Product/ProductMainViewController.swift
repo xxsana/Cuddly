@@ -14,7 +14,7 @@ class ProductMainViewController: UIViewController {
     var navigation: CustomNavigation!
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var purchaseButton: UIButton!
+    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var countStepper: UIStepper!
     @IBOutlet weak var priceLabel: UILabel!
@@ -48,12 +48,13 @@ class ProductMainViewController: UIViewController {
         priceLabel.text = "\(formattedPrice)원"
     }
     
-    @IBAction func purchaseButtonClicked(_ sender: UIButton) {
+    @IBAction func addToCartButtonClicked(_ sender: UIButton) {
         let id = product.productID
         let count = Int(countStepper.value)
+        let price = product.price
         
         if count == 0 {
-            // alert "장바구니에 담겼습니다"
+            // alert "수량을 선택해주세요"
             let alertVC = UIAlertController(title: "수량을 선택해주세요", message: nil, preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
@@ -61,7 +62,7 @@ class ProductMainViewController: UIViewController {
             return
             
         } else {
-            ProductService.shared.uploadToCart(productID: id, count: count) { error, ref in
+            ProductService.shared.uploadToCart(productID: id, count: count, price: price) { error, ref in
                 print("DEBUG: saved product to cart")
                 // alert "장바구니에 담겼습니다"
                 let alertVC = UIAlertController(title: "장바구니에 담겼습니다!", message: nil, preferredStyle: .alert)
@@ -87,18 +88,18 @@ class ProductMainViewController: UIViewController {
     
     func configureNavigation() {
         // change status bar color
-        self.navigationController?.navigationBar.barStyle = .black
+//        self.navigationController?.navigationBar.barStyle = .black
         
         // create custom navigation
         navigation = CustomNavigation(superVC: self)
-        navigation.initBackButton(tintWhite: true, showTab: true)
-        navigation.initCartButton(tintWhite: true)
+        navigation.initBackButton(showTab: true)
+        navigation.initCartButton()
     }
     
     func configureUI() {
         // purchase button round border
-        purchaseButton.layer.cornerRadius = 8.0
-        purchaseButton.clipsToBounds = true
+        addToCartButton.layer.cornerRadius = 8.0
+        addToCartButton.clipsToBounds = true
         
         // table autolayout
         tableView.contentInsetAdjustmentBehavior = .never

@@ -9,15 +9,33 @@ import Foundation
 import Firebase
 
 struct ProductService {
-    static let shared = ProductService()
     
-    func uploadToCart(productID: String, count: Int, completion: @escaping(Error?, DatabaseReference) -> Void) {
+    static let shared = ProductService()
+
+    
+    func uploadToCart(productID: String, count: Int, price: Int, completion: @escaping(Error?, DatabaseReference) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let values = ["uid": uid,
-                      "productId": productID,
-                      "count": count] as [String : Any]
+        let values = ["productID": productID,
+                      "count": count,
+                      "price": price] as [String : Any]
         
-        REF_CART.childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+        
+        // save to static value
+        REF_USER_CART.child(uid).childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+        
+    
     }
+
+    
+    func fetchCart() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        REF_USER_CART.child(uid).observe(.childAdded) { snapshot in
+            
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            Cart.sharedCart.append(CartItem(dictionary: dictionary))
+        }
+    }
+    
 }

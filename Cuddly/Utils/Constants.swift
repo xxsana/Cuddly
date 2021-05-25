@@ -11,7 +11,7 @@ import Firebase
 // Property to access Database
 let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
-let REF_CART = DB_REF.child("cart")
+let REF_USER_CART = DB_REF.child("user_cartItems")
 
 
 struct K {
@@ -25,6 +25,11 @@ struct K {
     static let appleSDGothicNeo_Bold = "AppleSDGothicNeo-Bold"
     static let SFProDisplay_Semibold = "SFProDisplay-Semibold"
     static let SFProDisplay_Heavy = "SFProDisplay-Heavy"
+    
+    // icon name
+    static let emptyCircle = "circle"
+    static let checkedCircle = "checkmark.circle.fill"
+    
     
     // view controller identifier
     struct id {
@@ -40,6 +45,8 @@ struct K {
         static let productListCell = "ProductListCell"
         static let productMainVC = "ProductMainViewController"
         static let productImageCell = "ProductImageCell"
+        static let cartVC = "CartViewController"
+        static let cartCell = "CartCell"
     }
     
     struct Firebase {

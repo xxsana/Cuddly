@@ -177,6 +177,10 @@ class CustomNavigation {
 
     @objc func cart() {
         print("DEBUG: cart clicked")
+
+        guard let vc = superVC.storyboard?.instantiateViewController(withIdentifier: K.id.cartVC) else { return }
+        self.superVC.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func logout() {
