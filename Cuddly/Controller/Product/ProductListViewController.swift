@@ -69,7 +69,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     func setCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         let width = collectionView.frame.width / 2 - 5
-        let height = width * 1.35
+        let height = width * 1.23
         layout.itemSize = CGSize(width: width, height: height)
         collectionView.collectionViewLayout = layout
     }
@@ -84,7 +84,7 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 2 - 5
-        let height = width * 1.35
+        let height = width * 1.23
         return CGSize(width: width, height: height)
     }
     

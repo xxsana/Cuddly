@@ -47,6 +47,7 @@ struct K {
         static let productImageCell = "ProductImageCell"
         static let cartVC = "CartViewController"
         static let cartCell = "CartCell"
+        static let orderVC = "OrderViewController"
     }
     
     struct Firebase {

@@ -48,7 +48,7 @@ struct Product {
         
         var products = [Product]()
         
-        let product1 = Product(name: "키친아트 라팔스퀘어5단 식품건조기 KAFD-B230",
+        let product1 = Product(name: "5단 식품건조기 KAFD-B230",
                                price: 36500,
                                mainImage: UIImage(named: "식품건조기Main.jpg"),
                                descImages: [
@@ -65,7 +65,7 @@ struct Product {
                                descImages: [
                                 UIImage(named: "오리날개0.jpg")],
                                productID: "SNACK090")
-        let product3 = Product(name: "키친아트 라팔스퀘어5단 식품건조기 KAFD-B230",
+        let product3 = Product(name: "5단 식품건조기 KAFD-B230",
                                price: 36500,
                                mainImage: UIImage(named: "식품건조기Main.jpg"),
                                descImages: [

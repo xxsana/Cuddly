@@ -37,12 +37,42 @@ class CartViewController: UIViewController {
 
     }
     
+    // MARK: - IBActions
+    
+    @IBAction func buyButtonClicked(_ sender: Any) {
+        
+        // selected item만 추려서 order array 만들고
+        var orderItems = [CartItem]()
+        
+        for item in cart {
+            if item.selected {
+                orderItems.append(item)
+                print("DEBUG: added \(item)")
+            }
+        }
+        
+        if orderItems.isEmpty {
+            // none selected - present alert
+            let alertVC = UIAlertController(title: "선택된 제품이 없습니다.", message: nil, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        // if it's not empty, pass value and push view controller
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: K.id.orderVC) as! OrderViewController
+        vc.orderItems = orderItems
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     // MARK: - Helper
     
     func configureNavigation() {
         navigation = CustomNavigation(superVC: self)
-        navigation.initBackButton(showTab: true)
+        navigation.initBackButton()
         navigation.setTitle(as: "장바구니")
     }
     
@@ -90,7 +120,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let cartItem = cart[indexPath.row]
         let productID = cartItem.productID
         
-        if let product = Product.findProduct(with: productID) {
+        guard let product = Product.findProduct(with: productID) else {
+            return UITableViewCell() }
+        
             let count = cartItem.count
             let cell = cartTableView.dequeueReusableCell(withIdentifier: K.id.cartCell, for: indexPath) as! CartCell
             
@@ -106,7 +138,4 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
-
-        return UITableViewCell()
-    }
 }

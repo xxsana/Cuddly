@@ -131,25 +131,30 @@ extension ProductMainViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+
             // show main image cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellOne.identifier, for: indexPath) as! ProductMainCellOne
             cell.setCustomImage(image: product.mainImage!)
             return cell
             
         } else if indexPath.row == 1 {
+            
             // show label cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellTwo.identifier, for: indexPath) as! ProductMainCellTwo
             cell.configure(with: product)
             return cell
+            
+        } else {
+            
+            // show info cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellThree.identifier, for: indexPath) as! ProductMainCellThree
+            
+            if let detailImage = product.descImages[indexPath.row - 2] {
+                cell.setCustomImage(image: detailImage)
+                return cell
+            }
         }
-        
-        // show info cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellThree.identifier, for: indexPath) as! ProductMainCellThree
-        
-        if let detailImage = product.descImages[indexPath.row - 2] {
-            cell.setCustomImage(image: detailImage)
-            return cell
-        }
+   
         
         return UITableViewCell()
     }
