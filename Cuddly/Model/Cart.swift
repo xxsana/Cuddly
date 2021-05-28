@@ -8,11 +8,7 @@
 import Foundation
 
 struct Cart {
-    static var sharedCart = [CartItem]() {
-        didSet {
-            print("DEBUG: add an item to cart.")
-        }
-    }
+    static var sharedCart = [CartItem]()
 }
 
 struct CartItem {
@@ -23,8 +19,8 @@ struct CartItem {
     var selected: Bool = false
     
     init(dictionary: [String: Any]) {
-        self.productID = dictionary["productID"] as? String ?? ""
-        self.count = dictionary["count"] as? Int ?? 0
-        self.price = dictionary["price"] as? Int ?? 0
+        self.productID = dictionary[K.Firebase.productID] as? String ?? ""
+        self.count = dictionary[K.Firebase.count] as? Int ?? 0
+        self.price = dictionary[K.Firebase.price] as? Int ?? 0
     }
 }

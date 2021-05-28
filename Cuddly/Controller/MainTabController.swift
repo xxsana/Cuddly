@@ -50,6 +50,10 @@ class MainTabController: UITabBarController {
     func fetchUser() {
         // set current user to static instance when there is a currentUser
         UserService.shared.fetchUser()
+        
+        // save the user address of firebase to user defaults if there is one
+        UserService.shared.fetchUserAddress()
+
     }
     
     // MARK: - Selectors

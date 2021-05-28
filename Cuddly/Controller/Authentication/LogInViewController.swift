@@ -50,6 +50,7 @@ class LogInViewController: UIViewController {
                 // successfully logged in
                 self.dismiss(animated: true, completion: {
                                 UserService.shared.fetchUser()
+                                UserService.shared.fetchUserAddress()
                                 ProductService.shared.fetchCart()
                 })
                 

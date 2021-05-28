@@ -13,6 +13,7 @@ class OrderViewController: UIViewController {
     
     var navigation: CustomNavigation!
     var orderItems: [CartItem]!
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var itemTableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -34,12 +35,63 @@ class OrderViewController: UIViewController {
 
         configureNavigation()
         
-        tableDelegate()
+        setDelegate()
         
         setTotalPrice()
         
         adjustTableViewHeight()
+        
+        buttonUI()
 
+        fetchRecentAddress()
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func goToPGButtonClicked(sender: UIButton) {
+        
+        if nameField.text?.isEmpty ?? true || phoneField.text?.isEmpty ?? true ||
+            basicAddressField.text?.isEmpty ?? true || detailAddressField.text?.isEmpty ?? true {
+            
+            // Some textField is empty
+            // alert "배송지 정보를 모두 작성 해 주세요."
+            let alertVC = UIAlertController(title: "배송지 정보를 모두 작성 해 주세요.", message: nil, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+
+        } else {
+            
+            // Textfield empty check succeed.
+            // upload address to firebase
+            guard let name = nameField.text,
+                  let phone = phoneField.text,
+                  let basicAddress = basicAddressField.text,
+                  let detailAddress = detailAddressField.text,
+                  let memo = orderMemo.text else { return }
+            
+            let addressDict = [K.Firebase.realName : name,
+                               K.Firebase.phoneNumber : phone,
+                               K.Firebase.basicAddress : basicAddress,
+                               K.Firebase.detailAddress : detailAddress]
+            
+            // upload to firebase
+            UserService.shared.uploadAddress(addressDict) { error, ref in
+                
+                if let e = error {
+                    print(e.localizedDescription)
+                }
+                
+                // save to user defaults
+                UserDefaultsService.shared.saveAddress(addressDict)
+            }
+        }
+    }
+    
+    func fetchRecentAddress() {
+        
+        let recentAddress = UserDefaultsService.shared.fetchAddressFromUserDefaults()
+        
+        fillTextFieldWithRecentAddress(recentAddress)
     }
     
     
@@ -51,14 +103,26 @@ class OrderViewController: UIViewController {
         navigation.setTitle(as: "결제")
     }
     
-    func tableDelegate() {
+    func setDelegate() {
         itemTableView.delegate = self
         itemTableView.dataSource = self
+        
+        nameField.delegate = self
+        phoneField.delegate = self
+        detailAddressField.delegate = self
+        basicAddressField.delegate = self
+        orderMemo.delegate = self
     }
     
     func adjustTableViewHeight() {
         tableViewHeightConstraint.constant = ( 61.0 * CGFloat(orderItems.count))
         self.view.layoutIfNeeded()
+    }
+    
+    func buttonUI() {
+        // purchase button round border
+        goToPGButton.layer.cornerRadius = 8.0
+        goToPGButton.clipsToBounds = true
     }
     
     func setTotalPrice() {
@@ -74,13 +138,21 @@ class OrderViewController: UIViewController {
         
         totalPriceLabel.text = "\(formattedPrice)원"
     }
+    
+    func fillTextFieldWithRecentAddress(_ dict: [String : String]) {
+        nameField.text = dict[K.Firebase.realName]
+        phoneField.text = dict[K.Firebase.phoneNumber]
+        basicAddressField.text = dict[K.Firebase.basicAddress]
+        detailAddressField.text = dict[K.Firebase.detailAddress]
+    }
 
 }
+
+// MARK: - Extension Table View
 
 extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("DEBUG: orderItems.count - \(orderItems.count)")
         return orderItems.count
     }
     
@@ -89,6 +161,29 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(orderItems[indexPath.row])
         return cell
     }
+}
+
+
+// MARK: - Extension Text Field Delegate
+
+extension OrderViewController: UITextFieldDelegate {
     
+    // return key user interface
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.tag == 4  {
+            // the last textfield
+            textField.resignFirstResponder()
+        } else {
+            let currentTag = textField.tag
+            self.view.viewWithTag(currentTag + 1)?.becomeFirstResponder()
+        }
+        
+        return true
+    }
     
+    // for the keyboard go away when user touches outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

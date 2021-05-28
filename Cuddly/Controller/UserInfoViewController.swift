@@ -102,7 +102,6 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
 extension UserInfoViewController: CustomNavigationDelegate {
 
     func handleLogOut() {
-        print("DEBUG: logout in UserInfoViewController")
         
         // open recipe view controller
         self.tabBarController?.selectedIndex = 0
@@ -113,6 +112,9 @@ extension UserInfoViewController: CustomNavigationDelegate {
         
         // reset static instance
         Cart.sharedCart = []
+        
+        // reset user defaults
+        UserDefaults.standard.removeObject(forKey: K.userAddress)
         
         // pop up log in view controller
         guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }

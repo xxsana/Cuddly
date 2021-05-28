@@ -176,7 +176,6 @@ class CustomNavigation {
     }
 
     @objc func cart() {
-        print("DEBUG: cart clicked")
 
         guard let vc = superVC.storyboard?.instantiateViewController(withIdentifier: K.id.cartVC) else { return }
         self.superVC.navigationController?.pushViewController(vc, animated: true)
@@ -184,8 +183,8 @@ class CustomNavigation {
     }
     
     @objc func logout() {
-        print("DEBUG: logout clicked")
         
+        // check once to user by alert 
         let alertVC = UIAlertController(title: nil, message: "로그아웃 하시겠습니까?", preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { _ in
             self.delegate?.handleLogOut()

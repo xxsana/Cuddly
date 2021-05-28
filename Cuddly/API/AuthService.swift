@@ -21,20 +21,18 @@ struct AuthService {
     static let shared = AuthService()
     
     func logUserIn(withEmail email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        print("DEBUG: Email : \(email)")
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
     
     func authenticateUser(completion: @escaping()->Void) {
         if Auth.auth().currentUser == nil {
-            print("DEBUG: User is NOT logged in")
-            
+            // User is NOT logged in
             // present Log in view controller
             DispatchQueue.main.async {
                 completion()
             }
         } else {
-            print("DEBUG: User is logged in")
+            // User is logged in
             ProductService.shared.fetchCart()
         }
     }
@@ -51,8 +49,7 @@ struct AuthService {
                 return
             }
             
-            print("DEBUG: Successfully registered user")
-            
+            // User registered successfully
             // unwrap unique id of user
             guard let uid = result?.user.uid else { return }
             

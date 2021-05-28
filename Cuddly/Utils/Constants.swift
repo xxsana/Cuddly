@@ -12,6 +12,7 @@ import Firebase
 let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
 let REF_USER_CART = DB_REF.child("user_cartItems")
+let REF_USER_ADDRESS = DB_REF.child("user_address")
 
 
 struct K {
@@ -29,6 +30,8 @@ struct K {
     // icon name
     static let emptyCircle = "circle"
     static let checkedCircle = "checkmark.circle.fill"
+    
+    static let userAddress = "user_address"
     
     
     // view controller identifier
@@ -53,5 +56,15 @@ struct K {
     struct Firebase {
         static let email = "email"
         static let username = "userName"
+        
+        static let realName = "realName"
+        static let phoneNumber = "phoneNumber"
+        static let basicAddress = "basicAddress"
+        static let detailAddress = "detailAddress"
+        
+        static let productID = "productID"
+        static let count = "count"
+        static let price = "price"
+        
     }
 }

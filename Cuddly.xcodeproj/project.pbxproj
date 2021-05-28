@@ -15,9 +15,10 @@
 		493278A926515265003C7936 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278A826515265003C7936 /* UserService.swift */; };
 		493278AB26518C86003C7936 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278AA26518C86003C7936 /* UserInfoViewController.swift */; };
 		493278AD265192DA003C7936 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493278AC265192DA003C7936 /* MainTabController.swift */; };
-		4947C388265D259D0017B482 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C387265D259D0017B482 /* UserDefaults.swift */; };
+		4947C388265D259D0017B482 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C387265D259D0017B482 /* UserDefaultsService.swift */; };
 		4947C38A265D27C40017B482 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C389265D27C40017B482 /* OrderViewController.swift */; };
 		4947C38C265E61B80017B482 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C38B265E61B80017B482 /* OrderCell.swift */; };
+		4947C38E265FD10C0017B482 /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C38D265FD10C0017B482 /* UserAddress.swift */; };
 		495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigation.swift */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
@@ -83,9 +84,10 @@
 		493278A826515265003C7936 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		493278AA26518C86003C7936 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		493278AC265192DA003C7936 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		4947C387265D259D0017B482 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		4947C387265D259D0017B482 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		4947C389265D27C40017B482 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		4947C38B265E61B80017B482 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		4947C38D265FD10C0017B482 /* UserAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddress.swift; sourceTree = "<group>"; };
 		495457D5261FF70C0011EE22 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				4932789B264EDF3A003C7936 /* AuthService.swift */,
 				493278A826515265003C7936 /* UserService.swift */,
 				49EA210E265A78A200840179 /* ProductService.swift */,
+				4947C387265D259D0017B482 /* UserDefaultsService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				496C33D726109B2700B2E35B /* Comment.swift */,
 				493278A626515235003C7936 /* User.swift */,
 				49B84706265C1D71000EE75F /* Cart.swift */,
+				4947C38D265FD10C0017B482 /* UserAddress.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,7 +360,6 @@
 			children = (
 				492EC1FE264B8F8000AA391B /* Constants.swift */,
 				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
-				4947C387265D259D0017B482 /* UserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */,
 				4979C667265523DD00B3B84F /* ProductListCell.swift in Sources */,
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
+				4947C38E265FD10C0017B482 /* UserAddress.swift in Sources */,
 				49B84704265BC423000EE75F /* CartCell.swift in Sources */,
 				496C33D526109B1C00B2E35B /* Step.swift in Sources */,
 				495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */,
@@ -539,7 +543,7 @@
 				496C33D826109B2700B2E35B /* Comment.swift in Sources */,
 				4979C66C2657A1D100B3B84F /* ProductMainViewController.swift in Sources */,
 				493278A926515265003C7936 /* UserService.swift in Sources */,
-				4947C388265D259D0017B482 /* UserDefaults.swift in Sources */,
+				4947C388265D259D0017B482 /* UserDefaultsService.swift in Sources */,
 				496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */,
 				4947C38A265D27C40017B482 /* OrderViewController.swift in Sources */,
 				492EC1FF264B8F8000AA391B /* Constants.swift in Sources */,

@@ -16,14 +16,13 @@ struct ProductService {
     func uploadToCart(productID: String, count: Int, price: Int, completion: @escaping(Error?, DatabaseReference) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let values = ["productID": productID,
-                      "count": count,
-                      "price": price] as [String : Any]
+        let values = [K.Firebase.productID: productID,
+                      K.Firebase.count: count,
+                      K.Firebase.price: price] as [String : Any]
         
         
         // save to static value
         REF_USER_CART.child(uid).childByAutoId().updateChildValues(values, withCompletionBlock: completion)
-        
     
     }
 

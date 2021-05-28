@@ -24,8 +24,6 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("DEBUG: in Cart VC cart: \(cart)")
         
         configureNavigation()
         
@@ -47,7 +45,6 @@ class CartViewController: UIViewController {
         for item in cart {
             if item.selected {
                 orderItems.append(item)
-                print("DEBUG: added \(item)")
             }
         }
         
@@ -72,7 +69,7 @@ class CartViewController: UIViewController {
     
     func configureNavigation() {
         navigation = CustomNavigation(superVC: self)
-        navigation.initBackButton()
+        navigation.initBackButton(showTab: true)
         navigation.setTitle(as: "장바구니")
     }
     

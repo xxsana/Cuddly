@@ -66,7 +66,7 @@ extension RegisterViewController: UITextFieldDelegate {
     
     // return key user interface
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Current Tag: \(textField.tag)")
+    
         if textField.placeholder == "email" {
             // user returned on email text field
             emailTextField.resignFirstResponder()
