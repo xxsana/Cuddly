@@ -134,7 +134,9 @@ extension ProductMainViewController: UITableViewDataSource, UITableViewDelegate 
 
             // show main image cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductMainCellOne.identifier, for: indexPath) as! ProductMainCellOne
-            cell.setCustomImage(image: product.mainImage!)
+            if let image = product.mainImage {
+                cell.setCustomImage(image: image)
+            }
             return cell
             
         } else if indexPath.row == 1 {

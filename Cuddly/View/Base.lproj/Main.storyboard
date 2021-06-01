@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X7O-Pp-7qs">
-                                <rect key="frame" x="15" y="155" width="384" height="658"/>
+                                <rect key="frame" x="15" y="155" width="384" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eY9-iT-9Rn">
                                     <size key="itemSize" width="128" height="128"/>
@@ -48,7 +48,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="X7O-Pp-7qs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="Bpy-GC-5HQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X7O-Pp-7qs" secondAttribute="bottom" id="MYe-N5-yit"/>
+                            <constraint firstAttribute="bottom" secondItem="X7O-Pp-7qs" secondAttribute="bottom" constant="90" id="MYe-N5-yit"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X7O-Pp-7qs" secondAttribute="trailing" constant="15" id="cMF-Em-DPQ"/>
                             <constraint firstItem="X7O-Pp-7qs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="jtR-D8-4OZ"/>
                         </constraints>
@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yg6-ab-SFQ">
-                                <rect key="frame" x="2" y="155" width="410" height="658"/>
+                                <rect key="frame" x="2" y="155" width="410" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KfJ-Il-Xzj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -95,7 +95,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Yg6-ab-SFQ" firstAttribute="top" secondItem="6UI-iV-bP4" secondAttribute="top" constant="67" id="HaQ-xp-iWr"/>
-                            <constraint firstItem="6UI-iV-bP4" firstAttribute="bottom" secondItem="Yg6-ab-SFQ" secondAttribute="bottom" id="Vq4-v3-xCl"/>
+                            <constraint firstAttribute="bottom" secondItem="Yg6-ab-SFQ" secondAttribute="bottom" constant="90" id="Vq4-v3-xCl"/>
                             <constraint firstItem="Yg6-ab-SFQ" firstAttribute="trailing" secondItem="6UI-iV-bP4" secondAttribute="trailing" constant="-2" id="gd4-yN-Zfn"/>
                             <constraint firstItem="Yg6-ab-SFQ" firstAttribute="leading" secondItem="6UI-iV-bP4" secondAttribute="leading" constant="2" id="zZr-Lg-yyM"/>
                         </constraints>
@@ -117,8 +117,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-MA-FQD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="781"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-MA-FQD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="737"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRU-Wl-a9c" userLabel="Purchase View">
@@ -189,7 +189,7 @@
                         <viewLayoutGuide key="safeArea" id="B0k-RM-A7N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5vB-MA-FQD" firstAttribute="top" secondItem="l4D-B8-nRM" secondAttribute="top" id="6up-z0-TJj"/>
+                            <constraint firstItem="5vB-MA-FQD" firstAttribute="top" secondItem="l4D-B8-nRM" secondAttribute="topMargin" id="6up-z0-TJj"/>
                             <constraint firstItem="uRU-Wl-a9c" firstAttribute="top" secondItem="5vB-MA-FQD" secondAttribute="bottom" id="KWT-he-QVj"/>
                             <constraint firstItem="uRU-Wl-a9c" firstAttribute="leading" secondItem="B0k-RM-A7N" secondAttribute="leading" id="LLH-6d-X86"/>
                             <constraint firstItem="5vB-MA-FQD" firstAttribute="leading" secondItem="l4D-B8-nRM" secondAttribute="leading" id="PNi-fp-tdh"/>
