@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct Cart {
-    static var sharedCart = [CartItem]()
-}
-
 struct CartItem {
     
     let productID: String

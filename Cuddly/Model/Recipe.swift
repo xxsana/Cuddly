@@ -39,6 +39,17 @@ struct Recipe {
     let linkedProductsID: [String]? //관련제품
     let recipeID: String
     
+    static func findRecipe(with recipeID: String) -> Recipe? {
+        let allRecipes = fetchRecipes()
+        
+        for recipe in allRecipes {
+            if recipe.recipeID == recipeID {
+                return recipe
+            }
+        }
+        return nil
+    }
+    
     static func fetchRecipes() -> [Recipe] {
         var recipes = [Recipe]()
         

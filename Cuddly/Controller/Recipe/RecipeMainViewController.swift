@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BookmarkDelegate {
     
     // MARK: - Properties
     
@@ -60,6 +60,20 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
+    // MARK: - API
+    
+    func addToBookmark() {
+        let id = recipe.recipeID
+        BookmarkService.shared.uploadToBookmark(with: id) {
+            
+            // show alert that says it saved successfully
+            let alertVC = UIAlertController(title: "북마크 되었습니다!", message: "북마크 탭에서 확인 해 주세요.", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    
     // MARK:- Actions
     
     @IBAction func touchDownGoToDetailBtn(_ sender: UIButton) {
@@ -73,6 +87,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
             
         let vc = RecipeStepViewController()
         // pass value
+        vc.recipe = recipe
         vc.recipeTitle = recipe.title
         vc.recipeSteps = recipe.steps
         vc.recipeCaution = recipe.caution
@@ -109,6 +124,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     func setDelegate() {
         ingredientTableView.dataSource = self
         ingredientTableView.delegate = self
+        navigation.bookmarkDelegate = self
     }
     
     func setRecipeValue() {
@@ -143,7 +159,4 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
 class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var weight: UILabel!
-
-    
-    
 }

@@ -7,10 +7,13 @@
 
 import UIKit
 
-class RecipeStepViewController: UIViewController {
+class RecipeStepViewController: UIViewController, BookmarkDelegate {
 
     var navigation: CustomNavigation!
     var tableView = UITableView()
+    
+    // 이거 하나만 쓰는 걸로 바꾸기
+    var recipe: Recipe!
     
     var recipeTitle: String!
     var recipeSteps: [Step]!
@@ -41,6 +44,20 @@ class RecipeStepViewController: UIViewController {
         configureTableView()
     }
 
+    // MARK: - API
+    
+    func addToBookmark() {
+        let id = recipe.recipeID
+        BookmarkService.shared.uploadToBookmark(with: id) {
+            
+            // show alert that says it saved successfully
+            let alertVC = UIAlertController(title: "북마크 되었습니다!", message: "북마크 탭에서 확인 해 주세요.", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    
     func configureCautionView() {
         cautionContainer = UIView()
         self.view.addSubview(cautionContainer)
@@ -114,7 +131,7 @@ class RecipeStepViewController: UIViewController {
         self.view.addSubview(tableView)
         
         // set other delegates
-        setTableViewDelegates()
+        setDelegate()
         
         // set row height
         tableView.rowHeight = UITableView.automaticDimension
@@ -127,9 +144,10 @@ class RecipeStepViewController: UIViewController {
         pin()
         }
 
-        func setTableViewDelegates() {
+        func setDelegate() {
             tableView.delegate = self
             tableView.dataSource = self
+            navigation.bookmarkDelegate = self
         }
 
         func pin() {

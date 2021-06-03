@@ -31,9 +31,6 @@ struct AuthService {
             DispatchQueue.main.async {
                 completion()
             }
-        } else {
-            // User is logged in
-            ProductService.shared.fetchCart()
         }
     }
     

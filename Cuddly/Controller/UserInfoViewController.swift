@@ -65,7 +65,7 @@ class UserInfoViewController: UIViewController {
         navigation.initCartAndLogOutButton()
         
         // delegate
-        navigation.delegate = self
+        navigation.logoutDelegate = self
     }
 
     func updateUserLabel() {
@@ -99,7 +99,7 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-extension UserInfoViewController: CustomNavigationDelegate {
+extension UserInfoViewController: LogoutDelegate {
 
     func handleLogOut() {
         
@@ -109,9 +109,6 @@ extension UserInfoViewController: CustomNavigationDelegate {
         // log user out
         User.currentUser = nil
         AuthService.shared.signOut()
-        
-        // reset static instance
-        Cart.sharedCart = []
         
         // reset user defaults
         UserDefaults.standard.removeObject(forKey: K.userAddress)

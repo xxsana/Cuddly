@@ -51,7 +51,6 @@ class LogInViewController: UIViewController {
                 self.dismiss(animated: true, completion: {
                                 UserService.shared.fetchUser()
                                 UserService.shared.fetchUserAddress()
-                                ProductService.shared.fetchCart()
                 })
                 
             }
@@ -85,10 +84,4 @@ extension LogInViewController: UITextFieldDelegate {
         }
         return true
     }
-    
-    // for the keyboard go away when user touches outside
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-
 }

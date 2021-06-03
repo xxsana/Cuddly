@@ -30,7 +30,8 @@ struct UserService {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         // save to firebase
-        REF_USER_ADDRESS.child(uid).updateChildValues(values, withCompletionBlock: completion)
+        let ref = REF_USERS.child(uid).child("recentAddress")
+        ref.updateChildValues(values, withCompletionBlock: completion)
         
     }
     
@@ -39,7 +40,8 @@ struct UserService {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         // read user's address snapshot and send it to user defaults service
-        REF_USER_ADDRESS.child(uid).observeSingleEvent(of: .value) { snapshot in
+        let ref = REF_USERS.child(uid)
+        ref.observeSingleEvent(of: .value) { snapshot in
             guard let dictionary = snapshot.value as? [String: String] else {return}
             UserDefaultsService.shared.saveAddress(dictionary)
         }

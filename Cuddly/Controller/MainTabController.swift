@@ -30,8 +30,6 @@ class MainTabController: UITabBarController {
         configureViewControllers()
     
         fetchUser()
-        
-//        purchaseBarTest()
 
     }
     

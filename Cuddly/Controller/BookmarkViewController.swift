@@ -12,20 +12,9 @@ class BookmarkViewController: UIViewController {
     // MARK: - Properties
     
     var navigation: CustomNavigation!
-    var savedIndex: [Int] = [0, 2, 3]
+    var bookmarks = [Recipe]()
     
     @IBOutlet weak var bookmarkTableView: UITableView!
-    
-    var bookmarks: [Recipe?] {
-        let recipes = Recipe.fetchRecipes()
-        var bookmarks: [Recipe?] = []
-    
-        for i in savedIndex {
-            bookmarks.append(recipes[i])
-        }
-
-        return bookmarks
-    }
     
     
     // MARK: - LifeCycle
@@ -35,7 +24,21 @@ class BookmarkViewController: UIViewController {
 
         configureNavigation()
     
+        fetchBookmark()
+        
         setDelegate()
+    }
+    
+    // MARK: - API
+    
+    func fetchBookmark() {
+        BookmarkService.shared.fetchBookmarks(completion: { id in
+            // user insert() for showing by recently added recipes.
+            if let recipe = Recipe.findRecipe(with: id) {
+                self.bookmarks.insert(recipe, at: 0)
+                self.bookmarkTableView.reloadData()
+            }
+        })
     }
     
     // MARK: - Helpers
@@ -56,6 +59,7 @@ class BookmarkViewController: UIViewController {
 
 
 // MARK: - Extension TableView Delegate
+
 extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,10 +69,9 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: BookmarkCell.id, for: indexPath) as! BookmarkCell
-        
-        if let recipe = bookmarks[indexPath.row] {
-            cell.configure(with: recipe)
-        }
+
+        let recipe = bookmarks[indexPath.row]
+        cell.configure(with: recipe)
         return cell
     }
     
@@ -80,5 +83,23 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
         vc.recipe = bookmarks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            
+            let id = bookmarks[indexPath.row].recipeID
+            
+            bookmarks.remove(at: indexPath.row)
+            BookmarkService.shared.delete(id)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
     }
 }

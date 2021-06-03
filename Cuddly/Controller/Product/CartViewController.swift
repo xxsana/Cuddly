@@ -11,7 +11,7 @@ class CartViewController: UIViewController {
 
     // MARK: - Properties
 
-    var cart = Cart.sharedCart
+    var cart = [CartItem]()
     var navigation: CustomNavigation!
     
     @IBOutlet weak var selectButton: UIButton!
@@ -26,6 +26,8 @@ class CartViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavigation()
+        
+        fetchCart()
         
         hideTabBar()
      
@@ -63,7 +65,15 @@ class CartViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: - API
     
+    func fetchCart() {
+        CartService.shared.fetchCart(completion: { dictionary in
+            // user insert() for showing by recent added products
+            self.cart.insert(CartItem(dictionary: dictionary), at: 0)
+            self.cartTableView.reloadData()
+        })
+    }
     
     // MARK: - Helper
     

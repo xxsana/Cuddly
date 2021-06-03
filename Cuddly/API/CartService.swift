@@ -8,9 +8,9 @@
 import Foundation
 import Firebase
 
-struct ProductService {
+struct CartService {
     
-    static let shared = ProductService()
+    static let shared = CartService()
 
     
     func uploadToCart(productID: String, count: Int, price: Int, completion: @escaping(Error?, DatabaseReference) -> Void) {
@@ -18,23 +18,22 @@ struct ProductService {
         
         let values = [K.Firebase.productID: productID,
                       K.Firebase.count: count,
-                      K.Firebase.price: price] as [String : Any]
+                      K.Firebase.price: price,
+                      K.Firebase.timestamp: Int(NSDate().timeIntervalSince1970)] as [String : Any]
         
-        
-        // save to static value
-        REF_USER_CART.child(uid).childByAutoId().updateChildValues(values, withCompletionBlock: completion)
+        let ref = REF_USERS.child(uid).child("cartItems").childByAutoId()
+        ref.updateChildValues(values, withCompletionBlock: completion)
     
     }
-
     
-    func fetchCart() {
+    func fetchCart(completion: @escaping([String : Any]) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        REF_USER_CART.child(uid).observe(.childAdded) { snapshot in
-            
+        let ref = REF_USERS.child(uid).child("cartItems")
+        ref.queryOrdered(byChild: K.Firebase.timestamp).observe(.childAdded) { snapshot in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
-            Cart.sharedCart.append(CartItem(dictionary: dictionary))
+            
+            completion(dictionary)
         }
     }
-    
 }

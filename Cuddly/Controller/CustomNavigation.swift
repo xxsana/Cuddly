@@ -7,15 +7,20 @@
 
 import UIKit
 
-protocol CustomNavigationDelegate: UIViewController {
+protocol LogoutDelegate: UIViewController {
     func handleLogOut()
+}
+
+protocol BookmarkDelegate: UIViewController {
+    func addToBookmark()
 }
 
 class CustomNavigation {
     
     // MARK: - Properties
     
-    var delegate: CustomNavigationDelegate?
+    var logoutDelegate: LogoutDelegate?
+    var bookmarkDelegate: BookmarkDelegate?
     
     let height = 88
     var width: Int {
@@ -172,7 +177,7 @@ class CustomNavigation {
     }
     
     @objc func bookmark() {
-        print("DEBUG: bookmark clicked")
+        bookmarkDelegate?.addToBookmark()
     }
 
     @objc func cart() {
@@ -188,11 +193,11 @@ class CustomNavigation {
         // check once to user by alert 
         let alertVC = UIAlertController(title: nil, message: "로그아웃 하시겠습니까?", preferredStyle: .actionSheet)
         alertVC.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { _ in
-            self.delegate?.handleLogOut()
+            self.logoutDelegate?.handleLogOut()
         }))
         alertVC.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         
-        delegate?.present(alertVC, animated: true, completion: nil)
+        logoutDelegate?.present(alertVC, animated: true, completion: nil)
 
     }
 

@@ -62,7 +62,7 @@ class ProductMainViewController: UIViewController {
             return
             
         } else {
-            ProductService.shared.uploadToCart(productID: id, count: count, price: price) { error, ref in
+            CartService.shared.uploadToCart(productID: id, count: count, price: price) { error, ref in
                 print("DEBUG: saved product to cart")
                 // alert "장바구니에 담겼습니다"
                 let alertVC = UIAlertController(title: "장바구니에 담겼습니다!", message: nil, preferredStyle: .alert)

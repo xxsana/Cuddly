@@ -83,9 +83,4 @@ extension RegisterViewController: UITextFieldDelegate {
         
         return true
     }
-    
-    // for the keyboard go away when user touches outside
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 }

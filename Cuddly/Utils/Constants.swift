@@ -11,8 +11,6 @@ import Firebase
 // Property to access Database
 let DB_REF = Database.database().reference()
 let REF_USERS = DB_REF.child("users")
-let REF_USER_CART = DB_REF.child("user_cartItems")
-let REF_USER_ADDRESS = DB_REF.child("user_address")
 
 
 struct K {
@@ -65,6 +63,8 @@ struct K {
         static let productID = "productID"
         static let count = "count"
         static let price = "price"
+        static let timestamp = "timestamp"
         
+        static let recipeID = "recipeID"
     }
 }
