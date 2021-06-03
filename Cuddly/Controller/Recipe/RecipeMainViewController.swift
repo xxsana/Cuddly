@@ -28,7 +28,7 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     let toolItem03Bookmark = CustomTabBarItem()
     let toolItem04LinkedProduct = CustomTabBarItem()
 
-    var recipe: Recipe! = nil       //okay with forced unwrap?
+    var recipe: Recipe! = nil
     
     
     // MARK: - LifeCycle

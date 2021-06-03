@@ -19,6 +19,8 @@
 		4947C38A265D27C40017B482 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C389265D27C40017B482 /* OrderViewController.swift */; };
 		4947C38C265E61B80017B482 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C38B265E61B80017B482 /* OrderCell.swift */; };
 		494F266B2666774E000F23B9 /* ImageNamingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266A2666774D000F23B9 /* ImageNamingHelper.swift */; };
+		494F266D26667FF4000F23B9 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266C26667FF4000F23B9 /* BookmarkViewController.swift */; };
+		494F266F266682DC000F23B9 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266E266682DC000F23B9 /* BookmarkCell.swift */; };
 		495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigation.swift */; };
 		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
 		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
@@ -71,6 +73,8 @@
 		4947C389265D27C40017B482 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		4947C38B265E61B80017B482 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		494F266A2666774D000F23B9 /* ImageNamingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNamingHelper.swift; sourceTree = "<group>"; };
+		494F266C26667FF4000F23B9 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		494F266E266682DC000F23B9 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		495457D5261FF70C0011EE22 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
 		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				49EA210B2659282700840179 /* ProductMainCellThree.xib */,
 				49B84703265BC423000EE75F /* CartCell.swift */,
 				4947C38B265E61B80017B482 /* OrderCell.swift */,
+				494F266E266682DC000F23B9 /* BookmarkCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				495457D5261FF70C0011EE22 /* CustomNavigation.swift */,
 				493278AC265192DA003C7936 /* MainTabController.swift */,
 				493278AA26518C86003C7936 /* UserInfoViewController.swift */,
+				494F266C26667FF4000F23B9 /* BookmarkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +439,8 @@
 				496C33A2260DD2D300B2E35B /* RecipeMainViewController.swift in Sources */,
 				496C33CF26109B0F00B2E35B /* Recipe.swift in Sources */,
 				4979C66426551D3800B3B84F /* ProductListViewController.swift in Sources */,
+				494F266D26667FF4000F23B9 /* BookmarkViewController.swift in Sources */,
+				494F266F266682DC000F23B9 /* BookmarkCell.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
 				49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */,
 				496C33DB26109B3400B2E35B /* Product.swift in Sources */,

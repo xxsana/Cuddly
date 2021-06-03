@@ -109,7 +109,7 @@ class MainTabController: UITabBarController {
         // set image and title
         self.tabItem01Home.setImageAndTitle(title: "홈", imageSystemName: "house", tag: 0)
         self.tabItem02Shop.setImageAndTitle(title: "마켓", imageSystemName: "bag", tag: 1)
-        self.tabItem03Bookmark.setImageAndTitle(title: "저장 목록", imageSystemName: "heart", tag: 2)
+        self.tabItem03Bookmark.setImageAndTitle(title: "북마크", imageSystemName: "heart", tag: 2)
         self.tabItem04User.setImageAndTitle(title: "내 정보", imageSystemName: "person.crop.rectangle", tag: 3)
         
         let items = [tabItem01Home, tabItem02Shop, tabItem03Bookmark, tabItem04User]

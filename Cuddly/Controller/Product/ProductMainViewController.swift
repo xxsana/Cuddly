@@ -87,9 +87,6 @@ class ProductMainViewController: UIViewController {
     }
     
     func configureNavigation() {
-        // change status bar color
-//        self.navigationController?.navigationBar.barStyle = .black
-        
         // create custom navigation
         navigation = CustomNavigation(superVC: self)
         navigation.initBackButton(showTab: true)

@@ -177,7 +177,8 @@ class CustomNavigation {
 
     @objc func cart() {
 
-        guard let vc = superVC.storyboard?.instantiateViewController(withIdentifier: K.id.cartVC) else { return }
+        guard let vc = superVC.storyboard?.instantiateViewController(withIdentifier: K.id.cartVC) as? CartViewController else { return }
+        
         self.superVC.navigationController?.pushViewController(vc, animated: true)
         
     }
