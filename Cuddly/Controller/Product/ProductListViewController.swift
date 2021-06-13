@@ -15,6 +15,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     let allProducts = Product.fetchProducts()
     
     var navigation: CustomNavigation!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - LifeCycle
@@ -24,10 +25,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
 
         configureCustomNav()
         
-        setDelegate()
-        
-        // register cell to collection view
-        collectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: K.id.productListCell)
+        setDelegateAndRegisterCell()
 
         setCollectionViewLayout()
     }
@@ -61,9 +59,12 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         navigation.initCartButton()
     }
     
-    func setDelegate() {
+    func setDelegateAndRegisterCell() {
         collectionView.delegate = self
         collectionView.dataSource = self
+           
+        // register cell to collection view
+        collectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: K.id.productListCell)
     }
     
     func setCollectionViewLayout() {

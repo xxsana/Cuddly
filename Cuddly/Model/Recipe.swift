@@ -36,7 +36,6 @@ struct Recipe {
     let target: Target              //급여가능대상
     let caution: String?            //주의사항
     let steps: [Step]               //제조과정
-    let linkedProductsID: [String]? //관련제품
     let recipeID: String
     
     static func findRecipe(with recipeID: String) -> Recipe? {
@@ -84,7 +83,6 @@ struct Recipe {
                                      description: "거품 위 캐롭파우더를 솔솔 뿌려주면 완성!",
                                      image: UIImage(named: "puppuchi_5"))
                         ],
-                        linkedProductsID: ["KLAMI880"],
                         recipeID: "puppuchi")
         
         let r2 = Recipe(title: "고구마 치즈볼",
@@ -130,7 +128,6 @@ struct Recipe {
                                      title: "완성!",
                                      description: "꼭 냉동, 냉장보관 해주세요",
                                      image: UIImage(named: "swtpocheese_7"))],
-                        linkedProductsID: ["KITDR500"],
                         recipeID: "swtpocheese")
         
         let r3 = Recipe(title: "멍케잌",
@@ -174,7 +171,6 @@ struct Recipe {
                                      title: "완성!",
                                      description: "맛있게 먹는 강아지를 보며 흐뭇해해요",
                                      image: UIImage(named: "facecake_7"))],
-                        linkedProductsID: ["KLAMI880"],
                         recipeID: "facecake")
         
         let r4 = Recipe(title: "호박요거트빵",
@@ -214,7 +210,6 @@ struct Recipe {
                                      title: "요거트 섞기",
                                      description: "플레인 요거트가 잘 스며들도록 골고루 부어주고 블루베리를 올려 플레이팅 해 주면 완성!",
                                      image: UIImage(named: "yogubang_6"))],
-                        linkedProductsID: ["KLAMI880"],
                         recipeID: "yogubang")
         
         let r5 = Recipe(title: "단호박전",
@@ -249,7 +244,6 @@ struct Recipe {
                                      title: "완성",
                                      description: "예쁜 그릇에 담아주면 완성!",
                                      image: UIImage(named: "swpujeon_5"))],
-                        linkedProductsID: nil,
                         recipeID: "swpujeon")
         
         
@@ -285,7 +279,6 @@ struct Recipe {
                                      title: "식히기",
                                      description: "잘 구워진 쿠키를 식혀주세요.",
                                      image: UIImage(named: "nutcookie_5"))],
-                        linkedProductsID: ["SHBLE490"],
                         recipeID: "nutcookie")
         
         let r7 = Recipe(title: "고양이 츄르",
@@ -327,7 +320,6 @@ struct Recipe {
                                      title: "보관하기",
                                      description: "완성! 그대로 보관하셔도 되고 츄르 포장스틱에 소분하셔도 됩니다.",
                                      image: UIImage(named: "churu_6"))],
-                        linkedProductsID: ["KLAMI880", "SHBLE490"],
                         recipeID: "churu")
         
         recipes.append(r1)

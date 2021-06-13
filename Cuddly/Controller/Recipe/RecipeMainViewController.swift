@@ -36,15 +36,13 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigation controller
-        navigation = CustomNavigation(superVC: self)
-        navigation.initBackButton(tintWhite: true)
-        navigation.initShareAndBookmarkButton(tintWhite: true)
+        configureNavigation()
         
         setDelegate()
     
         setRecipeValue()
-    
+        
+        // 삭제예정
         // line UI
         let lineViewAbove = UIView(frame: CGRect(x: 19, y: 560, width: 376, height: 1.2))
         lineViewAbove.layer.borderWidth = 374
@@ -95,7 +93,6 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-
     }
     
     
@@ -120,6 +117,12 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     // MARK: - Helpers
+    
+    func configureNavigation() {
+        navigation = CustomNavigation(superVC: self)
+        navigation.initBackButton(tintWhite: true)
+        navigation.initShareAndBookmarkButton(tintWhite: true)
+    }
     
     func setDelegate() {
         ingredientTableView.dataSource = self

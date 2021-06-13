@@ -66,8 +66,7 @@ class OrderViewController: UIViewController {
             guard let name = nameField.text,
                   let phone = phoneField.text,
                   let basicAddress = basicAddressField.text,
-                  let detailAddress = detailAddressField.text,
-                  let memo = orderMemo.text else { return }
+                  let detailAddress = detailAddressField.text else { return }
             
             let addressDict = [K.Firebase.realName : name,
                                K.Firebase.phoneNumber : phone,

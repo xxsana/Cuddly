@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		257D9E6E89EFD7315C930699 /* Pods_Cuddly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92A7692F82EA2ADCBE95F58 /* Pods_Cuddly.framework */; };
+		49220F8B2675E9C5009F6E6A /* ImageNamingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49220F8A2675E9C5009F6E6A /* ImageNamingHelper.swift */; };
 		492EC1FD264B82A100AA391B /* RecipeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */; };
 		492EC1FF264B8F8000AA391B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC1FE264B8F8000AA391B /* Constants.swift */; };
 		4932789C264EDF3A003C7936 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932789B264EDF3A003C7936 /* AuthService.swift */; };
@@ -18,12 +19,9 @@
 		4947C388265D259D0017B482 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C387265D259D0017B482 /* UserDefaultsService.swift */; };
 		4947C38A265D27C40017B482 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C389265D27C40017B482 /* OrderViewController.swift */; };
 		4947C38C265E61B80017B482 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947C38B265E61B80017B482 /* OrderCell.swift */; };
-		494F266B2666774E000F23B9 /* ImageNamingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266A2666774D000F23B9 /* ImageNamingHelper.swift */; };
 		494F266D26667FF4000F23B9 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266C26667FF4000F23B9 /* BookmarkViewController.swift */; };
 		494F266F266682DC000F23B9 /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F266E266682DC000F23B9 /* BookmarkCell.swift */; };
 		495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457D5261FF70C0011EE22 /* CustomNavigation.swift */; };
-		495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457EF2620376E0011EE22 /* LinkedProductViewController.swift */; };
-		495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495457F2262038B60011EE22 /* UIView+Snapshot.swift */; };
 		496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3383260C9E5E00B2E35B /* AppDelegate.swift */; };
 		496C3386260C9E5E00B2E35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3385260C9E5E00B2E35B /* SceneDelegate.swift */; };
 		496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */; };
@@ -63,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		1927082CE8D5FAD6C739AEFE /* Pods-Cuddly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuddly.debug.xcconfig"; path = "Target Support Files/Pods-Cuddly/Pods-Cuddly.debug.xcconfig"; sourceTree = "<group>"; };
+		49220F8A2675E9C5009F6E6A /* ImageNamingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNamingHelper.swift; sourceTree = "<group>"; };
 		492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
 		492EC1FE264B8F8000AA391B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4932789B264EDF3A003C7936 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -73,12 +72,9 @@
 		4947C387265D259D0017B482 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		4947C389265D27C40017B482 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		4947C38B265E61B80017B482 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
-		494F266A2666774D000F23B9 /* ImageNamingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNamingHelper.swift; sourceTree = "<group>"; };
 		494F266C26667FF4000F23B9 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		494F266E266682DC000F23B9 /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		495457D5261FF70C0011EE22 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
-		495457EF2620376E0011EE22 /* LinkedProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedProductViewController.swift; sourceTree = "<group>"; };
-		495457F2262038B60011EE22 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		496C3380260C9E5E00B2E35B /* Cuddly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuddly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496C3383260C9E5E00B2E35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496C3385260C9E5E00B2E35B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,7 +186,6 @@
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
 				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
 				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
-				495457EF2620376E0011EE22 /* LinkedProductViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -284,8 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				492EC1FE264B8F8000AA391B /* Constants.swift */,
-				495457F2262038B60011EE22 /* UIView+Snapshot.swift */,
-				494F266A2666774D000F23B9 /* ImageNamingHelper.swift */,
+				49220F8A2675E9C5009F6E6A /* ImageNamingHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -430,11 +424,9 @@
 				497E39B42668BF5300A7A600 /* BookmarkService.swift in Sources */,
 				49B84702265BC1AE000EE75F /* CartViewController.swift in Sources */,
 				4947C38C265E61B80017B482 /* OrderCell.swift in Sources */,
-				495457F02620376E0011EE22 /* LinkedProductViewController.swift in Sources */,
 				4979C667265523DD00B3B84F /* ProductListCell.swift in Sources */,
 				496C3388260C9E5E00B2E35B /* RecipeListViewController.swift in Sources */,
 				49B84704265BC423000EE75F /* CartCell.swift in Sources */,
-				495457F3262038B60011EE22 /* UIView+Snapshot.swift in Sources */,
 				49EA2104265927FF00840179 /* ProductMainCellOne.swift in Sources */,
 				495457D6261FF70C0011EE22 /* CustomNavigation.swift in Sources */,
 				49B84707265C1D72000EE75F /* Cart.swift in Sources */,
@@ -447,11 +439,11 @@
 				494F266F266682DC000F23B9 /* BookmarkCell.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
 				49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */,
+				49220F8B2675E9C5009F6E6A /* ImageNamingHelper.swift in Sources */,
 				496C33DB26109B3400B2E35B /* Product.swift in Sources */,
 				49F28F48264D6DA9005FDF93 /* RecipeListCell.swift in Sources */,
 				492EC1FD264B82A100AA391B /* RecipeStepViewController.swift in Sources */,
 				49D2E7D92654389100D4B985 /* UserCell.swift in Sources */,
-				494F266B2666774E000F23B9 /* ImageNamingHelper.swift in Sources */,
 				496C33D826109B2700B2E35B /* Comment.swift in Sources */,
 				4979C66C2657A1D100B3B84F /* ProductMainViewController.swift in Sources */,
 				493278A926515265003C7936 /* UserService.swift in Sources */,

@@ -34,18 +34,23 @@ struct K {
     
     // view controller identifier
     struct id {
+        static let navigation = "NavigationController"
+        static let customTabBar = "CustomTabBarController"
+        
         static let recipeStepVC = "RecipeStepViewController"
         static let recipeMainVC = "RecipeMainViewController"
         static let recipeStepCell = "StepCell"
         static let recipeListCell = "RecipeListCell"
-        static let navigation = "NavigationController"
-        static let customTabBar = "CustomTabBarController"
+        static let linkedProducts = "LinkedProductViewController"
+       
         static let logInVC = "LogInViewController"
         static let userNavigation = "UserNav"
         static let userCell = "UserCell"
+        
         static let productListCell = "ProductListCell"
         static let productMainVC = "ProductMainViewController"
         static let productImageCell = "ProductImageCell"
+        
         static let cartVC = "CartViewController"
         static let cartCell = "CartCell"
         static let orderVC = "OrderViewController"
