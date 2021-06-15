@@ -37,6 +37,8 @@
 		4979C668265523DD00B3B84F /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4979C666265523DD00B3B84F /* ProductListCell.xib */; };
 		4979C66C2657A1D100B3B84F /* ProductMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4979C66B2657A1D100B3B84F /* ProductMainViewController.swift */; };
 		497E39B42668BF5300A7A600 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E39B32668BF5300A7A600 /* BookmarkService.swift */; };
+		499DB0742678ABA900020AD7 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DB0722678ABA800020AD7 /* IngredientCell.swift */; };
+		499DB0752678ABA900020AD7 /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499DB0732678ABA900020AD7 /* IngredientCell.xib */; };
 		49B84702265BC1AE000EE75F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B84701265BC1AE000EE75F /* CartViewController.swift */; };
 		49B84704265BC423000EE75F /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B84703265BC423000EE75F /* CartCell.swift */; };
 		49B84707265C1D72000EE75F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B84706265C1D71000EE75F /* Cart.swift */; };
@@ -92,6 +94,8 @@
 		4979C666265523DD00B3B84F /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
 		4979C66B2657A1D100B3B84F /* ProductMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainViewController.swift; sourceTree = "<group>"; };
 		497E39B32668BF5300A7A600 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		499DB0722678ABA800020AD7 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		499DB0732678ABA900020AD7 /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		49B84701265BC1AE000EE75F /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		49B84703265BC423000EE75F /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		49B84706265C1D71000EE75F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				49B84703265BC423000EE75F /* CartCell.swift */,
 				4947C38B265E61B80017B482 /* OrderCell.swift */,
 				494F266E266682DC000F23B9 /* BookmarkCell.swift */,
+				499DB0722678ABA800020AD7 /* IngredientCell.swift */,
+				499DB0732678ABA900020AD7 /* IngredientCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				496C3390260C9E6400B2E35B /* LaunchScreen.storyboard in Resources */,
 				4979C668265523DD00B3B84F /* ProductListCell.xib in Resources */,
 				49F28F23264BECE3005FDF93 /* SF-Pro-Display-Heavy.otf in Resources */,
+				499DB0752678ABA900020AD7 /* IngredientCell.xib in Resources */,
 				49EA2105265927FF00840179 /* ProductMainCellOne.xib in Resources */,
 				49EA21092659281500840179 /* ProductMainCellTwo.xib in Resources */,
 				49F28F49264D6DA9005FDF93 /* RecipeListCell.xib in Resources */,
@@ -419,6 +426,7 @@
 				49EA21082659281500840179 /* ProductMainCellTwo.swift in Sources */,
 				49C3673B261B1C32000D5BCD /* CustomTabBarItem.swift in Sources */,
 				4932789C264EDF3A003C7936 /* AuthService.swift in Sources */,
+				499DB0742678ABA900020AD7 /* IngredientCell.swift in Sources */,
 				49F28F4D264D90DF005FDF93 /* RegisterViewController.swift in Sources */,
 				49EA210C2659282700840179 /* ProductMainCellThree.swift in Sources */,
 				497E39B42668BF5300A7A600 /* BookmarkService.swift in Sources */,

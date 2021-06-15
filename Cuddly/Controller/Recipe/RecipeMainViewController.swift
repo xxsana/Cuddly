@@ -11,13 +11,15 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK: - Properties
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+//    @IBOutlet weak var infoStackView: UIStackView!
+//    @IBOutlet weak var toolStackView: UIStackView!
+    @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var effectLabel: UILabel!
-    @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var toolsLabel: UILabel!
     
     let toolBar = UIView()
@@ -35,26 +37,11 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureNavigation()
-        
-        setDelegate()
     
+        configureNavigation()
+        setDelegate()
         setRecipeValue()
         
-        // 삭제예정
-        // line UI
-        let lineViewAbove = UIView(frame: CGRect(x: 19, y: 560, width: 376, height: 1.2))
-        lineViewAbove.layer.borderWidth = 374
-        lineViewAbove.layer.borderColor = CGColor.init(red: 0.8627, green: 0.8627, blue: 0.8627, alpha: 1)
-        
-        let lineViewBelow = UIView(frame: CGRect(x: 19, y: 648, width: 376, height: 1.2))
-        lineViewBelow.layer.borderWidth = 374
-        lineViewBelow.layer.borderColor = CGColor.init(red: 0.8627, green: 0.8627, blue: 0.8627, alpha: 1)
-        
-        self.view.addSubview(lineViewAbove)
-        self.view.addSubview(lineViewBelow)
-
     }
     
     
@@ -104,17 +91,18 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? IngredientTableViewCell
-        else {
-            print("failed to create table view cell")
-            let cell = IngredientTableViewCell(style: .default, reuseIdentifier: "IngredientCell")
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as! IngredientTableViewCell
         let ingredient = recipe.ingredients[indexPath.row]
         cell.name.text = ingredient.name
         cell.weight.text = ingredient.weight
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     
     // MARK: - Helpers
     
@@ -131,9 +119,6 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setRecipeValue() {
-        titleLabel.text = recipe.title
-        subtitleLabel.text = recipe.subtitle
-        mainImageView.image = recipe.image
         
         var targetString: String {
             switch recipe.target {
@@ -145,18 +130,26 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
                 return "강아지, 고양이 함께 먹어요"
             }
         }
+        
+       var toolString: String {
+           if let unwrappedTools = recipe.tools {
+               return unwrappedTools.joined(separator: ", ")
+           } else {
+               return "특별히 필요한 건 없어요"
+           }
+       }
+        
+        mainImageView.image = recipe.image
+        subtitleLabel.text = recipe.subtitle
+        titleLabel.text = recipe.title
         targetLabel.text = targetString
         timeLabel.text = recipe.time
         effectLabel.text = recipe.effect
-        var toolString: String {
-            if let unwrappedTools = recipe.tools {
-                return unwrappedTools.joined(separator: ", ")
-            } else {
-                return "특별히 필요한 건 없어요"
-            }
-        }
         toolsLabel.text = toolString
+        
     }
+
+    
 }
 
 class IngredientTableViewCell: UITableViewCell {
