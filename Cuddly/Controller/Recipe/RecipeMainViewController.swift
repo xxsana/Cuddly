@@ -73,9 +73,6 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
         let vc = RecipeStepViewController()
         // pass value
         vc.recipe = recipe
-        vc.recipeTitle = recipe.title
-        vc.recipeSteps = recipe.steps
-        vc.recipeCaution = recipe.caution
 
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .fullScreen

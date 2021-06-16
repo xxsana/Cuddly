@@ -127,7 +127,7 @@ struct Recipe {
                                 Step(number: 8,
                                      title: "완성!",
                                      description: "꼭 냉동, 냉장보관 해주세요",
-                                     image: UIImage(named: "swtpocheese_7"))],
+                                     image: UIImage(named: "swtpocheese_8"))],
                         recipeID: "swtpocheese")
         
         let r3 = Recipe(title: "멍케잌",

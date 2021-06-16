@@ -1339,7 +1339,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ula-bN-MIh">
-                                                    <rect key="frame" x="0.0" y="5" width="211" height="18"/>
+                                                    <rect key="frame" x="0.0" y="5" width="241" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="241" id="D8E-ee-qp1"/>
                                                         <constraint firstAttribute="height" constant="18" id="UUv-qH-Yte"/>
@@ -1349,9 +1349,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weight" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqI-1h-hfR">
-                                                    <rect key="frame" x="214" y="5" width="100" height="18"/>
+                                                    <rect key="frame" x="244" y="5" width="70" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="fxY-yZ-n2v"/>
                                                         <constraint firstAttribute="height" constant="18" id="jzi-Sg-KKB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>

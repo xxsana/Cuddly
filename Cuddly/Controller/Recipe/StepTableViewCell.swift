@@ -15,7 +15,8 @@ class StepTableViewCell: UITableViewCell {
     var stepImageView = UIImageView()
     var descLabel = UILabel()
     
-    let leadingSpace: CGFloat = 15.0
+    let leadingConstraint: CGFloat = 14.0
+    let titleTopConstraint: CGFloat = 20.0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -47,7 +48,21 @@ class StepTableViewCell: UITableViewCell {
         numberImageView.image = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 15, weight: .semibold))
         stepTitle.text = step.title
         stepImageView.image = step.image
-        descLabel.text = step.description
+//        descLabel.text = step.description
+        
+        let attributedString = NSMutableAttributedString(string: step.description)
+
+        // *** Create instance of `NSMutableParagraphStyle`
+        let paragraphStyle = NSMutableParagraphStyle()
+
+        // *** set LineSpacing property in points ***
+        paragraphStyle.lineSpacing = 5 // Whatever line spacing you want in points
+
+        // *** Apply attribute to string ***
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+
+        // *** Set Attributed String to your label ***
+        descLabel.attributedText = attributedString
     }
   
     func configureStepLabel() {
@@ -58,8 +73,8 @@ class StepTableViewCell: UITableViewCell {
     
     func setStepLabelConstraints() {
         stepLabel.translatesAutoresizingMaskIntoConstraints = false
-        stepLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15.0).isActive = true
-        stepLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingSpace).isActive = true
+        stepLabel.topAnchor.constraint(equalTo: topAnchor, constant: titleTopConstraint).isActive = true
+        stepLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
         stepLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
     }
     
@@ -69,9 +84,9 @@ class StepTableViewCell: UITableViewCell {
     
     func setNumberImageViewConstraints() {
         numberImageView.translatesAutoresizingMaskIntoConstraints = false
-        numberImageView.topAnchor.constraint(equalTo: topAnchor, constant: 15.0).isActive = true
+        numberImageView.topAnchor.constraint(equalTo: topAnchor, constant: titleTopConstraint).isActive = true
         numberImageView.leadingAnchor.constraint(equalTo: stepLabel.trailingAnchor, constant: 2).isActive = true
-        numberImageView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+//        numberImageView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
     }
     
     func configureTitleLabel() {
@@ -80,19 +95,26 @@ class StepTableViewCell: UITableViewCell {
     
     func setTitleConstraints() {
         stepTitle.translatesAutoresizingMaskIntoConstraints = false
-        stepTitle.topAnchor.constraint(equalTo: topAnchor, constant: 15.0).isActive = true
+        stepTitle.topAnchor.constraint(equalTo: topAnchor, constant: titleTopConstraint).isActive = true
         stepTitle.leadingAnchor.constraint(equalTo: numberImageView.trailingAnchor, constant: 6.0).isActive = true
         stepTitle.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
     }
     
     func setImageConstraints() {
+        
+        // round corner
+        stepImageView.layer.cornerRadius = 10.5
+        stepImageView.clipsToBounds = true
+        
         stepImageView.translatesAutoresizingMaskIntoConstraints = false
-        stepImageView.topAnchor.constraint(equalTo: stepTitle.bottomAnchor, constant: 10.0).isActive = true
-        stepImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingSpace).isActive = true
+        stepImageView.topAnchor.constraint(equalTo: stepTitle.bottomAnchor, constant: 11.0).isActive = true
+        stepImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
         stepImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
         // deal with ratio
-        stepImageView.heightAnchor.constraint(equalToConstant:195).isActive = true
-        stepImageView.widthAnchor.constraint(equalTo:stepImageView.heightAnchor, multiplier: 374/195).isActive = true
+        stepImageView.widthAnchor.constraint(equalToConstant: frame.width - 2*leadingConstraint).isActive = true
+        stepImageView.heightAnchor.constraint(equalTo:stepImageView.widthAnchor, multiplier: 0.6).isActive = true
+        
     }
     
     func configureDescLabel() {
@@ -105,9 +127,9 @@ class StepTableViewCell: UITableViewCell {
     func setDescLabelConstraint() {
         descLabel.translatesAutoresizingMaskIntoConstraints = false
         descLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        descLabel.topAnchor.constraint(equalTo: stepImageView.bottomAnchor, constant: 10.0).isActive = true
-        descLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingSpace).isActive = true
-        descLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -leadingSpace).isActive = true
-        descLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20.0).isActive = true
+        descLabel.topAnchor.constraint(equalTo: stepImageView.bottomAnchor, constant: 11.0).isActive = true
+        descLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
+        descLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -leadingConstraint).isActive = true
+        descLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -22.0).isActive = true
     }
 }
