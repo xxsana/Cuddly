@@ -24,6 +24,7 @@ class CartCell: UITableViewCell {
     var selectItem: (() -> ())?
     var unselectItem: (() -> ())?
     
+    static let id = "CartCell"
     
     // MARK: - LifeCycle
     override func awakeFromNib() {

@@ -45,7 +45,7 @@ class CustomTabBarItem: UIButton {
         // title
         self.setTitle(title, for: .normal)
         // font and color
-        self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 13)
+        self.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 12)
         self.setTitleColor(.black, for: .normal)
         
         // image

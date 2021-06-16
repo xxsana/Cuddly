@@ -9,9 +9,14 @@ import UIKit
 
 class RecipeStepViewController: UIViewController, BookmarkDelegate {
 
+    // MARK: - Properties
+    
     var navigation: CustomNavigation!
     var tableView = UITableView()
     var recipe: Recipe!
+    
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,7 @@ class RecipeStepViewController: UIViewController, BookmarkDelegate {
         // table view setting
         configureTableView()
     }
+    
 
     // MARK: - API
     
@@ -42,6 +48,9 @@ class RecipeStepViewController: UIViewController, BookmarkDelegate {
         }
     }
     
+    
+    // MARK: - Helpers
+    
     func configureTableView() {
 
         self.view.addSubview(tableView)
@@ -54,7 +63,7 @@ class RecipeStepViewController: UIViewController, BookmarkDelegate {
         tableView.estimatedRowHeight = 300
         
         // register cells
-        tableView.register(StepTableViewCell.self, forCellReuseIdentifier: K.id.recipeStepCell)
+        tableView.register(RecipeStepCell.self, forCellReuseIdentifier: RecipeStepCell.id)
         
         // set constraints
         pin()
@@ -73,8 +82,10 @@ class RecipeStepViewController: UIViewController, BookmarkDelegate {
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
             tableView.topAnchor.constraint(equalTo: navigation.csNavigationBar.bottomAnchor, constant: 4.0).isActive = true
         }
-
 }
+
+
+// MARK: - Table View Extension
 
 extension RecipeStepViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,7 +94,7 @@ extension RecipeStepViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.id.recipeStepCell) as! StepTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecipeStepCell.id) as! RecipeStepCell
         let step = recipe.steps[indexPath.row]
         cell.set(step: step)
         cell.selectionStyle = .none

@@ -13,8 +13,8 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     // MARK: - Properties
     
     let allProducts = Product.fetchProducts()
-    
     var navigation: CustomNavigation!
+    let cellRatio: CGFloat = 263 / 222      // height / width
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -36,9 +36,8 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         return allProducts.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.id.productListCell, for: indexPath) as! ProductListCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.id, for: indexPath) as! ProductListCell
         cell.configure(with: allProducts[indexPath.row])
         
         return cell
@@ -55,7 +54,7 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
     func configureCustomNav() {
         self.navigationController?.navigationBar.isHidden = true
         navigation = CustomNavigation(superVC: self)
-        navigation.setTitle(as: "CuddlyMarket")
+        navigation.setTitle(as: "CuddlyMarket", withLogo: true)
         navigation.initCartButton()
     }
     
@@ -64,13 +63,13 @@ class ProductListViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.dataSource = self
            
         // register cell to collection view
-        collectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: K.id.productListCell)
+        collectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: ProductListCell.id)
     }
     
     func setCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        let width = collectionView.frame.width / 2 - 5
-        let height = width * 1.23
+        let width = collectionView.frame.width / 2
+        let height = width * cellRatio
         layout.itemSize = CGSize(width: width, height: height)
         collectionView.collectionViewLayout = layout
     }
@@ -84,19 +83,19 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
 
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2 - 5
-        let height = width * 1.23
+        let width = collectionView.frame.width / 2
+        let height = width * cellRatio
         return CGSize(width: width, height: height)
     }
     
     // vertical space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     
     // horizontal space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
 

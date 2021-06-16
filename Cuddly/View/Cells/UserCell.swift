@@ -13,6 +13,8 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var settingIcon: UIImageView!
     @IBOutlet weak var settingLabel: UILabel!
     
+    static let id = "UserCell"
+    
     // MARK: - Helpers
     func configure(_ icon: String, _ label: String) {
         settingIcon.image = UIImage(systemName: icon)

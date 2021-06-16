@@ -90,7 +90,7 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = infoTableVIew.dequeueReusableCell(withIdentifier: K.id.userCell, for: indexPath) as! UserCell
+        let cell = infoTableVIew.dequeueReusableCell(withIdentifier: UserCell.id, for: indexPath) as! UserCell
         let value = tableData[indexPath.row]
         cell.configure(value.icon, value.label)
         
@@ -111,7 +111,7 @@ extension UserInfoViewController: LogoutDelegate {
         AuthService.shared.signOut()
         
         // reset user defaults
-        UserDefaults.standard.removeObject(forKey: K.userAddress)
+        UserDefaults.standard.removeObject(forKey: K.Firebase.userAddress)
         
         // pop up log in view controller
         guard let logInVC = self.storyboard?.instantiateViewController(withIdentifier: K.id.logInVC) else { return }

@@ -16,7 +16,7 @@ class RecipeListCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    static let identifier = K.id.recipeListCell
+    static let id = "RecipeListCell"
     
     
     // MARK: - LifeCycle
@@ -25,7 +25,7 @@ class RecipeListCell: UICollectionViewCell {
         
         super.awakeFromNib()
         
-        imageView.layer.cornerRadius = 8.0
+        imageView.layer.cornerRadius = 10.0
         imageView.clipsToBounds = true
 
      }
@@ -42,7 +42,7 @@ class RecipeListCell: UICollectionViewCell {
     
     // nib initialize
     static func nib() -> UINib {
-        return UINib(nibName: K.id.recipeListCell, bundle: nil)
+        return UINib(nibName: id, bundle: nil)
     }
     
 

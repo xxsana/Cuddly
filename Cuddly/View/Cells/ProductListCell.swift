@@ -15,7 +15,7 @@ class ProductListCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    static let identifier = K.id.productListCell
+    static let id = "ProductListCell"
     
     // MARK: - LifeCycle
     
@@ -23,7 +23,7 @@ class ProductListCell: UICollectionViewCell {
         
         super.awakeFromNib()
         
-        imageView.layer.cornerRadius = 8.0
+        imageView.layer.cornerRadius = 10.0
         imageView.clipsToBounds = true
 
      }
@@ -39,7 +39,7 @@ class ProductListCell: UICollectionViewCell {
     
     // nib initialize
     static func nib() -> UINib {
-        return UINib(nibName: K.id.productListCell, bundle: nil)
+        return UINib(nibName: id, bundle: nil)
     }
 
 }

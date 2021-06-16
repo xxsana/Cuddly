@@ -51,7 +51,7 @@
 		49EA210C2659282700840179 /* ProductMainCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA210A2659282700840179 /* ProductMainCellThree.swift */; };
 		49EA210D2659282700840179 /* ProductMainCellThree.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EA210B2659282700840179 /* ProductMainCellThree.xib */; };
 		49EA210F265A78A200840179 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA210E265A78A200840179 /* CartService.swift */; };
-		49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */; };
+		49F28F12264BA29E005FDF93 /* RecipeStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F10264BA29E005FDF93 /* RecipeStepCell.swift */; };
 		49F28F22264BECE1005FDF93 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */; };
 		49F28F23264BECE3005FDF93 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */; };
 		49F28F48264D6DA9005FDF93 /* RecipeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28F46264D6DA9005FDF93 /* RecipeListCell.swift */; };
@@ -108,7 +108,7 @@
 		49EA210A2659282700840179 /* ProductMainCellThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainCellThree.swift; sourceTree = "<group>"; };
 		49EA210B2659282700840179 /* ProductMainCellThree.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductMainCellThree.xib; sourceTree = "<group>"; };
 		49EA210E265A78A200840179 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
-		49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		49F28F10264BA29E005FDF93 /* RecipeStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepCell.swift; sourceTree = "<group>"; };
 		49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
 		49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		49F28F46264D6DA9005FDF93 /* RecipeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListCell.swift; sourceTree = "<group>"; };
@@ -144,9 +144,10 @@
 		49162B8226582E54008983C3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				49D2E7D82654389100D4B985 /* UserCell.swift */,
 				49F28F46264D6DA9005FDF93 /* RecipeListCell.swift */,
 				49F28F47264D6DA9005FDF93 /* RecipeListCell.xib */,
-				49D2E7D82654389100D4B985 /* UserCell.swift */,
+				49F28F10264BA29E005FDF93 /* RecipeStepCell.swift */,
 				4979C665265523DD00B3B84F /* ProductListCell.swift */,
 				4979C666265523DD00B3B84F /* ProductListCell.xib */,
 				49EA2102265927FF00840179 /* ProductMainCellOne.swift */,
@@ -191,7 +192,6 @@
 				496C3387260C9E5E00B2E35B /* RecipeListViewController.swift */,
 				496C33A1260DD2D300B2E35B /* RecipeMainViewController.swift */,
 				492EC1FC264B82A100AA391B /* RecipeStepViewController.swift */,
-				49F28F10264BA29E005FDF93 /* StepTableViewCell.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -217,19 +217,16 @@
 		496C3382260C9E5E00B2E35B /* Cuddly */ = {
 			isa = PBXGroup;
 			children = (
-				496C33CA26109AF800B2E35B /* Model */,
 				496C3383260C9E5E00B2E35B /* AppDelegate.swift */,
 				496C3385260C9E5E00B2E35B /* SceneDelegate.swift */,
+				496C33CA26109AF800B2E35B /* Model */,
 				496C3399260CB3BB00B2E35B /* View */,
 				496C339F260DD29A00B2E35B /* Controller */,
 				4932789A264EDF0A003C7936 /* API */,
 				49F28F4E264E54D5005FDF93 /* Utils */,
 				496C338C260C9E6400B2E35B /* Assets.xcassets */,
-				496C338E260C9E6400B2E35B /* LaunchScreen.storyboard */,
 				496C3391260C9E6400B2E35B /* Info.plist */,
 				49F28F4F264E726B005FDF93 /* GoogleService-Info.plist */,
-				49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */,
-				49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Cuddly;
 			sourceTree = "<group>";
@@ -238,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				496C3389260C9E5E00B2E35B /* Main.storyboard */,
+				496C338E260C9E6400B2E35B /* LaunchScreen.storyboard */,
 				49C3673A261B1C32000D5BCD /* CustomTabBarItem.swift */,
 				49162B8226582E54008983C3 /* Cells */,
 			);
@@ -247,13 +245,13 @@
 		496C339F260DD29A00B2E35B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4979C66226551D1300B3B84F /* Product */,
-				49327899264E8285003C7936 /* Authentication */,
-				4932789D264FA38C003C7936 /* Recipe */,
 				495457D5261FF70C0011EE22 /* CustomNavigation.swift */,
 				493278AC265192DA003C7936 /* MainTabController.swift */,
 				493278AA26518C86003C7936 /* UserInfoViewController.swift */,
 				494F266C26667FF4000F23B9 /* BookmarkViewController.swift */,
+				4979C66226551D1300B3B84F /* Product */,
+				49327899264E8285003C7936 /* Authentication */,
+				4932789D264FA38C003C7936 /* Recipe */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +284,8 @@
 			children = (
 				492EC1FE264B8F8000AA391B /* Constants.swift */,
 				49220F8A2675E9C5009F6E6A /* ImageNamingHelper.swift */,
+				49F28F20264BEC97005FDF93 /* SF-Pro-Display-Heavy.otf */,
+				49F28F21264BEC98005FDF93 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -446,7 +446,7 @@
 				494F266D26667FF4000F23B9 /* BookmarkViewController.swift in Sources */,
 				494F266F266682DC000F23B9 /* BookmarkCell.swift in Sources */,
 				496C3384260C9E5E00B2E35B /* AppDelegate.swift in Sources */,
-				49F28F12264BA29E005FDF93 /* StepTableViewCell.swift in Sources */,
+				49F28F12264BA29E005FDF93 /* RecipeStepCell.swift in Sources */,
 				49220F8B2675E9C5009F6E6A /* ImageNamingHelper.swift in Sources */,
 				496C33DB26109B3400B2E35B /* Product.swift in Sources */,
 				49F28F48264D6DA9005FDF93 /* RecipeListCell.swift in Sources */,

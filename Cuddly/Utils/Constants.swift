@@ -29,30 +29,18 @@ struct K {
     static let emptyCircle = "circle"
     static let checkedCircle = "checkmark.circle.fill"
     
-    static let userAddress = "user_address"
-    
-    
     // view controller identifier
     struct id {
         static let navigation = "NavigationController"
         static let customTabBar = "CustomTabBarController"
         
+        static let logInVC = "LogInViewController"
+        
         static let recipeStepVC = "RecipeStepViewController"
         static let recipeMainVC = "RecipeMainViewController"
-        static let recipeStepCell = "StepCell"
-        static let recipeListCell = "RecipeListCell"
-        static let linkedProducts = "LinkedProductViewController"
-       
-        static let logInVC = "LogInViewController"
-        static let userNavigation = "UserNav"
-        static let userCell = "UserCell"
         
-        static let productListCell = "ProductListCell"
         static let productMainVC = "ProductMainViewController"
-        static let productImageCell = "ProductImageCell"
-        
         static let cartVC = "CartViewController"
-        static let cartCell = "CartCell"
         static let orderVC = "OrderViewController"
     }
     
@@ -60,6 +48,7 @@ struct K {
         static let email = "email"
         static let username = "userName"
         
+        static let userAddress = "user_address"
         static let realName = "realName"
         static let phoneNumber = "phoneNumber"
         static let basicAddress = "basicAddress"

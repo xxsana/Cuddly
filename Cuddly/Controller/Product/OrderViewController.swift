@@ -99,7 +99,7 @@ class OrderViewController: UIViewController {
     func configureNavigation() {
         navigation = CustomNavigation(superVC: self)
         navigation.initBackButton()
-        navigation.setTitle(as: "결제")
+        navigation.setTitle(as: "결제", withLogo: true)
     }
     
     func setDelegate() {

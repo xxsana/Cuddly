@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bubble@1x.png",
+      "filename" : "bone @1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bubble@2x.png",
+      "filename" : "bone @2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bubble@3x.png",
+      "filename" : "bone @3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

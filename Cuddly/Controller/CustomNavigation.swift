@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Protocols
+
 protocol LogoutDelegate: UIViewController {
     func handleLogOut()
 }
@@ -53,7 +55,7 @@ class CustomNavigation {
     // MARK: - Title
     
     // add navigation title using given parameter
-    func setTitle(as title: String) {
+    func setTitle(as title: String, withLogo: Bool = false) {
         
         let titleLabel = UILabel()
         self.csNavigationBar.addSubview(titleLabel)
@@ -66,7 +68,26 @@ class CustomNavigation {
         titleLabel.text = title
         
         setTitleConstraints(titleLabel)
+        
+        if withLogo {
+            initLogoImageView()
+        }
+        
+        func initLogoImageView() {
+            
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "bone "))
+            
+            csNavigationBar.addSubview(imageView)
+            
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+            imageView.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -1.5).isActive = true
+            
+            imageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
+        }
     }
+   
     
     // MARK: - LeftButtonItems
     
@@ -93,6 +114,7 @@ class CustomNavigation {
             backButton.addTarget(self, action: #selector(goDismiss), for: .touchUpInside)
         }
     }
+
     
     
     // MARK: - RightButtonItems
@@ -102,10 +124,8 @@ class CustomNavigation {
         
         configureRightContainer()
         
-        let cartButton = UIButton(type: .system)
-        self.rightContainer.addSubview(cartButton)
-        
-        configureButtonItem(cartButton, imageName: "cart", tintWhite)
+        let cartButton = configureRightButton(image: "cart", tintWhite: tintWhite)
+
         setOneItemConstraint(item: cartButton)
         
         // add action method
@@ -118,14 +138,8 @@ class CustomNavigation {
 
         configureRightContainer()
         
-        let shareButton = UIButton(type: .system)
-        let bookmarkButton = UIButton(type: .system)
-        
-        self.rightContainer.addSubview(shareButton)
-        self.rightContainer.addSubview(bookmarkButton)
-        
-        configureButtonItem(shareButton, imageName: "paperplane", tintWhite)
-        configureButtonItem(bookmarkButton, imageName: "heart", tintWhite)
+        let shareButton = configureRightButton(image: "paperplane", tintWhite: tintWhite)
+        let bookmarkButton = configureRightButton(image: "heart", tintWhite: tintWhite)
         
         setTwoItemsConstraint(left: shareButton, right: bookmarkButton)
 
@@ -139,20 +153,25 @@ class CustomNavigation {
         
         configureRightContainer()
         
-        let cartButton = UIButton(type: .system)
-        let logOutButton = UIButton(type: .system)
-        
-        self.rightContainer.addSubview(cartButton)
-        self.rightContainer.addSubview(logOutButton)
-        
-        configureButtonItem(cartButton, imageName: "cart")
-        configureButtonItem(logOutButton, imageName: "power")
+        let cartButton = configureRightButton(image: "cart", tintWhite: false)
+        let logOutButton = configureRightButton(image: "power", tintWhite: false)
         
         setTwoItemsConstraint(left: cartButton, right: logOutButton)
         
         // add action method
         cartButton.addTarget(self, action: #selector(cart), for: .touchUpInside)
         logOutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
+    
+    func configureRightButton(image: String, tintWhite: Bool) -> UIButton {
+        
+        let button = UIButton(type: .system)
+        
+        self.rightContainer.addSubview(button)
+        
+        configureButtonItem(button, imageName: image, tintWhite)
+        
+        return button
     }
 
     
@@ -252,7 +271,7 @@ class CustomNavigation {
     private func setTitleConstraints(_ title: UILabel) {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.centerXAnchor.constraint(equalTo: csNavigationBar.centerXAnchor).isActive = true
-        title.bottomAnchor.constraint(equalTo: csNavigationBar.bottomAnchor, constant: -10).isActive = true
+        title.bottomAnchor.constraint(equalTo: csNavigationBar.bottomAnchor, constant: -8).isActive = true
     }
     
     private func setBackButtonConstraint(_ button: UIButton) {

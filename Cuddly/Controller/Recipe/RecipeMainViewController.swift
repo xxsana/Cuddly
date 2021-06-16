@@ -14,8 +14,6 @@ class RecipeMainViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var infoStackView: UIStackView!
-//    @IBOutlet weak var toolStackView: UIStackView!
     @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

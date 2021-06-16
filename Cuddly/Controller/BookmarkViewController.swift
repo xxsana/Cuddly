@@ -47,7 +47,7 @@ class BookmarkViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         navigation = CustomNavigation(superVC: self)
-        navigation.setTitle(as: "북마크 레시피")
+        navigation.setTitle(as: "북마크 레시피", withLogo: true)
         navigation.initCartButton()
     }
     

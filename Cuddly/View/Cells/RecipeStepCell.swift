@@ -7,8 +7,10 @@
 
 import UIKit
 
-class StepTableViewCell: UITableViewCell {
+class RecipeStepCell: UITableViewCell {
 
+    // MARK: - Properties
+    
     var stepLabel = UILabel()
     var numberImageView = UIImageView()
     var stepTitle = UILabel()
@@ -17,6 +19,11 @@ class StepTableViewCell: UITableViewCell {
     
     let leadingConstraint: CGFloat = 14.0
     let titleTopConstraint: CGFloat = 20.0
+    
+    static let id = "RecipeStepCell"
+    
+    
+    // MARK: - LifeCycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,13 +49,17 @@ class StepTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: - Configure Helpers
+    
     func set(step: Step) {
         stepLabel.text = "STEP"
         let imageName = "\(step.number).circle.fill"
         numberImageView.image = UIImage(systemName: imageName, withConfiguration: UIImage.SymbolConfiguration(pointSize: 15, weight: .semibold))
         stepTitle.text = step.title
         stepImageView.image = step.image
-//        descLabel.text = step.description
+
+        // desc label line spacing
         
         let attributedString = NSMutableAttributedString(string: step.description)
 
@@ -63,6 +74,7 @@ class StepTableViewCell: UITableViewCell {
 
         // *** Set Attributed String to your label ***
         descLabel.attributedText = attributedString
+        descLabel.lineBreakMode = .byWordWrapping
     }
   
     func configureStepLabel() {
@@ -70,6 +82,24 @@ class StepTableViewCell: UITableViewCell {
         stepLabel.textColor = UIColor(named: K.lightYellowGreen)
         stepLabel.sizeToFit()
     }
+  
+    func configureNumberImageView() {
+        numberImageView.tintColor = UIColor(named: K.lightYellowGreen)
+    }
+    
+    func configureTitleLabel() {
+        stepTitle.font = UIFont(name: K.appleSDGothicNeo_Bold, size: 14)
+    }
+    
+    func configureDescLabel() {
+        descLabel.font = UIFont(name: K.appleSDGothicNeo_Medium, size: 12.5)
+        descLabel.numberOfLines = 0
+        descLabel.lineBreakMode = .byWordWrapping
+        descLabel.sizeToFit()
+    }
+    
+    
+    // MARK: - Constraints Helpers
     
     func setStepLabelConstraints() {
         stepLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -78,19 +108,10 @@ class StepTableViewCell: UITableViewCell {
         stepLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
     }
     
-    func configureNumberImageView() {
-        numberImageView.tintColor = UIColor(named: K.lightYellowGreen)
-    }
-    
     func setNumberImageViewConstraints() {
         numberImageView.translatesAutoresizingMaskIntoConstraints = false
         numberImageView.topAnchor.constraint(equalTo: topAnchor, constant: titleTopConstraint).isActive = true
         numberImageView.leadingAnchor.constraint(equalTo: stepLabel.trailingAnchor, constant: 2).isActive = true
-//        numberImageView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-    }
-    
-    func configureTitleLabel() {
-        stepTitle.font = UIFont(name: K.appleSDGothicNeo_Bold, size: 15)
     }
     
     func setTitleConstraints() {
@@ -116,13 +137,7 @@ class StepTableViewCell: UITableViewCell {
         stepImageView.heightAnchor.constraint(equalTo:stepImageView.widthAnchor, multiplier: 0.6).isActive = true
         
     }
-    
-    func configureDescLabel() {
-        descLabel.font = UIFont(name: K.appleSDGothicNeo_Medium, size: 14)
-        descLabel.numberOfLines = 0
-        descLabel.lineBreakMode = .byWordWrapping
-        descLabel.sizeToFit()
-    }
+ 
     
     func setDescLabelConstraint() {
         descLabel.translatesAutoresizingMaskIntoConstraints = false

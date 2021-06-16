@@ -80,7 +80,7 @@ class CartViewController: UIViewController {
     func configureNavigation() {
         navigation = CustomNavigation(superVC: self)
         navigation.initBackButton(showTab: true)
-        navigation.setTitle(as: "장바구니")
+        navigation.setTitle(as: "장바구니", withLogo: true)
     }
     
     func hideTabBar() {
@@ -131,7 +131,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell() }
         
             let count = cartItem.count
-            let cell = cartTableView.dequeueReusableCell(withIdentifier: K.id.cartCell, for: indexPath) as! CartCell
+        let cell = cartTableView.dequeueReusableCell(withIdentifier: CartCell.id, for: indexPath) as! CartCell
             
             cell.configure(product: product, count: count)
             cell.selectItem = {

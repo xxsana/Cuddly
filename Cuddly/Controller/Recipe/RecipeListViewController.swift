@@ -12,8 +12,9 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
     // MARK: - Properties
     
     let allRecipes = Recipe.fetchRecipes()
-    
     var navigation: CustomNavigation!
+    let cellRatio: CGFloat = 256 / 203      // height / width
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -24,7 +25,7 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         // custom navigation
         self.navigationController?.navigationBar.isHidden = true
         navigation = CustomNavigation(superVC: self)
-        navigation.setTitle(as: "Cuddly")
+        navigation.setTitle(as: "Cuddly", withLogo: true)
         navigation.initCartButton()
         
         // collection view delegate
@@ -32,12 +33,12 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         
         // register cell to collection view
-        collectionView.register(RecipeListCell.nib(), forCellWithReuseIdentifier: RecipeListCell.identifier)
+        collectionView.register(RecipeListCell.nib(), forCellWithReuseIdentifier: RecipeListCell.id)
         
         // collection view layout
         let layout = UICollectionViewFlowLayout()
-        let width = collectionView.frame.width / 2 - 10
-        let height = 13 * width / 9
+        let width = collectionView.frame.width / 2
+        let height = width * cellRatio
         layout.itemSize = CGSize(width: width, height: height)
         collectionView.collectionViewLayout = layout
         
@@ -51,7 +52,7 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.id.recipeListCell, for: indexPath) as! RecipeListCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecipeListCell.id, for: indexPath) as! RecipeListCell
         cell.configure(with: allRecipes[indexPath.row])
         return cell
     }
@@ -68,23 +69,22 @@ class RecipeListViewController: UIViewController, UICollectionViewDelegate, UICo
 
 // MARK: - CollectionViewLayout
 
-//extension RecipeListCell: UICollectionViewDelegateFlowLayout {
 extension RecipeListViewController: UICollectionViewDelegateFlowLayout {
     
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2 - 10
-        let height = 13 * width / 9
+        let width = collectionView.frame.width / 2
+        let height = width * cellRatio
         return CGSize(width: width, height: height)
     }
     
     // vertical space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
     
     // horizontal space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }
