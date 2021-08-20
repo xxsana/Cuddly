@@ -4,7 +4,7 @@ A recipe app for homemade pet snack.
 Designed by Suhyun Park
 Devoloped by Sana Jeong
 
-** 履歴書を通じておっしゃってくださった方は下のNotion Portfolioをご覧いただきます！
+** 履歴書を通じて来てくださった方は下のNotion Portfolioをご覧いただきます！
 
 https://bush-guitar-be6.notion.site/Cuddly-b0663ddb2d3849c9b78a37b8b573919e
 
